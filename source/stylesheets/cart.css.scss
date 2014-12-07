@@ -1,0 +1,124 @@
+@import "mixins";
+
+.in-cart {
+  padding: 0;
+  margin: 0 0 55px 0;
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+
+  li {
+    display: block;
+    padding: 20px 0;
+
+    & * {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    img { 
+      max-width: 131px; 
+      margin-right: 70px;
+    }
+
+    h3 {
+      max-width: 276px;
+      margin-top: 50px;
+
+      &:nth-of-type(2n) { margin-top: 63px; }
+    }
+
+    input[type="text"] {
+      padding: 10px 20px;
+      margin-top: 45px;
+      margin-right: 45px;
+      max-width: 70px;
+      height: 56px;
+    }
+
+    a {
+      float: right;
+      margin-top: 65px;
+      text-indent: -999px;
+      overflow: hidden;
+      width: 14px;
+      height: 14px;
+      background: url(../images/close.png) no-repeat center;
+      background-size: auto;
+    }
+  }
+}
+
+.cart {
+  border-bottom: 2px solid $primary-color;
+
+  label { 
+    margin-bottom: 15px; 
+    display: block;
+  }
+
+  div {
+    display: inline-block;
+
+    + div {
+      margin-left: 25px;
+
+      + div {
+        float: right;
+        text-align: right;
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  input[type="type"] {
+    width: 400px;
+    height: 56px;
+    padding: 10px 20px;
+  }
+
+  h2 { margin-bottom: 15px; }
+
+  button {
+    @include primary-button;
+    @include all-transitions;
+    background: #fff;
+    outline: none;
+
+    &:hover {
+      border-color: $secondary-color;
+      color: $secondary-color;
+    }
+  }
+
+  #close-cart {
+    position: relative;
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    border: 2px solid $primary-color;
+    border-bottom: none;
+    width: 40px;
+    height: 40px;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -20px;
+    @include all-transitions;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -2px;
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: url(../images/next-arrow.png) no-repeat center;
+      background-size: auto;
+      -ms-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      @include all-transitions;
+    }
+
+    &:hover { border-color: $secondary-color; }
+  }
+}

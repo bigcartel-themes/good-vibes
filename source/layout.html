@@ -6,78 +6,62 @@
     <meta charset="utf-8">
     <meta name="description" content="{{ page.meta_description }}">
     <meta name="keywords" content="{{ page.meta_keywords }}">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
 
-    <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
+    <link href="{{ theme | theme_css_url }}" rel="stylesheet">
 
     {{ head_content }}
   </head>
 
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
-      <a href="/" title="{{ store.name | escape }}">
-        {% if theme.logo != blank %}
-        <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-        {% else %}
-        {{ store.name }}
-        {% endif %}
-      </a>
-    </header>
-
-    <div class="wrap">
-      <aside>
-        <section>
-          <a href="/cart">Cart ({{ cart.total | money_with_sign }})</a>
-        </section>
-
-        {% if theme.show_search %}
-        <section>
-          <form action="/products" method="get">
-            <label>Search: <input type="text" name="search"></label>
-          </form>
-        </section>
-        {% endif %}
-
-        <nav>
-          <h3>Products</h3>
-          <ul class="unstyled">
-            <li><a href="/products">All</a></li>
-            {% for category in categories.active %}
-            <li>{{ category | link_to }}</li>
-            {% endfor %}
-          </ul>
-
-          {% if artists.active != blank %}
-          <h3>Artists</h3>
-          <ul class="unstyled">
-            <li><a href="/products">All</a></li>
-            {% for artist in artists.active %}
-            <li>{{ artist | link_to }}</li>
+      <div class="container clearfix">
+        <div class="logo grid_7">
+          <a href="/"><img src="images/gv-logo.png" alt="Shop Logo"></a>
+          <!-- <a href="/" title="{{ store.name | escape }}">
+          {% if theme.logo != blank %}
+            <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
+          {% else %}
+            <h2>{{ store.name }}</h2>
+          {% endif %}
+          </a> -->
+        </div>
+        <div class="nav grid_3">
+    <!--       {% if artists.active != blank %} -->
+          <ul>
+            <!-- {% for artist in artists.active %}
+              <li>{{ artist | link_to }}</li>
             {% endfor %}
           </ul>
           {% endif %}
-
-          <h3>Info</h3>
-          <ul class="unstyled">
+          <ul>
             {% for page in pages.all %}
             <li>{{ page | link_to }}</li>
-            {% endfor %}
-            <li><a href="/contact">Contact Us</a></li>
+            {% endfor %} -->
+
+            <li><a href="/shop" data-hover="Shop" class="active-link-style">Shop</a></li>
+            <li><a href="/about" data-hover="About">About</a></li>
+            <li><a href="/contact" data-hover="Contact">Contact</a></li>
+
             {% if store.website != blank %}
             <li><a href="{{ store.website }}">Back to Site</a></li>
             {% endif %}
           </ul>
-        </nav>
+        </div>
+        <div class="shopping-cart grid_2">
+          <a href="/cart"></a>
+          <ul>
+            <a href="/cart">
+              <li>{{ cart.item_count }}</li>
+              <li>Items:</li>
+              <li>{{ cart.total | money_with_sign }}</li>
+            </a>
+          </ul>
+        </div>
+      </div>    
+    </header> <!-- END OF HEADER -->  
 
-        <cite>{{ bigcartel_credit }}</cite>
-      </aside>
-
-      <section class="content">
-        <h1>{{ page.name }}</h1>
-
-        {% if errors != blank %}
+      {% if errors != blank %}
         <ul class="unstyled errors">
           {% for error in errors %}
           <li>{{ error }}</li>
@@ -86,17 +70,25 @@
         {% endif %}
 
         {% if page.category == 'custom' %}
+        <div class="container clearfix info-pages">
+          <div class="grid_middle">
           {{ page_content | paragraphs }}
+          </div>
+        </div>
         {% else %}
           {{ page_content }}
         {% endif %}
-      </section>
-    </div>
 
     <footer>
-      {% if theme.twitter_username != blank %}
-      <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
-      {% endif %}
-    </footer>
+      <div class="container clearfix">
+        <div class="grid_12">
+          <p>&copy; {{ 'Today' | date: '%Y' }} {{ store.name }}</p>
+          <p>{{ bigcartel_credit}}</p>
+        </div>
+      </div>    
+    </footer> <!--END OF FOOTER -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
   </body>
 </html>

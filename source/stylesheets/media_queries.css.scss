@@ -1,0 +1,53 @@
+@import "mixins";
+
+/* ========================================================================== 
+ Retina-specific stuff here 
+========================================================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+
+  .shopping-cart > a {
+    background: url(../images/gv-cart@2x.png) no-repeat center;
+    background-size: 30px 28px;
+  }
+
+  .product figure:after {
+    background: url(../images/hover-arrow@2x.png) no-repeat center;
+    background-size: 30px 28px;
+  }
+
+  #next {
+    background: url(../images/next-arrow@2x.png) no-repeat center;
+    background-size: 13px 12px;
+  }
+
+  #last {
+    background: url(../images/last-arrows@2x.png) no-repeat center;
+    background-size: 16px 12px;
+  }
+
+  #instagram-icon {
+    background: url(../images/instagram-icon@2x.png) no-repeat center;
+    background-size: 22px 23px;
+  }
+
+  #back-to-all:before {
+    background: url(../images/next-arrow@2x.png) no-repeat center left;
+    background-size: 13px 12px;
+  }
+
+  .in-cart li a {
+    background: url(../images/close@2x.png) no-repeat center;
+    background-size: 14px 14px;
+  }
+
+  #close-cart:before {
+    background: url(../images/next-arrow@2x.png) no-repeat center left;
+    background-size: 13px 12px;
+  }
+}

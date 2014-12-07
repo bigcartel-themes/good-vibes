@@ -1,0 +1,246 @@
+@import "mixins";
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+/* ========================================================================== 
+global    
+========================================================================== */
+
+html {
+  background-color: $primary-color;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+body { 
+  font-family: $primary-font; 
+  background-color: #fff;
+  color: $primary-color;
+}
+
+
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  opacity: .85;
+  filter:alpha(opacity=85);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #fff;
+  
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+img {
+  vertical-align: bottom;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+h1 {
+  font: 2.625em $primary-font;
+  font-weight: 900; 
+}
+
+h2 {
+  font: 1.875em $primary-font;
+  font-weight: 900;
+}
+
+h3 {
+  font: 1.125em $primary-font;
+  font-weight: 900;
+  
+}
+
+h4 {
+  font: .875em $primary-font;
+  font-weight: 900;
+  font-style: italic;
+  
+  text-transform: uppercase;
+}
+
+a { color: $primary-color; }
+
+p {
+  font: 1em $primary-font;
+  font-weight: 700;
+  line-height: 24px;
+
+  a {
+    position: relative;
+    display: inline-block;
+    @include all-transitions;
+
+    &:before {
+      position: absolute;
+      box-sizing: content-box;
+      content: '';
+      height: 100%;
+      width: 100%;
+      border-bottom: 2px solid $primary-color;
+      bottom: -1px;
+      @include all-transitions;
+    }
+
+    &:hover { color: $secondary-color; }
+
+    &:hover:before {
+      border-color: $secondary-color;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
+
+small {
+  font: .875em $primary-font;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+input:not([type=submit]):not([type=file]) {
+  color: $primary-color;
+  font: 1.125em $primary-font;
+  font-weight: 900;
+  border: 2px solid $primary-color;
+
+  &:focus  {
+    outline: none;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $primary-color;
+    font-weight: 900;
+    font: 1.125em $primary-font;
+  }
+}
+
+label {
+  font: 1.125em $primary-font;
+  font-weight: 900;
+}
+
+.active-link-style {
+  padding-bottom: 2px;
+  border-bottom: 2px solid $primary-color;
+}
+
+/* ========================================================================== 
+header   
+========================================================================== */
+
+header {
+  font-size: 1.125em;
+  font-weight: 900;
+
+  .logo {
+
+    img { max-width: 80px; }
+  }
+
+  .nav {
+    padding-top: 27px;
+    text-align: right;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li { padding-left: 22px; }
+
+    a {
+      display: inline-block;
+      position: relative;
+
+      &:before { @include slide-rollover; }
+
+      &:hover { @include no-opacity; }
+
+      &:hover:before { max-width: 100%; }
+    }
+  }
+
+  .shopping-cart {
+    padding-top: 26px;
+    text-align: right;
+
+    > a {
+      display: inline-block;
+      width: 30px;
+      height: 28px;
+      background: url(../images/gv-cart.png) no-repeat center;
+      margin: 2px 3px 0 0;
+    }
+
+    ul {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      vertical-align: top;
+    }
+
+    li { padding: 3px 0 0 1px; }
+  }
+}
+
+
+/* ========================================================================== 
+info-pages 
+========================================================================== */
+
+.info-pages {
+  
+  .grid_middle { margin-bottom: 100px; }
+  
+  img { max-width: 830px; }
+}
+
+
+
+/* ========================================================================== 
+footer 
+========================================================================== */
+
+footer {
+  background-color: $primary-color;
+  padding: 5px 0;
+
+  p {
+    font-weight: 900;
+    color: #fff;
+
+    &:first-of-type { float: left; }
+
+    &:last-of-type { float: right; }
+
+    a {
+      color: #fff;
+
+      &:hover { color: #fff; }
+
+      &:before { content: none; }
+    }
+  }
+}

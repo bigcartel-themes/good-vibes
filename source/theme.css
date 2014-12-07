@@ -19,9 +19,11 @@
  * as well as a few custom Sass stylesheets we've written for different areas of the store
  *
  *= require_directory ./stylesheets/vendor
+ *= require stylesheets/grid
  *= require stylesheets/layout
- *= require stylesheets/products
- *= require stylesheets/product
  *= require stylesheets/cart
- *
+ *= require stylesheets/home
+ *= require stylesheets/product
+ *= require stylesheets/products
+ *= require stylesheets/media_queries
  */

@@ -1,0 +1,180 @@
+@import "mixins";
+
+.main-content { position: relative; }
+
+.categories {
+  position: absolute;
+  z-index: 3;
+  font-size: .875em;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+  left: 50%;
+  margin: -95px 0 0 -85px;
+  padding: 0 10px 20px 10px;
+  background-color: #fff;
+
+  li { 
+    display: block;
+    cursor: pointer;
+    padding: 20px 0 0 0;
+  }
+
+  ul {
+    @include all-transitions;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+
+    li { 
+      padding: 10px 0; 
+
+      a {
+      @include all-transitions;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &:hover ul {
+    padding-top:20px;
+    max-height: 500px;
+  }
+}
+
+.products {
+  margin-top: 60px;
+
+  a {
+    display: inline-block;
+
+    figure {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      padding-bottom: 20px;
+      border-bottom: 2px solid $primary-color;
+
+      img { float: left; }
+
+      figcaption {
+        float: left;
+        max-width: 185px;
+        margin-left: 25px;
+        @include all-transitions;
+
+        small + small {
+          color: $secondary-color;
+          margin-left: 4px;
+        }
+      }
+
+      &:before { 
+        @include slide-rollover;
+        margin-top: 2px;
+        height: 100%;
+        font-size: 180px;
+        color: transparent; 
+      }
+
+      &:after {
+        @include all-transitions;
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 19px;
+        height: 18px;
+        background: url(../images/hover-arrow.png) no-repeat center;
+        background-size: auto;
+        z-index: -1;
+      }
+
+      &:hover figcaption { 
+        color: $secondary-color;
+      }
+
+      &:hover:after {
+        left: calc(96.5% - 0px);
+      }
+
+      &:hover:before { max-width: 100%; }
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+
+  ul { 
+    display: inline-block; 
+
+    li { padding-left: 3px; }
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    font-weight: 900;
+
+    &:before { @include slide-rollover; }
+
+    &:hover { @include no-opacity; }
+
+    &:hover:before { max-width: 100%; }
+  }
+  
+  #next {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 13px;
+    height: 12px;
+    background: url(../images/next-arrow.png) no-repeat center;
+    background-size: auto;
+    margin-left: 15px;
+  }
+
+   #last {
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 16px;
+    height: 12px;
+    background: url(../images/last-arrows.png) no-repeat center;
+    background-size: auto;
+    margin-left: 5px;
+  }
+}
+
+.instagram {
+  margin: 80px auto 100px auto;
+  text-align: center;
+
+  a { display: block; }
+
+  #instagram-icon {
+    display: inline-block;
+    font-size: 1.875em;
+    font-weight: 900;
+    background: url(../images/instagram-icon.png) no-repeat top center;
+    background-size: auto;
+    padding-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin: 20px 0 0 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 270px;
+    max-height: 270px;
+  }
+}
