@@ -1,16 +1,24 @@
 $(document).ready(function() {
 
- $('.bxslider').bxSlider({
+  $('.bxslider').bxSlider({
   auto: true
- });
+  });
 
- $('.wrapper-dropdown').on('click', function() {
+  $('.wrapper-dropdown').on('click', function() {
     $(this).toggleClass('active');
- });
+  });
 
- $(".nav li a").attr("data-hover", 'name of page');
+  $(".nav li a").attr("data-hover", 'name of page');
 
- $(".pagination a").attr("data-hover", 'page number');
+  $(".pagination a").attr("data-hover", 'page number');
+
+  $(function() {
+    $(".nav a").each(function(){
+      if ($(this).attr("href") == window.location.pathname) {
+      $(this).addClass("current");
+      }
+    });
+  });
 
   // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
   // var columnTop = $(".fixed").parent().offset().top;
