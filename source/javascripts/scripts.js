@@ -10,6 +10,8 @@ $(document).ready(function() {
 
  $(".nav li a").attr("data-hover", 'name of page');
 
+ $(".pagination a").attr("data-hover", 'page number');
+
   // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
   // var columnTop = $(".fixed").parent().offset().top;
 

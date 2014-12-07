@@ -109,19 +109,14 @@
 
 .pagination {
   text-align: center;
-  margin-top: 20px;
-
-  ul { 
-    display: inline-block; 
-
-    li { padding-left: 3px; }
-  }
+  margin-top: 40px;
+  font-size: 1em;
+  font-weight: 900;
 
   a {
     display: inline-block;
     position: relative;
-    font-size: 1em;
-    font-weight: 900;
+    margin: 0 2px;
 
     &:before { @include slide-rollover; }
 
@@ -130,7 +125,7 @@
     &:hover:before { max-width: 100%; }
   }
   
-  #next {
+  .next {
     text-indent: -999px;
     overflow: hidden;
     width: 13px;
@@ -140,7 +135,18 @@
     margin-left: 15px;
   }
 
-   #last {
+  .previous {
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 13px;
+    height: 12px;
+    background: url(../images/prev-arrow.png) no-repeat center;
+    background-size: auto;
+    margin-right: 15px;
+  }
+
+   .last {
     display: inline-block;
     text-indent: -999px;
     overflow: hidden;

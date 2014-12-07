@@ -53,24 +53,12 @@
       </div>
     </div>
     <div class="container clearfix pagination">
-      <ul>
-        <li><a href="" data-hover="1" class="active-link-style">1</a></li>
-        <li><a href="" data-hover="2">2</a></li>
-        <li><a href="" data-hover="3">3</a></li>
-        <li><a href="" data-hover="4">4</a></li>
-        <li><a href="" data-hover="5">5</a></li>
-        <li><a href="" >...</a></li>
-        <li><a href="" data-hover="12">12</a></li>
-        <li><a href="" data-hover="13">13</a></li>
-      </ul>
-      <a href="#" id="next">next</a>
-      <a href="#" id="last">last</a>
       
       {{ paginate | default_pagination }}
 
-          {% else %}
-            <p>No products found.</p>
-          {% endif %}
+      {% else %}
+        <p>No products found.</p>
+      {% endif %}
 
       {% endpaginate %}
     </div>

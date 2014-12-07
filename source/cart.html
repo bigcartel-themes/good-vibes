@@ -13,7 +13,7 @@
       <ul class="in-cart">
         {% for item in cart.items %}
         <li>
-          <a href="{{ item.product.url }}"><img src="{{ item.product.image | product_image_url size:"thumb" }}"></a>
+          <a href="{{ item.product.url }}"><img src="{{ item.product.image | product_image_url size:"small" }}"></a>
           <a href="{{ item.product.url }}">
             <h3>{{ item.product.name }}
               {% unless item.product.has_default_option %}
@@ -54,7 +54,7 @@
       {% endif %}
       {% endif %}
       <div>
-        <button type="submit" class="button" id="update">update cart</a>
+       
         {% if cart.shipping.enabled or cart.discount.enabled %}
             {% unless cart.shipping.pending and cart.discount.pending %}
               <ul>
@@ -80,6 +80,7 @@
             {% endunless %}
           {% endif %}
           <h2>Total: {{ cart.total | money_with_sign }}</h2>
+          <button type="submit" name="checkout" title="Checkout" id="update">Update cart</button>
           <button type="submit" name="checkout" title="Checkout">Checkout</button>
       </div>
     </form>

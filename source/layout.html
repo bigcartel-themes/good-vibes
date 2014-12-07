@@ -16,36 +16,38 @@
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
       <div class="container clearfix">
-        <div class="logo grid_4">
-          <a href="/"><img src="/images/gv-logo.png" alt="Shop Logo"></a>
-          <!-- <a href="/" title="{{ store.name | escape }}">
-          {% if theme.logo != blank %}
-            <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-          {% else %}
-            <h2>{{ store.name }}</h2>
-          {% endif %}
-          </a> -->
-        </div>
-        <div class="nav grid_6">
-          <ul>
-            {% for page in pages.all %}
-            <li>{{ page | link_to }}</li>
-            {% endfor %}
-
-            {% if store.website != blank %}
-            <li><a href="{{ store.website }}">Back to Site</a></li>
+        <div class="grid_12">
+          <div class="logo">
+            <a href="/"><img src="/images/gv-logo.png" alt="Shop Logo"></a> <!-- TAKE OUT LOGO -->
+            <!-- <a href="/" title="{{ store.name | escape }}">
+            {% if theme.logo != blank %}
+              <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
+            {% else %}
+              <h2>{{ store.name }}</h2>
             {% endif %}
-          </ul>
-        </div>
-        <div class="shopping-cart grid_2">
-          <a href="/cart"></a>
-          <ul>
-            <a href="/cart">
-              <li>{{ cart.item_count }}</li>
-              <li>Items:</li>
-              <li>{{ cart.total | money_with_sign }}</li>
-            </a>
-          </ul>
+            </a> -->
+          </div>
+          <div class="shopping-cart">
+            <a href="/cart"></a>
+            <ul>
+              <a href="/cart">
+                <li>{{ cart.item_count }}</li>
+                <li>Items:</li>
+                <li>{{ cart.total | money_with_sign }}</li>
+              </a>
+            </ul>
+          </div>
+           <div class="nav">
+            <ul>
+              {% for page in pages.all %}
+              <li>{{ page | link_to }}</li>
+              {% endfor %}
+
+              {% if store.website != blank %}
+              <li><a href="{{ store.website }}">Back to Site</a></li>
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </div>    
     </header> <!-- END OF HEADER -->  

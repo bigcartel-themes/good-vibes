@@ -21,12 +21,17 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 30px 28px;
   }
 
-  #next {
+  .next {
     background: url(../images/next-arrow@2x.png) no-repeat center;
     background-size: 13px 12px;
   }
 
-  #last {
+  .previous {
+    background: url(../images/prev-arrow@2x.png) no-repeat center;
+    background-size: 13px 12px;
+  }
+
+  .last {
     background: url(../images/last-arrows@2x.png) no-repeat center;
     background-size: 16px 12px;
   }
