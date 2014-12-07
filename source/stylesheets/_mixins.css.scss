@@ -2,6 +2,7 @@
 $primary-color: #222222;
 $secondary-color: #f55253;
 $tertiary-color: #777777;
+$white: #fff;
 // $dark-green-color:  #{'{{ theme.secondary_color }}'};
 // $light-green-color: #{'{{ theme.primary_color }}'};
 
@@ -37,6 +38,7 @@ $primary-font: 'Lato', $fallback-fonts;
   top: 0;
   left: 0;
   overflow: hidden;
+  height: 24px;
   max-width: 0;
   padding-bottom: 2px;
   border-bottom: 2px solid $secondary-color;

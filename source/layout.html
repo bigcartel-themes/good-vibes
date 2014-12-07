@@ -16,8 +16,8 @@
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
       <div class="container clearfix">
-        <div class="logo grid_7">
-          <a href="/"><img src="images/gv-logo.png" alt="Shop Logo"></a>
+        <div class="logo grid_4">
+          <a href="/"><img src="/images/gv-logo.png" alt="Shop Logo"></a>
           <!-- <a href="/" title="{{ store.name | escape }}">
           {% if theme.logo != blank %}
             <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
@@ -26,22 +26,11 @@
           {% endif %}
           </a> -->
         </div>
-        <div class="nav grid_3">
-    <!--       {% if artists.active != blank %} -->
-          <ul>
-            <!-- {% for artist in artists.active %}
-              <li>{{ artist | link_to }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+        <div class="nav grid_6">
           <ul>
             {% for page in pages.all %}
             <li>{{ page | link_to }}</li>
-            {% endfor %} -->
-
-            <li><a href="/shop" data-hover="Shop" class="active-link-style">Shop</a></li>
-            <li><a href="/about" data-hover="About">About</a></li>
-            <li><a href="/contact" data-hover="Contact">Contact</a></li>
+            {% endfor %}
 
             {% if store.website != blank %}
             <li><a href="{{ store.website }}">Back to Site</a></li>

@@ -18,7 +18,7 @@ html {
 
 body { 
   font-family: $primary-font; 
-  background-color: #fff;
+  background-color: $white;
   color: $primary-color;
 }
 
@@ -36,7 +36,7 @@ a:hover {
 hr {
   border: 0;
   height: 1px;
-  background: #fff;
+  background: $white;
   
 }
 
@@ -74,7 +74,6 @@ h4 {
   font: .875em $primary-font;
   font-weight: 900;
   font-style: italic;
-  
   text-transform: uppercase;
 }
 
@@ -117,6 +116,21 @@ small {
   line-height: 24px;
 }
 
+.info-pages {
+
+   ul, ol {
+    font: .875em $primary-font;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+   }
+
+   ul li { 
+    display: list-item; 
+    list-style: disc;
+  }
+}
+
 input:not([type=submit]):not([type=file]) {
   color: $primary-color;
   font: 1.125em $primary-font;
@@ -141,7 +155,7 @@ label {
   font-weight: 900;
 }
 
-.active-link-style {
+.current {
   padding-bottom: 2px;
   border-bottom: 2px solid $primary-color;
 }
@@ -229,16 +243,16 @@ footer {
 
   p {
     font-weight: 900;
-    color: #fff;
+    color: $white;
 
     &:first-of-type { float: left; }
 
     &:last-of-type { float: right; }
 
     a {
-      color: #fff;
+      color: $white;
 
-      &:hover { color: #fff; }
+      &:hover { color: $white; }
 
       &:before { content: none; }
     }

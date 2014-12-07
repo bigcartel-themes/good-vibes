@@ -8,6 +8,8 @@ $(document).ready(function() {
     $(this).toggleClass('active');
  });
 
+ $(".nav li a").attr("data-hover", 'name of page');
+
   // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
   // var columnTop = $(".fixed").parent().offset().top;
 
