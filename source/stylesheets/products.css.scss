@@ -49,6 +49,8 @@
 .products {
   margin-top: 60px;
 
+  li { display: block; }
+
   a {
     display: inline-block;
 
@@ -126,6 +128,7 @@
   }
   
   .next {
+    display: inline-block;
     text-indent: -999px;
     overflow: hidden;
     width: 13px;
@@ -156,6 +159,8 @@
     background-size: auto;
     margin-left: 5px;
   }
+
+  a:before { height: 23px; }
 }
 
 .instagram {

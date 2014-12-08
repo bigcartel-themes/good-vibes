@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+  // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
+  // var columnTop = $(".fixed").parent().offset().top;
+
+  var container = document.querySelector('#container');
+  var msnry = new Masonry( container, {
+    columnWidth: 200,
+    itemSelector: '.item'
+  });
+
   $('.bxslider').bxSlider({
   auto: true
   });
@@ -20,8 +29,9 @@ $(document).ready(function() {
     });
   });
 
-  // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
-  // var columnTop = $(".fixed").parent().offset().top;
+
+
+
 
   // $(".description").height(maxHeight);
   // $(".product-shots").height(maxHeight);

@@ -30,10 +30,10 @@
 
       {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
-      <div class="products">
+      <div class="products js-masonry">
         <ul>
           {% for product in products %}
-          <li class="grid_6 {{ product.css_class }}">
+          <li class="grid_6 {{ product.css_class }} item">
             <a href="{{ product.url }}">
               <figure data-hover="product">
                 <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url size: theme.product_image_size }}">
@@ -55,7 +55,7 @@
     <div class="container clearfix">
 
       {{ paginate | default_pagination }}
-     <!--  <a href="#" class="last">last</a>  NEED TO ADD LAST BUTTON-->
+      <!--  <a href="#" class="last">last</a>  NEED TO ADD LAST BUTTON-->
 
           {% else %}
             <p>No products found.</p>
@@ -66,10 +66,10 @@
     <div class="container clearfix instagram">
       <a href="" id="instagram-icon">@goodvidestheme</a>
       <ul>
-        <li class="grid_3"><a href=""><img src="images/test/insta/insta1.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="images/test/insta/insta2.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="images/test/insta/insta3.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="images/test/insta/insta4.jpg" alt=""></a></li>
+        <li class="grid_3"><a href=""><img src="/images/test/insta/insta1.jpg" alt=""></a></li>
+        <li class="grid_3"><a href=""><img src="/images/test/insta/insta2.jpg" alt=""></a></li>
+        <li class="grid_3"><a href=""><img src="/images/test/insta/insta3.jpg" alt=""></a></li>
+        <li class="grid_3"><a href=""><img src="/images/test/insta/insta4.jpg" alt=""></a></li>
       </ul>
     </div>
     
