@@ -1,7 +1,18 @@
 $(document).ready(function() {
 
-  // var maxHeight = Math.max($(".description").height(), $(".product-shots").height());
-  // var columnTop = $(".fixed").parent().offset().top;
+  // Sticky scrolling on Product page
+  var columnTop = $(".fixed").parent().offset().top;
+
+  $(window).on('scroll', function() {
+    var windowTop = $(window).scrollTop();
+
+    if (windowTop >= columnTop) {
+      $(".fixed").css("top", windowTop - columnTop);
+    } else {
+      $(".fixed").removeAttr("style");
+    }
+  });
+
 
   var container = document.querySelector('#container');
   var msnry = new Masonry( container, {
@@ -28,26 +39,5 @@ $(document).ready(function() {
       }
     });
   });
-
-
-
-
-
-  // $(".description").height(maxHeight);
-  // $(".product-shots").height(maxHeight);
-
-  // $(window).on('scroll', function() {
-  //   var windowTop = $(window).scrollTop();
-
-  //   if (windowTop >= columnTop) {
-  //     $(".fixed").css("top", windowTop - columnTop);
-  //   } else {
-  //     $(".fixed").removeAttr("style");
-  //   }
-  // });
-
-
- 
-
 });
 
