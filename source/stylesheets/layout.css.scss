@@ -153,6 +153,7 @@ input:not([type=submit]):not([type=file]) {
 label {
   font: 1.125em $primary-font;
   font-weight: 900;
+  display: block;
 }
 
 .current {

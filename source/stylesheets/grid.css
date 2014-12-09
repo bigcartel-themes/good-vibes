@@ -53,6 +53,7 @@
 .grid_middle {
   width: 69.1666667%;
   margin: 10px 16.6666667%;
+  float: left;
 }
 
 .pull_1 { margin-left: -9.5833333%; }

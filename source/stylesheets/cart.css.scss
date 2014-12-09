@@ -117,6 +117,19 @@
     &:hover { border-color: $secondary-color; }
   }
 
-  #cart-message { margin: 20px 0 60px 0; }
+  #cart-message { 
+    display: block;
+    text-align: left;
+    margin: 20px 0 60px 0; 
+    float: none;
+  }
+
+  ul.unstyled.errors { display: none !important; }
+
+  .errors {
+    padding:0;
+    color: $secondary-color;
+    font: 2em $primary-font;
+  }
 
 }

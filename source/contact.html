@@ -1,37 +1,38 @@
-{% if contact.sent %}
+<div class="container clearfix contact">
 
-<p>Your message has been sent and we&#8217;ll get back to you soon.</p>
+  {% if contact.sent %}
 
-{% else %}
+    <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
 
-<form method="post" action="/contact">
-  <ul class="unstyled">
-    <li>
-      <label for="name">Name</label>
-      {{ contact | contact_input: 'name' }}
-    </li>
-    <li>
-      <label for="email">Email</label>
-      {{ contact | contact_input: 'email' }}
-    </li>
-    <li>
+  {% else %}
+
+  <form method="post" action="/contact">
+    <div class="grid_middle">
+      <div>
+        <label for="name">Name</label>
+        {{ contact | contact_input: 'name' }}
+      </div>
+      <div>
+        <label for="email">Email</label>
+        {{ contact | contact_input: 'email' }}
+      </div>
+    </div>
+    <div class="grid_middle">
       <label for="subject">Subject</label>
       {{ contact | contact_input: 'subject' }}
-    </li>
-    <li>
+  
       <label for="message">Message</label>
       {{ contact | contact_input: 'message' }}
-    </li>
-    <li>
-      <label for="captcha">Spam check</label>
-      <p>Please enter the characters from the image.</p>
-      <div>{{ contact.captcha }}</div>
-      {{ contact | contact_input: 'captcha' }}
-    </li>
-    <li>
-      <button type="submit" name="submit" title="Send us an email">Send</button>
-    </li>
-  </ul>
-</form>
+  
+      <div class="spam"> 
+        <label for="captcha">Spam check</label>
+        {{ contact | contact_input: 'captcha' }}
+        {{ contact.captcha }}
+      </div>
 
-{% endif %}
+      <button type="submit" name="submit" title="Send us an email">Send</button>
+    </div>
+  </form>
+  {% endif %}
+</div>
+

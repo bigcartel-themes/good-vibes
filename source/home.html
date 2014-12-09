@@ -30,7 +30,7 @@
 
       {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
-      <div class="products js-masonry" >
+      <div class="products js-masonry masonry" >
         <ul>
           {% for product in products %}
           <li class="grid_6 {{ product.css_class }} item">
@@ -52,7 +52,7 @@
         </ul>
       </div>
     </div>
-    <div class="container clearfix pagination">
+    <div class="container clearfix">
       
       {{ paginate | default_pagination }}
       <!--  <a href="#" class="last">last</a>  NEED TO ADD LAST BUTTON-->

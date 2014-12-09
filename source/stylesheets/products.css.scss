@@ -49,7 +49,11 @@
 .products {
   margin-top: 60px;
 
-  li { display: block; }
+  ul {
+    position: static !important;
+
+    li { display: block; }
+  }
 
   a {
     display: inline-block;
