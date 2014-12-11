@@ -48,6 +48,8 @@
 
 .cart {
   border-bottom: 2px solid $primary-color;
+  overflow: hidden;
+  position: relative;
 
   .grid_middle { text-align: left; }
 
@@ -57,10 +59,8 @@
   }
 
   div {
-    display: inline-block;
-    float: right;
-    text-align: right;
-    margin-bottom: 35px;
+    margin-bottom: 75px;
+    overflow: auto;
 
     button { margin-left: 10px; }
   }
@@ -86,15 +86,16 @@
   }
 
   #close-cart {
-    position: relative;
-    display: inline-block;
-    text-indent: -999px;
+    position: absolute;
+    display: block;
+    text-indent: 100%;
     overflow: hidden;
     border: 2px solid $primary-color;
     border-bottom: none;
+    white-space: nowrap;
     width: 40px;
     height: 40px;
-    bottom: -4px;
+    bottom: 0;
     left: 50%;
     margin-left: -20px;
     @include all-transitions;

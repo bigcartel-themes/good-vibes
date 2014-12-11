@@ -44,5 +44,43 @@ $(document).ready(function() {
     //   itemSelector: ".item"
     // });
   }
-});
 
+  // Showing and hiding the cart
+
+  if ($("body").attr("id") != "cart") {
+    var cartShowing = false;
+
+    $(document).on("click", ".shopping-cart a", function(e) {
+      e.preventDefault();
+
+      if (!cartShowing) { showCart() }
+    }).on("click", "#close-cart", function(e) {
+      e.preventDefault();
+
+      if (cartShowing) { hideCart() }
+    });
+
+    var hideCart = function() {
+      var $cart = $(".cart");
+
+      cartShowing = false;
+
+      $cart.slideUp(300, function() {
+        $(this).remove();
+      });
+    }
+
+    var showCart = function() {
+      var $container = $("<div>");
+
+      $container.load("/cart" + " .cart", function() {
+        var $cart = $container.find(".cart")
+
+        cartShowing = true;
+        $cart.css("display", "none");
+        $("body").prepend($cart);
+        $cart.slideDown(300);
+      });
+    }
+  }
+});
