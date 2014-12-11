@@ -20,27 +20,29 @@ $(document).ready(function() {
     });
   });
 
+  // Enable sticky scrolling only on Product page
+  if ($("body").attr("id") == "product") {
+    var columnTop = $(".fixed").parent().offset().top;
 
-  // Sticky scrolling on Product page
-  var columnTop = $(".fixed").parent().offset().top;
+    $(window).on('scroll', function() {
+      var windowTop = $(window).scrollTop();
 
-  $(window).on('scroll', function() {
-    var windowTop = $(window).scrollTop();
+      if (windowTop >= columnTop) {
+        $(".fixed").css("top", windowTop - columnTop);
+      } else {
+        $(".fixed").removeAttr("style");
+      }
+    });
+  }
 
-    if (windowTop >= columnTop) {
-      $(".fixed").css("top", windowTop - columnTop);
-    } else {
-      $(".fixed").removeAttr("style");
-    }
-  });
+  // Enable Masonry plugin only on Home page
+  if ($("body").attr("id") == "home") {
+    // var $container = $(".container")
 
-
-  var container = document.querySelector('#container');
-  var msnry = new Masonry( container, {
-    columnWidth: 200,
-    itemSelector: '.item'
-  });
-
- 
+    // $container.masonry({
+    //   columnWidth: 200,
+    //   itemSelector: ".item"
+    // });
+  }
 });
 
