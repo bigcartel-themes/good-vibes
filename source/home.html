@@ -39,7 +39,7 @@
                 <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url size: theme.product_image_size }}">
                 <figcaption>
                   <h4>{{ product.categories }}</h4>
-                  <h2>{{ product.name }}</h2>
+                  <h2>{{ product.name | truncate: 40 }}</h2>
                   <small>{{ product.default_price | money_with_sign }}</small>
                   {% if product.on_sale %}
                   <small><i>On Sale</i></small>
