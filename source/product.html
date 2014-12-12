@@ -20,32 +20,27 @@
 
           {% when 'active' %}
             <h4>{% if product.on_sale %} <em>On Sale{% endif %}</em></h4>
-        {% endcase %}  
-        <div class="wrapper-dropdown">Black Speckle
-          <ul class="dropdown">
-            {% for option in product.options %}
-            <li>
-              {% unless product.has_default_option %}<span>{{ option.name }}</span>{% endunless %}
-              <span>{% if option.sold_out %}Sold Out{% endif %}</span>
-              <b style="width:{{ option.inventory }}%"></b>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-        <input type="text" placeholder="0">
-        <div class="add-to-cart">
+        {% endcase %}
+
+        <form method="post" action="/cart" id="product_form">
           {% if product.status == 'active' %}
-          <form method="post" action="/cart" id="product_form">
+
             {% if product.has_default_option %}
               {{ product.option | hidden_option_input }}
             {% else %}
               {{ product.options_in_stock | options_select }}
             {% endif %}
-            <button class="button" name="submit" type="submit" title="Add to Cart" data-add-to-cart="data-add-to-cart">Add to Cart</button>
-          </form>
-          {% endif %}  
-          <small>{{ product.default_price | money_with_sign }}</small>
-        </div>
+
+          {% endif %}
+
+          <input type="text" value="1" id="quantity" data-default-price="{{ product.default_price }}">
+
+          <div class="add-to-cart">
+            <button class="button" name="submit" type="submit" title="Add to Cart">Add to Cart</button>
+            <small>{{ product.default_price | money_with_sign }}</small>
+          </div>
+        </form>
+
       </div>
     </div>
     <div class="grid_6 product-shots">

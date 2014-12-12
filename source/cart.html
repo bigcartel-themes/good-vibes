@@ -8,7 +8,7 @@
   {% endif %}
   <h1>Cart</h1>
   {% if cart.items != blank %}
-  <form method="post" action="/cart">
+  <form method="post" action="/cart" id="cart_form">
     <ul class="in-cart">
       {% for item in cart.items %}
       <li>
@@ -22,7 +22,7 @@
         </a>
         {{ item | item_quantity_input }}
         <h3>{{ item.price | money_with_sign }}</h3>
-        <a href="#" class="remove">remove</a>
+        <a href="#" class="remove" data-item-id="{{ item.id }}">remove</a>
       </li>
       {% endfor %}
     </ul>

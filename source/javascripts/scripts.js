@@ -46,7 +46,6 @@ $(document).ready(function() {
   }
 
   // Showing and hiding the cart
-
   if ($("body").attr("id") != "cart") {
     var cartShowing = false;
 
@@ -80,6 +79,68 @@ $(document).ready(function() {
         $cart.css("display", "none");
         $("body").prepend($cart);
         $cart.slideDown(300);
+      });
+    }
+  }
+
+  // Change visible price when item quantity changes
+  $(document).on("keyup", "#quantity", function() {
+    var $quantityInput = $(this)
+      , $priceDisplay = $quantityInput.closest("#product_form").find("small")
+      , quantity = $quantityInput.val()
+      , price = $quantityInput.data("default-price");
+
+    $priceDisplay.html(Format.money(quantity * price, true, true));
+  });
+
+  // Adding items to the cart
+  $(document).on("click", "#product_form :submit", function(e) {
+    e.preventDefault();
+
+    var $button = $(this)
+      , $form = $button.closest("#product_form")
+      , quantity = $form.find("#quantity").val()
+      , itemID = $form.find("#option").val();
+
+    addToCart(itemID, quantity);
+  });
+
+  var addToCart = function(itemID, quantity) {
+    Cart.addItem(itemID, quantity, function(cart) { updateCart(cart) });
+  }
+
+  // Removing items from the cart
+  $(document).on("click", ".cart .remove", function(e) {
+    e.preventDefault();
+
+    var itemID = $(this).data("item-id");
+
+    removeFromCart(itemID);
+  });
+
+  var removeFromCart = function(itemID) {
+    Cart.removeItem(itemID, function(cart) { updateCart(cart) });
+  }
+
+  // Updating the cart
+  $(document).on("click", ".cart #update", function(e) {
+    e.preventDefault();
+
+    Cart.updateFromForm("cart_form", function(cart) { updateCart(cart) });
+  });
+
+  var updateCart = function(cart) {
+    var $cartListItems = $(".shopping-cart ul a li");
+
+    $cartListItems.filter(":first").text(cart.item_count);
+    $cartListItems.filter(":last").html(Format.money(cart.total, true, true));
+
+    if (cartShowing) {
+      var $container = $("<div>")
+        , $cart = $(".cart");
+
+      $container.load("/cart" + " .cart", function() {
+        $cart.html($container.find(".cart").html())
       });
     }
   }
