@@ -4,10 +4,6 @@ $(document).ready(function() {
   auto: true
   });
 
-  $('.wrapper-dropdown').on('click', function() {
-    $(this).toggleClass('active');
-  });
-
   $(".nav li a").attr("data-hover", 'name of page');
 
   $(".pagination a").attr("data-hover", 'page number');
