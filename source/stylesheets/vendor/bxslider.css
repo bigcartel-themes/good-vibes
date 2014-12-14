@@ -16,8 +16,7 @@
 
 
 .bx-wrapper {
-	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto;
 	padding: 0;
 	*zoom: 1;
 }
@@ -40,11 +39,11 @@
     	transform: translatez(0);
 }
 
-.bx-wrapper .bx-pager,
-.bx-wrapper .bx-controls-auto {
+.grid_12 .control-wrap .bx-pager,
+.grid_12 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: 90px;
-	right: 136px;
+	bottom: -120px;
+	right: 0px;
 }
 
 /* LOADER */

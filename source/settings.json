@@ -15,7 +15,7 @@
   ],
   "image_sets": [
     {
-      "variable": "slideshow_images",
+      "variable": "slideshow",
       "label": "Slideshow",
       "description": "This is a slideshow"
     },
@@ -78,6 +78,18 @@
       "label": "Twitter username",
       "type": "text",
       "description": "Ex: @bigcartel"
+    },
+    {
+      "variable": "store_tagline",
+      "label": "Store Tagline",
+      "type": "text",
+      "description": "This tagline appears over slideshow and or banner area of shop"
+    },
+    {
+      "variable": "instagram_username",
+      "label": "Instagram username",
+      "type": "text",
+      "description": "Instagram username without @ symbol"
     }
   ]
 }

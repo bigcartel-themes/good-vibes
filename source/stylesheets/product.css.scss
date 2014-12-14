@@ -8,6 +8,10 @@
   padding-top: 20px;
 }
 
+.stat {
+  position: static;
+}
+
 .single-product { position: relative; }
 
 .wrapper-dropdown {
@@ -167,7 +171,7 @@
 .product-shots {
   position: relative;
 
-  ul:first-of-type { padding-top: 20px; }
+  ul:first-of-type { padding: 20px 0 40px 0; }
 
   ul {
     padding: 0;

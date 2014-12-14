@@ -22,6 +22,7 @@
     }
 
     h3 {
+      width: 186px;
       max-width: 186px;
       margin-top: 70px;
     }
@@ -38,6 +39,7 @@
 .remove {
   float: right;
   margin-top: 75px;
+  margin-bottom: 20px;
   text-indent: -999px;
   overflow: hidden;
   width: 14px;
@@ -61,6 +63,8 @@
   div {
     margin-bottom: 75px;
     overflow: auto;
+    text-align: right;
+
 
     button { margin-left: 10px; }
   }

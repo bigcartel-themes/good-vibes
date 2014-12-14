@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
   $('.bxslider').bxSlider({
-  auto: true
+  auto: true,
+  pagerSelector: '.control-wrap'
   });
 
   $(".nav li a").attr("data-hover", 'name of page');
@@ -17,27 +18,47 @@ $(document).ready(function() {
   });
 
   // Enable sticky scrolling only on Product page
-  if ($("body").attr("id") == "product") {
-    var columnTop = $(".fixed").parent().offset().top;
+  $(window).on('scroll', function() {
+    if ($(".sticky").hasClass("fixed")) { enableSticky() }
+  });
 
-    $(window).on('scroll', function() {
+  var enableSticky = function() {
+    if ($(".sticky").length > 0) {
+      var columnTop = $(".sticky").parent().offset().top;
       var windowTop = $(window).scrollTop();
 
+      $(".sticky").addClass("fixed");
+
       if (windowTop >= columnTop) {
-        $(".fixed").css("top", windowTop - columnTop);
+        $(".sticky").css("top", windowTop - columnTop);
       } else {
-        $(".fixed").removeAttr("style");
+        $(".sticky").removeAttr("style");
       }
-    });
+    }
   }
+
+   var fixedContainerHeight = $(".sticky").outerHeight();
+
+    $(window).on("load resize", function() {
+    var windowHeight = $(window).height();
+
+    if (fixedContainerHeight > windowHeight) {
+      $(".sticky").removeClass("fixed").removeAttr("style");
+    } else {
+      enableSticky();
+    }
+    
+  });
 
   // Enable Masonry plugin only on Home page
   if ($("body").attr("id") == "home") {
-    // var $container = $(".container")
+    var $container = $(".masonry");
 
-    // $container.masonry({
-    //   columnWidth: 200,
-    //   itemSelector: ".item"
+    $container.imagesLoaded(function() {
+      $container.masonry();
+    });
+    // $container.imagesLoaded( function() {
+    //   $container.masonry();
     // });
   }
 
@@ -48,12 +69,17 @@ $(document).ready(function() {
     $(document).on("click", ".shopping-cart a", function(e) {
       e.preventDefault();
 
+      $(".fixed").removeClass("fixed").removeAttr("style"); 
+
       if (!cartShowing) { showCart() }
     }).on("click", "#close-cart", function(e) {
       e.preventDefault();
 
+      enableSticky();
+
       if (cartShowing) { hideCart() }
     });
+
 
     var hideCart = function() {
       var $cart = $(".cart");
@@ -171,4 +197,5 @@ $(document).ready(function() {
       }
     }
   });
+
 });
