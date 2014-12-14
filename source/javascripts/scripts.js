@@ -144,4 +144,35 @@ $(document).ready(function() {
       });
     }
   }
+
+  // Open and close dropdowns
+  $(document).on("click", ".wrapper-dropdown", function(e) {
+    e.stopPropagation();
+
+    $(this).toggleClass("active");
+  });
+
+  var closeDropdowns = function() {
+    $(".wrapper-dropdown.active").removeClass("active");
+  }
+
+  // Choose dropdown option
+  $(document).on("click", ".wrapper-dropdown li", function() {
+    var $listItem = $(this)
+      , $dropdown = $listItem.closest(".wrapper-dropdown")
+      , $selectionArea = $dropdown.find("span")
+      , $realSelect = $dropdown.next("select");
+
+    $selectionArea.text($listItem.text());
+    $realSelect.val($listItem.data("item-id"));
+  });
+
+  // Close open dropdown when clicking outside
+  $(document).on('click', function(e) {
+    if ($('.wrapper-dropdown.active').length > 0) {
+      if ($(this).closest('.wrapper-dropdown.active').length == 0) {
+        closeDropdowns();
+      }
+    }
+  });
 });

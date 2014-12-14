@@ -28,6 +28,16 @@
             {% if product.has_default_option %}
               {{ product.option | hidden_option_input }}
             {% else %}
+
+              <div class="wrapper-dropdown">
+                <span>Choose an option</span>
+                <ul class="dropdown">
+                  {% for option in product.options_in_stock %}
+                    <li data-item-id="{{ option.id }}">{{ option.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+
               {{ product.options_in_stock | options_select }}
             {% endif %}
 
