@@ -10,7 +10,7 @@
       {% endif %}
       <h1>Cart</h1>
       {% if cart.items != blank %}
-      <form method="post" action="/cart">
+      <form method="post" action="/cart" id="cart_form">
         <ul class="in-cart">
           {% for item in cart.items %}
           <li>
