@@ -69,15 +69,11 @@
 
       {% endpaginate %}
     </div>
-    <div class="container clearfix instagram">
-      {% if theme.store_tagline != blank %}
+    {% if theme.instagram_username != blank %}
+      <div class="container clearfix instagram" data-instagram-username="{{ theme.instagram_username }}">
         <a href="http://instagram.com/{{ theme.instagram_username }}" id="instagram-icon" target="_blank">@{{ theme.instagram_username }}</a>
-      {% endif %}
-      <ul>
-        <li class="grid_3"><a href=""><img src="/images/test/insta/insta1.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="/images/test/insta/insta2.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="/images/test/insta/insta3.jpg" alt=""></a></li>
-        <li class="grid_3"><a href=""><img src="/images/test/insta/insta4.jpg" alt=""></a></li>
-      </ul>
-    </div>
-    
+        <ul>
+        </ul>
+      </div>
+    {% endif %}
+

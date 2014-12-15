@@ -198,4 +198,36 @@ $(document).ready(function() {
     }
   });
 
+  // Search for Instagram user ID
+  if ($('.instagram').length > 0) {
+    $.ajax({
+      url: "https://api.instagram.com/v1/users/search?q=" + $('.instagram').data('instagram-username') + "&client_id=25b0b91b1f0b47588a99db9e9952d9b1",
+      dataType: 'jsonp',
+      success: function(response) {
+        var instagramUserID = response.data[0].id;
+
+        $.ajax({
+          url: "https://api.instagram.com/v1/users/" + instagramUserID + "/media/recent/?client_id=25b0b91b1f0b47588a99db9e9952d9b1&count=4",
+          dataType: 'jsonp',
+          success: function(response) {
+            $.each(response.data, function(index, object) {
+              $('.instagram ul').append(
+                $('<li>', { class: 'grid_3'}).append(
+                  $('<a>', { href: object.link}).append(
+                    $('<img>', { src: object.images.standard_resolution.url })
+                  )
+                )
+              )
+            });
+          },
+          error: function() {
+            console.log("There was an error fetching Instagram images")
+          }
+        });
+      },
+      error: function() {
+        console.log("There was an error searching Instagram")
+      }
+    });
+  }
 });
