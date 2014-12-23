@@ -35,7 +35,7 @@
     top: 50%;
     right: 20px;
     margin-top: -4px;
-    background: url(../images/drop-arrow.png) no-repeat;
+    background: url({{ 'drop-arrow.png' | theme_image_url }}) no-repeat;
     background-size: auto;
     @include all-transitions;
   }
@@ -101,7 +101,7 @@
         content: '';
         width: 13px;
         height: 12px;
-        background: url(../images/next-arrow.png) no-repeat center left;
+        background: url({{ 'next-arrow.png' | theme_image_url }}) no-repeat center left;
         background-size: auto;
         -ms-transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
@@ -121,7 +121,7 @@
 
   input[type="text"] {
     float: left;
-    padding: 10px 20px;
+    padding: 10px;
     margin-top: 30px;
     max-width: 70px;
     height: 56px;

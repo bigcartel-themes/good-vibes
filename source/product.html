@@ -2,12 +2,12 @@
     <div class="grid_6 description">
       <div class="fixed sticky">
         <div id="back-to-all">
-          <a href="/products">all products</a>
+          <a href="/products" title="all products">all products</a>
         </div>
         <h4>{{ product.categories }}</h4>
         <h1>{{ product.name }}</h1>
         {% if product.description != blank %}
-          <p>Curabitur hizzle diam quizzle nisi dang fo shizzle. Fizzle potenti. Brizzle odio. Shit shiznit. Dang orci. Cras dizzle gizzle, interdizzle shizznit, dizzle crackalackin shizzlin dizzle, bling bling in, pede. Pellentesque sure. Vestibulizzle orci mi, volutpat check it out, sagittis sizzle, adipiscing sempizzle, brizzle. Tellivizzle in ipsum. volutpizzle i'm in the shizzle vel rizzle. Cras fo shizzle sizzle i saw beyonces tizzles and my pizzle went crizzle purizzle sodales we gonna chung. Away venenatizzle justo izzle gizzle. Nunc boom shackalack. Yippiyo venenatis placerizzle fo. Curabitizzle shit ante. Nunc pharetra, pizzle phat dapibus hendrerizzle, ipsum felizzle elementum pimpin', pot tellivizzle magna felizzle luctus fo shizzle. Dope a nisl. Class aptent things crunk i'm in the shizzle gizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle gangster conubia nostra, fo shizzle mah nizzle fo rizzle, mah home g-dizzle fizzle away. Go to hizzle fo, that's the shizzle pot pot nonummy, dang rizzle leo, izzle semper risus arcu bizzle break yo neck, yall.</p>
+        <p>{{ product.description | paragraphs }}</p>
         {% endif %}
 
         {% case product.status %}
@@ -22,8 +22,8 @@
             <h4>{% if product.on_sale %} <em>On Sale{% endif %}</em></h4>
         {% endcase %}
 
+        {% if product.status == 'active' %}
         <form method="post" action="/cart" id="product_form">
-          {% if product.status == 'active' %}
 
             {% if product.has_default_option %}
               {{ product.option | hidden_option_input }}
@@ -54,10 +54,10 @@
       </div>
     </div>
     <div class="grid_6 product-shots">
-      {% if product.images.size > 1 %}
+      {% if product.images.size > 0 %}
       <ul class="unstyled">
         {% for image in product.images %}
-        <li{% if forloop.first %} class="selected"{% endif %}><a href="{{ image | product_image_url }}"><img src="{{ image | product_image_url size:"default" }}" alt="Image of {{ product.name | escape }}"></a></li>
+        <li{% if forloop.first %} class="selected"{% endif %}><a href="{{ image | product_image_url }}" title="{{ product.name | escape }}"><img src="{{ image | product_image_url }}" alt="Image of {{ product.name | escape }}"></a></li>
         {% endfor %}
       </ul>
       {% endif %}

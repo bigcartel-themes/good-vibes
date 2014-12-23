@@ -28,7 +28,7 @@
     }
 
     input[type="text"] {
-      padding: 10px 20px;
+      padding: 10px;
       margin: 55px 60px 0 60px;
       max-width: 70px;
       height: 56px;
@@ -44,7 +44,7 @@
   overflow: hidden;
   width: 14px;
   height: 14px;
-  background: url(../images/close.png) no-repeat center;
+  background: url({{ 'close.png' | theme_image_url }}) no-repeat center;
   background-size: auto;
 }
 
@@ -111,7 +111,7 @@
       content: '';
       width: 40px;
       height: 40px;
-      background: url(../images/next-arrow.png) no-repeat center;
+      background: url({{ 'next-arrow.png' | theme_image_url }}) no-repeat center;
       background-size: auto;
       -ms-transform: rotate(-90deg);
       -webkit-transform: rotate(-90deg);

@@ -171,7 +171,8 @@ header {
 
   .logo {
     display: inline-block;
-    img { max-width: 80px; }
+
+    img { max-height: 80px; }
   }
 
   .nav {
@@ -210,7 +211,7 @@ header {
       display: inline-block;
       width: 30px;
       height: 28px;
-      background: url(../images/gv-cart.png) no-repeat center;
+      background: url({{ 'gv-cart.png' | theme_image_url }}) no-repeat center;
       margin: 2px 3px 0 0;
     }
 

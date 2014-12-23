@@ -12,47 +12,262 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) { 
 
   .shopping-cart > a {
-    background: url(../images/gv-cart@2x.png) no-repeat center;
+    background: url({{ 'gv-cart@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 30px 28px;
   }
 
   .product figure:after {
-    background: url(../images/hover-arrow@2x.png) no-repeat center;
+    background: url({{ 'hover-arrow@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 30px 28px;
   }
 
   .next {
-    background: url(../images/next-arrow@2x.png) no-repeat center;
+    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 13px 12px;
   }
 
   .previous {
-    background: url(../images/prev-arrow@2x.png) no-repeat center;
+    background: url({{ 'prev-arrow@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 13px 12px;
   }
 
   .last {
-    background: url(../images/last-arrows@2x.png) no-repeat center;
+    background: url({{ 'last-arrows@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 16px 12px;
   }
 
   #instagram-icon {
-    background: url(../images/instagram-icon@2x.png) no-repeat center;
+    background: url({{ 'instagram-icon@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 22px 23px;
   }
 
   #back-to-all:before {
-    background: url(../images/next-arrow@2x.png) no-repeat center left;
+    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center left;
     background-size: 13px 12px;
   }
 
   .in-cart li a {
-    background: url(../images/close@2x.png) no-repeat center;
+    background: url({{ 'close@2x.png' | theme_image_url }}) no-repeat center;
     background-size: 14px 14px;
   }
 
   #close-cart:before {
-    background: url(../images/next-arrow@2x.png) no-repeat center left;
+    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center left;
     background-size: 13px 12px;
   }
 }
+
+/* ========================================================================== 
+ Start of Media Queries 
+========================================================================== */
+
+@media screen and (max-width: 1200px) {
+
+  /* ================================ 
+   Banner 
+  =================================== */
+
+  section .container .grid_12 h1 { 
+    margin-top: 120px; 
+    padding: 0 20px;
+  }
+
+  .grid_12 .control-wrap .bx-pager {
+    bottom: -100px;
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+
+  /* ================================ 
+   Banner 
+  =================================== */
+
+  section .container .grid_12 h1 {
+    margin-top: 90px;
+    font-size: 2.4em;
+  }
+
+}
+
+@media screen and (max-width: 945px) {
+
+  /* ================================ 
+   Banner 
+  =================================== */
+
+  .grid_12 .control-wrap .bx-pager { bottom: -80px; }
+
+  /* ================================ 
+   Instagram 
+  =================================== */
+
+  .instagram { margin-top: 40px; }
+
+}
+
+
+@media screen and (max-width: 860px) {
+
+  /* ================================ 
+   Banner 
+  =================================== */
+
+  section .container .grid_12 h1 { margin-top: 70px; }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+  /* ================================ 
+   Banner 
+  =================================== */
+  
+  section .container .grid_12 h1 {
+    margin-top: 60px;
+    font-size: 2em;
+  }
+
+  .grid_12 .control-wrap .bx-pager { bottom: -70px; }
+
+}
+
+
+@media screen and (max-width: 710px) {
+
+  /* ================================ 
+  global 
+  =================================== */
+
+  .grid_12 {
+    width: 95.5%;
+    margin: 10px 2.25%;
+  }
+
+  /* ================================ 
+  Banner 
+  =================================== */
+  
+  section .container .grid_12 h1 {
+    margin-top: 50px;
+    font-size: 1.75em;
+  }
+
+  .grid_12 .control-wrap .bx-pager { right: 2.25%; }
+
+
+  /* ================================ 
+  Categories
+  =================================== */
+
+  .categories {
+    margin-top: -85px;
+    font-size: .75em;
+
+    li { padding-top: 12px; }
+  }
+
+
+  /* ================================ 
+  Products 
+  =================================== */
+  
+  .products {
+
+    ul .grid_6 {
+      width: 95.5%;
+      margin: 10px 2.25%;
+
+      img { max-width: 240px; }
+    }
+
+    a figure figcaption { max-width: 310px; }
+
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  /* ================================ 
+  Banner 
+  =================================== */
+
+  ul.bxslider { display: none; }
+
+ .banner { min-height: 200px; }
+
+  section .container .grid_12 h1 { margin-top: 50px; }
+
+  .grid_12 .control-wrap .bx-pager { display: none; }
+
+
+  /* ================================ 
+  Products 
+  =================================== */
+
+  .products a figure figcaption { max-width: 280px; }
+
+}
+
+@media screen and (max-width: 580px) {
+
+
+  /* ================================ 
+  Products 
+  =================================== */
+
+  .products a figure figcaption { 
+    max-width: 190px; 
+    
+    h2 { font-size: 1.5em; }
+  }
+
+
+  /* ================================ 
+   Instagram 
+  =================================== */
+
+  .instagram {
+
+    #instagram-icon { 
+      padding-top: 30px;
+      margin-bottom: 0; 
+    }
+
+    .grid_3 {
+      width: 45.5%;
+      margin: 12px 2.25%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* ================================ 
+  Products 
+  =================================== */
+
+  .products a figure figcaption { max-width: 150px; }
+
+}
+
+@media screen and (max-width: 434px) {
+
+  /* ================================ 
+  Products 
+  =================================== */
+
+  .products ul .grid_6 img { max-width: none; }
+
+  .products a figure figcaption { max-width: none; }
+
+}
+
+
+
+
+
+

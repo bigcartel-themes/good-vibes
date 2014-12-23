@@ -41,9 +41,9 @@
               {% for page in pages.all %}
               <li>{{ page | link_to }}</li>
               {% endfor %}
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/contact" title="{{ page.name }}">Contact</a></li>
               {% if store.website != blank %}
-              <li><a href="{{ store.website }}">Back to Site</a></li>
+              <li><a href="{{ store.website }}" title="{{ page.name }}">Back to Site</a></li>
               {% endif %}
             </ul>
           </div>
@@ -78,7 +78,7 @@
       </div>    
     </footer> <!--END OF FOOTER -->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
     <script src="{{ theme | theme_js_url }}"></script>
   </body>
