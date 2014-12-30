@@ -156,10 +156,6 @@ label {
   display: block;
 }
 
-.current {
-  padding-bottom: 2px;
-  border-bottom: 2px solid $primary-color;
-}
 
 /* ========================================================================== 
 header   
@@ -187,17 +183,42 @@ header {
       padding: 0;
     }
 
-    li { padding-left: 22px; }
+    li { padding-left: 18px; }
 
     a {
       display: inline-block;
       position: relative;
+      padding-right: 5px;
 
       &:before { @include slide-rollover; }
 
       &:hover { @include no-opacity; }
 
       &:hover:before { max-width: 100%; }
+    }
+
+    .up {
+      width: 12px;
+      height: 17px;
+      fill: $primary-color;
+      position: relative;
+      top: 3px;
+      right: -5px;
+      @include all-transitions;
+    }
+  }
+
+  .drop-cat, .drop-pages {
+    
+    ul {
+      @include all-transitions;
+      padding: 0;
+      text-align: center;
+
+      li { 
+        padding: 5px 10px; 
+        position: relative;
+      }
     }
   }
 
@@ -207,12 +228,18 @@ header {
     padding-top: 24px;
     text-align: right;
     margin-left: 1.25%;
+
     > a {
       display: inline-block;
       width: 30px;
       height: 28px;
-      background: url({{ 'gv-cart.png' | theme_image_url }}) no-repeat center;
+      
       margin: 2px 3px 0 0;
+    }
+
+    .cart-icon {
+      fill: $primary-color;
+      @include all-transitions;
     }
 
     ul {
@@ -223,9 +250,18 @@ header {
     }
 
     li { padding: 3px 0 0 1px; }
+
+    &:hover .cart-icon {
+      fill: $secondary-color;
+    }
   }
 }
 
+.flip {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 /* ========================================================================== 
 info-pages 

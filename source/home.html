@@ -23,18 +23,10 @@
       </div>
     </section>
     <div class="main-content container clearfix"> 
-      <ul class="grid_2 categories">
-        <li>Categories
-          <ul>
-            {% for category in categories.active %}
-            <li>{{ category | link_to }}</li>
-            {% endfor %}
-            <li><a href="/products">All Products</a></li>
-          </ul>
-        </li>
-      </ul>
+      <h4 class="category">Featured Products</h4>
 
-      {% paginate products from products.current by theme.products_per_page %}
+      {% get products from products.all limit:theme.featured_products %}
+
       {% if products != blank %}
       <div class="products" >
         <ul class="masonry js-masonry">
@@ -44,26 +36,13 @@
               <figure data-hover="product">
                 <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '340' }}">
                 <figcaption>
-                  {% if product.categories != blank %}
-                    <h4>
-                    {% for category in product.categories %}
-                      {% if forloop.first %}
-                        {{ category.name }}
-                      {% if forloop.length > 2 %}, {% endif %}
-                      {% elsif forloop.last %}
-                        {{ category.name }}
-                      {% else %}
-                        {{ category.name }},
-                      {% endif %}
-                    {% endfor %}
-                    </h4>
-                  {% endif %}
                   <h2>{{ product.name | truncate: 40 }}</h2>
                   <small>{{ product.default_price | money_with_sign }}</small>
                   {% if product.on_sale %}
                   <small><i>On Sale</i></small>
                    {% endif %}
                 </figcaption>
+                <svg class="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg>
               </figure>
             </a>
           </li>
@@ -72,15 +51,11 @@
       </div>
     </div>
     <div class="container clearfix">
-      
-      {{ paginate | default_pagination }}
-      <!--  <a href="#" class="last">last</a>  NEED TO ADD LAST BUTTON-->
-
       {% else %}
         <p>No products found.</p>
       {% endif %}
 
-      {% endpaginate %}
+    {% endget %}
     </div>
     {% if theme.instagram_username != blank %}
       <div class="container clearfix instagram" data-instagram-username="{{ theme.instagram_username }}">

@@ -1,16 +1,12 @@
 // Colors
-$primary-color: #222222;
-$secondary-color: #f55253;
-$tertiary-color: #777777;
+$primary-color: #{'{{ theme.primary_color }}'};
+$secondary-color: #{'{{ theme.secondary_color }}'};
 $white: #fff;
-// $dark-green-color:  #{'{{ theme.secondary_color }}'};
-// $light-green-color: #{'{{ theme.primary_color }}'};
 
 // Fonts
 
-$fallback-fonts:    "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-// $sans-serif-font:   "#{'{{ theme.primary_font }}'}", $fallback-fonts;
-$primary-font: 'Lato', $fallback-fonts;
+$fallback-fonts: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+$primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts;
 
 @mixin all-transitions {
   -webkit-transition: all 0.3s ease-in-out;

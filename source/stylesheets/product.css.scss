@@ -88,6 +88,7 @@
   position: relative;
 
   #back-to-all {
+    display: inline-block;
     position: relative;
     margin-bottom: 60px;
 
@@ -95,19 +96,24 @@
       font-size: 1em;
       font-weight: 900;
       padding-left: 20px;
+      @include all-transitions; 
     
-      &:before {
+      .prev {
         position: absolute;
-        content: '';
+        fill: $primary-color;
         width: 13px;
         height: 12px;
-        background: url({{ 'next-arrow.png' | theme_image_url }}) no-repeat center left;
-        background-size: auto;
-        -ms-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
         top: 5px;
         left: 0;
+        @include all-transitions;
+      }
+    }
+
+    &:hover a {
+      color: $secondary-color;
+      
+      .prev {
+        fill: $secondary-color;
       }
     }
   }
@@ -134,6 +140,7 @@
     width: 300px;
     height: 56px;
     margin: 30px 0 0 30px;
+    @include all-transitions;
 
     button {
       color: $primary-color;
@@ -146,6 +153,7 @@
       top: 50%;
       margin-top: -14px;
       left: 20px;
+      @include all-transitions; 
 
       &:focus { outline: none; }
 
@@ -160,6 +168,7 @@
       top: 50%;
       margin-top: -15px;
       right: 0;
+      @include all-transitions; 
     }
 
     &:hover, &:active { border-color: $secondary-color; }

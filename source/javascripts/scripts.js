@@ -1,5 +1,24 @@
 $(document).ready(function() {
 
+  $('.drop-cat').hide();
+
+  $('.shop').on('click', function(e) {
+    e.preventDefault();
+    $('.drop-pages').hide();
+    $('.drop-cat').slideToggle(350);
+  });
+
+
+  $('.drop-pages').hide();
+
+  $('.pages').on('click', function(e) {
+    e.preventDefault();
+    $('.drop-cat').hide();
+    $('.drop-pages').slideToggle(350);
+  });
+
+
+
   $('.bxslider').bxSlider({
   auto: true,
   pagerSelector: '.control-wrap'
@@ -9,13 +28,13 @@ $(document).ready(function() {
 
   $(".pagination a").attr("data-hover", 'page number');
 
-  $(function() {
-    $(".nav a").each(function(){
-      if ($(this).attr("href") == window.location.pathname) {
-      $(this).addClass("current");
-      }
-    });
-  });
+  // $(function() {
+  //   $(".nav a").each(function(){
+  //     if ($(this).attr("href") == window.location.pathname) {
+  //     $(this).addClass("current");
+  //     }
+  //   });
+  // });
 
   // Enable sticky scrolling only on Product page
   $(window).on('scroll', function() {

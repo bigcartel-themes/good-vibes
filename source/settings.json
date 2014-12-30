@@ -16,7 +16,7 @@
   "image_sets": [
     {
       "variable": "slideshow",
-      "label": "Slideshow",
+      "label": "Homepage Slideshow",
       "description": "This is a slideshow"
     },
     {
@@ -27,44 +27,24 @@
   ],
   "fonts": [
     {
-      "variable": "header_font",
-      "label": "Header Font",
-      "default": "Inconsolata"
-    },
-    {
-      "variable": "text_font",
-      "label": "Text Font",
-      "default": "Helvetica"
+      "variable": "primary_font",
+      "label": "Primary Font",
+      "default": "Lato"
     }
   ],
   "colors": [
-    {
-      "variable": "background_color",
-      "label": "Background",
-      "default": "#FAFAFA"
+   {
+      "variable": "primary_color",
+      "label": "Primary Color",
+      "default": "#222222"
     },
     {
-      "variable": "text_color",
-      "label": "Text Color",
-      "default": "#222222"
+      "variable": "secondary_color",
+      "label": "Secondary Color",
+      "default": "#f55253"
     }
   ],
   "options": [
-    {
-      "variable": "show_search",
-      "label": "Show search",
-      "type": "boolean",
-      "default": false,
-      "description": "Shows a search field"
-    },
-    {
-      "variable": "product_image_size",
-      "label": "Product image size",
-      "type": "select",
-      "options": [["Small", "thumb"], ["Medium", "medium"], ["Large", "large"], ["Huge", ""]],
-      "default": "large",
-      "description": "The size of your product images"
-    },
     {
       "variable": "products_per_page",
       "label": "Products per page",
@@ -74,10 +54,12 @@
       "description": "The number of products shown per page"
     },
     {
-      "variable": "twitter_username",
-      "label": "Twitter username",
-      "type": "text",
-      "description": "Ex: @bigcartel"
+      "variable": "featured_products",
+      "label": "Featured Products",
+      "type": "select",
+      "options": "1..100",
+      "default": 6,
+      "description": "The number of featured products"
     },
     {
       "variable": "store_tagline",
