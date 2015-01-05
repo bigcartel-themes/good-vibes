@@ -17,8 +17,6 @@ $(document).ready(function() {
     $('.drop-pages').slideToggle(350);
   });
 
-
-
   $('.bxslider').bxSlider({
   auto: true,
   pagerSelector: '.control-wrap'

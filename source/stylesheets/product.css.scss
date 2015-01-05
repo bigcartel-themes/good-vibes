@@ -131,6 +131,10 @@
     margin-top: 30px;
     max-width: 70px;
     height: 56px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: none;
   }
 
   .add-to-cart {
@@ -191,6 +195,7 @@
 
       img {
         max-width: 570px;
+        width: 100%;
         height: auto;
       }
     }

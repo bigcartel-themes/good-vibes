@@ -23,7 +23,7 @@
       </div>
     </section>
     <div class="main-content container clearfix"> 
-      <h4 class="category">{{ page.name }}</h4>
+      <h4 class="category">{% if page.name == 'products' %}All Products{% else %}{{ page.name }}{% endif %}</h4>
 
       {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
