@@ -24,7 +24,9 @@
             </a>
             {{ item | item_quantity_input }}
             <h3>{{ item.price | money_with_sign }}</h3>
-            <a href="#" class="remove" data-item-id="{{ item.id }}">remove</a>
+            <a href="#" data-item-id="{{ item.id }}" class="remove">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 75.6 612 651.2" enable-background="new 0 75.6 612 651.2" xml:space="preserve"><polygon points="612,175.7 517.4,75.6 306,303.7 94.6,75.6 0,175.7 213.8,401.2 0,626.6 94.6,726.8 306,498.6 517.4,726.8 612,626.6 398.2,401.2 "/></svg>
+            </a>
           </li>
           {% endfor %}
         </ul>

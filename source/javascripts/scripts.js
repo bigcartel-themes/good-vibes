@@ -119,7 +119,7 @@ $(document).ready(function() {
         $("body").prepend($cart);
 
         $cart.find('.grid_middle').append(
-          $('<a>', { href: '#', id: 'close-cart'}).text('close cart')
+          $('<a>', { href: '#', id: 'close-cart'}).html('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="25.5 90 561 612" enable-background="new 25.5 90 561 612" xml:space="preserve"><polygon points="25.5,375.6 112.2,457.2 244.8,324.6 244.8,702 367.2,702 367.2,324.6 499.8,457.2 586.5,375.6 306,90 "/></svg>')
         );
 
         $cart.slideDown(300);

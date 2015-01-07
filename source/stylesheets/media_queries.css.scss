@@ -78,9 +78,41 @@ only screen and (                min-resolution: 2dppx) {
     bottom: -100px;
     right: 5%;
   }
+
+  /* ================================ 
+   Cart 
+  =================================== */
+
+  .in-cart li {
+
+    h3 { margin-top: 60px; }
+
+    > h3:last-of-type { margin-top: 70px; }
+
+    img { margin-right: 40px; }
+
+    input[type="text"] {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 1040px) {
+
+  /* ================================ 
+  global 
+  =================================== */
+
+  .grid_12 {
+    width: 95.5%;
+    margin: 10px 2.25%;
+  }
+
+  .grid_6 {
+      width: 45.5%;
+      margin: 10px 2.25%;
+    }
 
   /* ================================ 
    Banner 
@@ -89,6 +121,14 @@ only screen and (                min-resolution: 2dppx) {
   section .container .grid_12 h1 {
     margin-top: 90px;
     font-size: 2.4em;
+  }
+
+  /* ================================ 
+   Products 
+  =================================== */
+
+  .products {
+    a figure figcaption { margin-left: 0; }
   }
 
 }
@@ -112,26 +152,41 @@ only screen and (                min-resolution: 2dppx) {
 
 @media screen and (max-width: 860px) {
 
+
   /* ================================ 
    Banner 
   =================================== */
 
   section .container .grid_12 h1 { margin-top: 70px; }
 
+
+  /* ================================ 
+   Cart 
+  =================================== */
+
+  .grid_middle {
+    width: 95.5%; 
+    margin: 10px 2.25%;
+  }
+
+
   /* ================================ 
    Product 
   =================================== */
 
-  .single-product .grid_6 { width: 97.5%; }
+  .single-product .grid_6 { 
+    width: 95.5%; 
+    margin: 10px 2.25%;
+  }
 
   .fixed { position: static; }
 
   .product-shots ul li img { max-width: none; }
 
-
 }
 
 @media screen and (max-width: 768px) {
+
 
   /* ================================ 
    Banner 
@@ -150,13 +205,12 @@ only screen and (                min-resolution: 2dppx) {
 @media screen and (max-width: 710px) {
 
   /* ================================ 
-  global 
+  Products 
   =================================== */
 
-  .grid_12, .single-product.grid_6 {
-    width: 95.5%;
-    margin: 10px 2.25%;
-  }
+
+  .products a figure figcaption { margin-left: 25px; }
+
 
   /* ================================ 
   Product
@@ -216,9 +270,30 @@ only screen and (                min-resolution: 2dppx) {
   Banner 
   =================================== */
 
+  header {
+    .drop-cat {
+      margin-top: 50px;
+
+      ul li { 
+        display: block; 
+        padding-top: 10px;
+      }
+
+    } 
+
+    .drop-pages {
+      margin-top: 50px;
+
+      ul li { 
+        display: block; 
+        padding-top: 10px;
+      }
+    }
+  }
+
   ul.bxslider { display: none; }
 
- .banner { min-height: 200px; }
+  .banner { min-height: 200px; }
 
   section .container .grid_12 h1 { margin-top: 50px; }
 
@@ -231,6 +306,40 @@ only screen and (                min-resolution: 2dppx) {
 
   .products a figure figcaption { max-width: 280px; }
 
+  /* ================================ 
+   Cart 
+  =================================== */
+  
+
+ 
+  .in-cart li {
+    position: relative;
+    height: auto;
+
+   
+    h3 { 
+      width: 280px;
+      max-width: 280px;
+    }
+
+    > h3:last-of-type { 
+      margin-top: 42px; 
+    }
+
+    input[type="text"] {
+      margin-left: 0;
+      margin-top: 26px;
+    }
+
+    .remove { 
+      position: absolute;
+      top: 20px;
+      right: 0;
+      margin-top: 0; 
+    }
+  } 
+
+ 
 }
 
 @media screen and (max-width: 580px) {
@@ -263,6 +372,7 @@ only screen and (                min-resolution: 2dppx) {
       margin: 12px 2.25%;
     }
   }
+
 }
 
 @media screen and (max-width: 480px) {
