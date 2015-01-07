@@ -33,7 +33,7 @@
                 <span>Choose an option</span>
                 <ul class="dropdown">
                   {% for option in product.options_in_stock %}
-                    <li data-item-id="{{ option.id }}">{{ option.name }}</li>
+                    <li data-item-id="{{ option.id }}"{% if option.has_custom_price %} data-item-price="{{ option.price }}"{% endif %}>{{ option.name }}{% if option.has_custom_price %} ({{ option.price | money_with_sign }}){% endif %}</li>
                   {% endfor %}
                 </ul>
               </div>

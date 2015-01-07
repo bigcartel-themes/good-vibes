@@ -199,11 +199,12 @@ $(document).ready(function() {
   $(document).on("click", ".wrapper-dropdown li", function() {
     var $listItem = $(this)
       , $dropdown = $listItem.closest(".wrapper-dropdown")
-      , $selectionArea = $dropdown.find("span")
+      , $selectionArea = $dropdown.find(" > span")
       , $realSelect = $dropdown.next("select");
 
     $selectionArea.text($listItem.text());
     $realSelect.val($listItem.data("item-id"));
+    $('.add-to-cart small').html(Format.money($listItem.data('item-price'), true, true));
   });
 
   // Close open dropdown when clicking outside
