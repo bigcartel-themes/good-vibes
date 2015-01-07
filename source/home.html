@@ -58,7 +58,7 @@
     {% endget %}
     </div>
     {% if theme.instagram_username != blank %}
-      <div class="container clearfix instagram" data-instagram-username="{{ theme.instagram_username }}">
+      <div class="container clearfix instagram" data-instagram-count="{{ theme.instagram_photos_count }}" data-instagram-username="{{ theme.instagram_username }}">
         <a href="http://instagram.com/{{ theme.instagram_username }}" id="instagram-icon" target="_blank" title="{{ theme.instagram_username }}">@{{ theme.instagram_username }}</a>
         <ul>
         </ul>

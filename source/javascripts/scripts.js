@@ -222,7 +222,9 @@ $(document).ready(function() {
   });
 
   // Search for Instagram user ID
-  if ($('.instagram').length > 0) {
+  var $instagramContainer = $('.instagram');
+
+  if ($instagramContainer.length > 0) {
     $.ajax({
       url: "https://api.instagram.com/v1/users/search?q=" + $('.instagram').data('instagram-username') + "&client_id=25b0b91b1f0b47588a99db9e9952d9b1",
       dataType: 'jsonp',
@@ -230,7 +232,7 @@ $(document).ready(function() {
         var instagramUserID = response.data[0].id;
 
         $.ajax({
-          url: "https://api.instagram.com/v1/users/" + instagramUserID + "/media/recent/?client_id=25b0b91b1f0b47588a99db9e9952d9b1&count=4",
+          url: "https://api.instagram.com/v1/users/" + instagramUserID + "/media/recent/?client_id=25b0b91b1f0b47588a99db9e9952d9b1&count=" + $instagramContainer.data('instagram-count'),
           dataType: 'jsonp',
           success: function(response) {
             $.each(response.data, function(index, object) {

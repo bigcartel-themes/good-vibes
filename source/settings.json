@@ -72,6 +72,14 @@
       "label": "Instagram username",
       "type": "text",
       "description": "Instagram username without @ symbol"
+    },
+    {
+      "variable": "instagram_photos_count",
+      "label": "How many Instagram photos to show?",
+      "type": "select",
+      "options": [4, 8],
+      "default": 4,
+      "description": "The number of Instagram photos to show on the store."
     }
   ]
 }

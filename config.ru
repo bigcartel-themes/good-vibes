@@ -22,7 +22,8 @@ options = {}
     { :url => '/images/test-banner.jpg', :width => 1440, :height => 800 }
   ],
   :store_tagline => 'The good vides theme does it right',
-  :instagram_username => 'bigcartel'
+  :instagram_username => 'bigcartel',
+  :instagram_photos_count => 8
 }
 
 run Dugway.application(options)
