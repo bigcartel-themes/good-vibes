@@ -81,6 +81,7 @@
   &.active .dropdown {
     max-height: 400px;
     border-color: $secondary-color;
+    overflow: scroll;
   }
 }
 
