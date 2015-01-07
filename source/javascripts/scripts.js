@@ -117,6 +117,11 @@ $(document).ready(function() {
         cartShowing = true;
         $cart.css("display", "none");
         $("body").prepend($cart);
+
+        $cart.find('.grid_middle').append(
+          $('<a>', { href: '#', id: 'close-cart'}).text('close cart')
+        );
+
         $cart.slideDown(300);
       });
     }
