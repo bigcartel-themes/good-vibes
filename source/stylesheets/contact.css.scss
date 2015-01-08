@@ -70,6 +70,7 @@
     @include primary-button;
     background-color: $white;
     margin-left: 30px;
+    outline: none;
 
     &:hover {
       color: $secondary-color;

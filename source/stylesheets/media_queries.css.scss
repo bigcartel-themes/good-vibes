@@ -1,63 +1,5 @@
 @import "mixins";
 
-/* ========================================================================== 
- Retina-specific stuff here 
-========================================================================== 
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) { 
-
-  .shopping-cart > a {
-    background: url({{ 'gv-cart@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 30px 28px;
-  }
-
-  .product figure:after {
-    background: url({{ 'hover-arrow@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 30px 28px;
-  }
-
-  .next {
-    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 13px 12px;
-  }
-
-  .previous {
-    background: url({{ 'prev-arrow@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 13px 12px;
-  }
-
-  .last {
-    background: url({{ 'last-arrows@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 16px 12px;
-  }
-
-  #instagram-icon {
-    background: url({{ 'instagram-icon@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 22px 23px;
-  }
-
-  #back-to-all:before {
-    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center left;
-    background-size: 13px 12px;
-  }
-
-  .in-cart li a {
-    background: url({{ 'close@2x.png' | theme_image_url }}) no-repeat center;
-    background-size: 14px 14px;
-  }
-
-  #close-cart:before {
-    background: url({{ 'next-arrow@2x.png' | theme_image_url }}) no-repeat center left;
-    background-size: 13px 12px;
-  }
-}
-
-*/
 
 /* ========================================================================== 
  Start of Media Queries 
@@ -96,6 +38,20 @@ only screen and (                min-resolution: 2dppx) {
       margin-left: 30px;
     }
   }
+
+  /* ================================ 
+   contact form 
+  =================================== */
+
+  .contact .grid_middle:first-of-type div {
+
+    width: 100%;
+
+    input { width: 100%; }
+  }
+
+  .contact .grid_middle:first-of-type div + div { margin-left: 0px !important; } 
+
 }
 
 @media screen and (max-width: 1040px) {
@@ -318,8 +274,8 @@ only screen and (                min-resolution: 2dppx) {
 
    
     h3 { 
-      width: 280px;
-      max-width: 280px;
+      width: 340px;
+      max-width: 340px;
     }
 
     > h3:last-of-type { 
@@ -339,7 +295,11 @@ only screen and (                min-resolution: 2dppx) {
     }
   } 
 
- 
+  .contact .spam { width: 100%; }
+
+  .contact .spam #captcha { width: 100% !important; }
+
+  .contact button { margin-left: 0 !important; }
 }
 
 @media screen and (max-width: 580px) {
@@ -373,6 +333,13 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
 
+  .in-cart li {
+   
+    h3 { 
+      width: 280px;
+      max-width: 280px;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -382,6 +349,12 @@ only screen and (                min-resolution: 2dppx) {
   =================================== */
 
   .products a figure figcaption { max-width: 150px; }
+
+
+  .in-cart li h3 {
+    width: 360px;
+    max-width: 360px;
+  }
 
 }
 
@@ -418,6 +391,8 @@ only screen and (                min-resolution: 2dppx) {
     float: right; 
     margin-left: 0;
   }
+
+  .cart button { padding: 15px 26px; }
 
 }
 
