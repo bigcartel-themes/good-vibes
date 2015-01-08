@@ -17,10 +17,16 @@ $(document).ready(function() {
     $('.drop-pages').slideToggle(350);
   });
 
-  $('.bxslider').bxSlider({
-  auto: true,
-  pagerSelector: '.control-wrap'
-  });
+  var $slider = $('.bxslider')
+    , sliderOptions = {
+        auto: true,
+        pager: true,
+        pagerSelector: '.control-wrap'
+      }
+
+  if ($slider.children().length == 1) { sliderOptions.pager = false }
+
+  $slider.bxSlider(sliderOptions);
 
   $(".nav li a").attr("data-hover", 'name of page');
 
