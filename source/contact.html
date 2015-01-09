@@ -7,6 +7,13 @@
   {% else %}
 
   <form method="post" action="/contact">
+    {% if errors != blank %}
+      <div class="grid_middle errors">
+         {% for error in errors %}
+         <h2>{{ error }}!</h2>
+         {% endfor %}
+      </div>
+    {% endif %}
     <div class="grid_middle">
       <div>
         <label for="name">Name</label>

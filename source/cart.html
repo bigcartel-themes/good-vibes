@@ -2,11 +2,11 @@
   <div class="clearfix container ">
     <div class="grid_middle">
       {% if errors != blank %}
-      <ul class="errors">
+      <div class="errors">
         {% for error in errors %}
-        <li>{{ error }}</li>
+        <h2>{{ error }}!</h2>
         {% endfor %}
-      </ul>
+      </div>
       {% endif %}
       <h1>Cart</h1>
       {% if cart.items != blank %}
