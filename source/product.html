@@ -50,6 +50,17 @@
           </div>
         </form>
         {% endif %}
+        {% if theme.share_buttons %}
+        <div class="sharing">
+          <ul>  
+            <li><a target="_blank" href="http://twitter.com/share?url={{ store.url }}{{ product.url }}&text=Check out {{store.name}}'s">Tweet</a></li>
+            <li> | </li>
+            <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
+            <li> | </li>
+            <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{store.url}}{{product.url}}&media={{ product.images.first.url }}">Pin</a></li>
+          </ul>   
+        </div>
+        {% endif %}
       </div>
     </div>
     <div class="grid_6 product-shots">

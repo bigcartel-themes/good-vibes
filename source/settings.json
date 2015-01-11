@@ -80,6 +80,13 @@
       "options": [4, 8],
       "default": 4,
       "description": "The number of Instagram photos to show on the store."
+    },
+    {
+      "variable": "share_buttons",
+      "label": "Show social buttons",
+      "type": "boolean",
+      "default": true,
+      "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
     }
   ]
 }

@@ -205,3 +205,31 @@
 
 .mfp-title { display: none; }
 
+.sharing {
+  display: inline-block;
+  position: absolute;
+  bottom: -60px;
+  left:0;
+
+  ul {
+    padding: 0;
+
+    li {
+      font: 1.125em $primary-font;
+      font-weight: 900;
+      margin: 0 2px;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
