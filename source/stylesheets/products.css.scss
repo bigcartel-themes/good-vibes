@@ -113,7 +113,7 @@
     overflow: hidden;
     width: 13px;
     height: 12px;
-    background: url({{ 'next-arrow.png' | theme_image_url }}) no-repeat center;
+    background: url(#{'{{ "next-arrow.png" | theme_image_url }}'}) no-repeat center;
     background-size: auto;
     margin-left: 15px;
   }
@@ -124,20 +124,9 @@
     overflow: hidden;
     width: 13px;
     height: 12px;
-    background: url({{ 'prev-arrow.png' | theme_image_url }}) no-repeat center;
+    background: url(#{'{{ "prev-arrow.png" | theme_image_url }}'}) no-repeat center;
     background-size: auto;
     margin-right: 15px;
-  }
-
-   .last {
-    display: inline-block;
-    text-indent: -999px;
-    overflow: hidden;
-    width: 16px;
-    height: 12px;
-    background: url({{ 'last-arrows.png' | theme_image_url }}) no-repeat center;
-    background-size: auto;
-    margin-left: 5px;
   }
 
   a:before { height: 23px; }
