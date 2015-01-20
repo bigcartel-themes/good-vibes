@@ -1,11 +1,13 @@
 @import "mixins";
 
+
+.sticky { margin-top: 20px; }
+
 .fixed {
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-  padding-top: 20px;
 }
 
 .stat {
@@ -86,6 +88,7 @@
 
 .description {
   position: relative;
+  margin-top: 0;
 
   #back-to-all {
     display: inline-block;
