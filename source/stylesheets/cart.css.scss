@@ -117,6 +117,7 @@
       width: 14px;
       height: 16px;
       @include all-transitions;
+      fill: $primary-color;
     }
 
     &:hover { 
