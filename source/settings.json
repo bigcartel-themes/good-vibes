@@ -5,24 +5,14 @@
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Adds your logo to the header"
-    },
-    {
-      "variable": "background_image",
-      "label": "Background Image",
-      "description": "Adds a repeating background image"
+      "description": "Add your logo to the header. A height of 80px is recommended"
     }
   ],
   "image_sets": [
     {
       "variable": "slideshow",
       "label": "Homepage Slideshow",
-      "description": "This is a slideshow"
-    },
-    {
-      "variable": "lookbook_images",
-      "label": "Lookbook",
-      "description": "This is a lookbook"
+      "description": "1440px by 360px images recommended"
     }
   ],
   "fonts": [
@@ -44,6 +34,23 @@
       "default": "#f55253"
     }
   ],
+   "checkout": {
+    "logo": "{{ logo }}",
+    "title_color": "{{ primary_color }}",
+    "title_font": "{{ primary_font }}",
+    "step_header_font": "{{ primary_font }}",
+    "background_color": "#fff",
+    "body_font": "{{ primary_font }}",
+    "input_border_radius": "0px",
+    "input_border_color": "{{ primary_color }}",
+    "input_border_width": "2px",
+    "button_background_color": "#fff",
+    "button_border_color": "{{ primary_color }}",
+    "button_border_width": "2px",
+    "button_border_radius": "0px",
+    "button_hover_border_color": "{{ secondary_color }}",
+    "link_color": "{{ secondary_color }}"
+  },
   "options": [
     {
       "variable": "products_per_page",
@@ -89,4 +96,5 @@
       "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
     }
   ]
+
 }
