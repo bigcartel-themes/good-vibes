@@ -91,6 +91,8 @@
 
 @media screen and (max-width: 945px) {
 
+  .logo h2 { max-width: 400px; }
+
   /* ================================ 
    Banner 
   =================================== */
@@ -143,6 +145,7 @@
 
 @media screen and (max-width: 768px) {
 
+  .logo h2 { max-width: 400px; }
 
   /* ================================ 
    Banner 
@@ -159,6 +162,11 @@
 
 
 @media screen and (max-width: 710px) {
+
+  .logo h2 { 
+    max-width: 250px; 
+    font-size: 1.25em;
+  }
 
   /* ================================ 
   Products 
@@ -303,6 +311,11 @@
 }
 
 @media screen and (max-width: 580px) {
+
+   .logo h2 { 
+    max-width: 100%; 
+    margin-bottom: 0;
+  }
 
 
   /* ================================ 

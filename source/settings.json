@@ -5,7 +5,7 @@
     {
       "variable": "logo",
       "label": "Logo",
-      "description": "Add your logo to the header. A height of 80px is recommended"
+      "description": "Add your logo to the header. 80px by 80px is recommended"
     }
   ],
   "image_sets": [
@@ -72,7 +72,7 @@
       "variable": "store_tagline",
       "label": "Store Tagline",
       "type": "text",
-      "description": "This tagline appears over slideshow and or banner area of shop"
+      "description": "This tagline appears over slideshow and or banner area of shop. Highly recommended for this theme."
     },
     {
       "variable": "instagram_username",
