@@ -282,13 +282,17 @@ info-pages
 
 .info-pages {
   min-height: 500px;
-  margin-top: 100px;
+  margin-top: 40px;
 
   .grid_middle { margin-bottom: 100px; }
   
   img { max-width: 830px; }
 
-
+  h2:first-of-type {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid $secondary-color;
+  }
 }
 
 /* ========================================================================== 
