@@ -183,6 +183,7 @@ $(document).ready(function() {
     var $cartListItems = $(".shopping-cart ul a li");
 
     $cartListItems.filter(":first").text(cart.item_count);
+    $cartListItems.filter(":eq(1)").text(cart.item_count == 1 ? "Item:" : "Items:");
     $cartListItems.filter(":last").html(Format.money(cart.total, true, true));
 
     if (cartShowing) {
