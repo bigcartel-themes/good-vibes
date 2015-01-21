@@ -121,7 +121,20 @@
     }
   }
 
-  p { padding-right: 40px; }
+  p { 
+    font-weight: 400;
+    padding-right: 40px; 
+  }
+
+  h4 + em {
+    position: absolute;
+    top: 55px;
+    display: block;
+    margin: 5px 0;
+    font: 2.625em "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-weight: 900;
+    color: $secondary-color;
+  }
 
   .wrapper-dropdown { 
     margin-top: 40px; 

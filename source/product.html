@@ -12,13 +12,16 @@
         {% case product.status %}
 
           {% when 'sold-out' %}
-            <h4>{{ product.default_price | money_with_sign }} <em>Sold Out</em></h4>
+            <h4>{{ product.default_price | money_with_sign }}</h4>
+            <em>Sold Out! Sorry all gone.</em>
 
           {% when 'coming-soon' %}
-            <h4>{{ product.default_price | money_with_sign }} <em>Coming Soon</em></h4>
+            <h4>{{ product.default_price | money_with_sign }}</h4>
+            <em>Coming soon. Hang in there.</em>
 
           {% when 'active' %}
-            <h4>{% if product.on_sale %} <em>On Sale{% endif %}</em></h4>
+            <h4>{% if product.on_sale %}</h4>
+            <em>Hey look it's On Sale!{% endif %}</em>
         {% endcase %}
 
         {% if product.status == 'active' %}
@@ -40,8 +43,6 @@
 
               {{ product.options_in_stock | options_select }}
             {% endif %}
-
-          
 
           <input type="text" value="1" id="quantity" data-default-price="{{ product.default_price }}">
 

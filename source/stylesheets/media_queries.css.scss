@@ -263,6 +263,17 @@
 
   .grid_12 .control-wrap .bx-pager { display: none; }
 
+  .description h4 + em {
+    position: absolute;
+    top: 40px;
+    display: block;
+    margin: 5px 0;
+    font: 2.625em "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-weight: 900;
+    color: $secondary-color;
+    line-height: 38px;
+  }
+
 
   /* ================================ 
   Products 
