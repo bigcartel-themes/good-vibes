@@ -50,8 +50,21 @@
     </div>
     <div class="container clearfix">
 
+    {% if paginate.previous.is_link or paginate.next.is_link %}
+      {% if paginate.previous %}
+        {% if paginate.previous.is_link %}
+        <a href="{{ paginate.previous.url }}" class="previous-link" title="Previous"><svg version="1.1" id="prev" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg></a>
+        {% endif %}
+      {% endif %}
+
       {{ paginate | default_pagination }}
-      <!--  <a href="#" class="last">last</a>  NEED TO ADD LAST BUTTON-->
+
+      {% if paginate.next %}
+        {% if paginate.next.is_link %}
+          <a href="{{ paginate.next.url }}" class="next-link" title="Next"><svg version="1.1" id="next" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg></a>
+        {% endif %}
+      {% endif %}  
+    {% endif %}
 
           {% else %}
             <p>No products found.</p>
