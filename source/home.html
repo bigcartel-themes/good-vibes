@@ -34,7 +34,7 @@
           <li class="grid_6 {{ product.css_class }} item">
             <a href="{{ product.url }}" title="{{ product.name | escape }}">
               <figure data-hover="product">
-                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '340' }}">
+                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '680' }}">
                 <figcaption>
                   <h2>{{ product.name | truncate: 40 }}</h2>
                   <small>{{ product.default_price | money_with_sign }}</small>
