@@ -203,7 +203,7 @@
       @include all-transitions; 
     }
 
-    &:hover, &:active { border-color: $secondary-color; }
+    &:active, &:focus { border-color: $secondary-color; }
   }
 }
 
@@ -243,6 +243,8 @@
 
     li {
       float: left;
+      display: inline-block;
+      list-style: none;
       font: 1.125em $primary-font;
       font-weight: 900;
       margin: 0 2px;
