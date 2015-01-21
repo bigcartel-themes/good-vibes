@@ -121,6 +121,18 @@
     }
   }
 
+  ul {
+    font: inherit;
+    width:570px;
+
+    li{
+      float: none;
+      display: block;
+      display: list-item;
+      list-style: disc;
+    }
+  }
+
   p { 
     font-weight: 400;
     padding-right: 40px; 
@@ -230,6 +242,7 @@
     padding: 0;
 
     li {
+      float: left;
       font: 1.125em $primary-font;
       font-weight: 900;
       margin: 0 2px;

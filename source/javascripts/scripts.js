@@ -262,7 +262,14 @@ $(document).ready(function() {
     });
   }
 
+  // Zoom for product images
   $(document).ready(function() {
-    $('.image-link').magnificPopup({type:'image'});
+    $('.image-link').magnificPopup({
+      type:'image',
+      gallery: {
+        enabled: true
+      },
+
+    });
   });
 });
