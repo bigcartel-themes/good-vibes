@@ -273,4 +273,13 @@ $(document).ready(function() {
 
     });
   });
+
+
+  if ($('.banner').length == 0) { 
+    $('.main-content').css('margin-top', 200);
+    $('section .container .grid_12 h1').css('margin-top', 0);
+  } else {
+    $('.main-content').css('margin-top', 0);
+  }
+
 });
