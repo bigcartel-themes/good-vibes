@@ -54,7 +54,12 @@ section {
   }
 }
 
-.control-wrap { position: relative; }
+.control-wrap { 
+  position: absolute; 
+  display: inline-block;
+  bottom: -120px;
+  right: 0;
+}
 
 .bx-pager-item { display: inline-block; }
  

@@ -16,9 +16,9 @@
     padding: 0 20px;
   }
 
-  .grid_12 .control-wrap .bx-pager {
+  .control-wrap { 
     bottom: -100px;
-    right: 5%;
+    right: 2%;
   }
 
   /* ================================ 
@@ -97,7 +97,7 @@
    Banner 
   =================================== */
 
-  .grid_12 .control-wrap .bx-pager { bottom: -80px; }
+  .control-wrap { bottom: -80px; }
 
   /* ================================ 
    Instagram 
@@ -116,6 +116,8 @@
   =================================== */
 
   section .container .grid_12 h1 { margin-top: 70px; }
+
+  .control-wrap { bottom: -60px; }
 
 
   /* ================================ 
@@ -156,7 +158,7 @@
     font-size: 2em;
   }
 
-  .grid_12 .control-wrap .bx-pager { bottom: -70px; }
+  
 
 }
 
@@ -194,7 +196,7 @@
     font-size: 1.75em;
   }
 
-  .grid_12 .control-wrap .bx-pager { right: 2.25%; }
+  
 
 
   /* ================================ 

@@ -55,6 +55,7 @@
     border-top: none;
     max-height: 0;
     overflow: hidden;
+    overflow-x: hidden;
     @include all-transitions;
 
     li {
