@@ -47,13 +47,18 @@ $(document).ready(function() {
 
   var enableSticky = function() {
     if ($(".sticky").length > 0) {
-      var columnTop = $(".sticky").parent().offset().top;
-      var windowTop = $(window).scrollTop();
+      var columnTop = $(".sticky").parent().offset().top
+        , windowTop = $(window).scrollTop()
+        , footerTop = $("footer").offset().top;
 
       $(".sticky").addClass("fixed");
 
       if (windowTop >= columnTop) {
-        $(".sticky").css("top", windowTop - columnTop);
+        var stickyHeight = $(".sticky").outerHeight() + 20
+          , newColumnTop = windowTop - columnTop
+          , maxNewColumnTop = footerTop - stickyHeight - 100
+
+        $(".sticky").css("top", Math.min(newColumnTop, maxNewColumnTop));
       } else {
         $(".sticky").removeAttr("style");
       }
