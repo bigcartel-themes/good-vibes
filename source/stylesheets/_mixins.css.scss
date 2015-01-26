@@ -4,8 +4,7 @@ $secondary-color: #{'{{ theme.secondary_color }}'};
 $white: #fff;
 
 // Fonts
-
-$fallback-fonts: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+$fallback-fonts: "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts;
 
 @mixin all-transitions {
