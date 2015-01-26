@@ -41,9 +41,18 @@
                 <figcaption>
                   <h2>{{ product.name | truncate: 40 }}</h2>
                   <small>{{ product.default_price | money_with_sign }}</small>
-                  {% if product.on_sale %}
-                  <small><i>On Sale</i></small>
-                   {% endif %}
+                  {% case product.status %}
+                    {% when 'sold-out' %}
+                    <small><i>Sold Out!</i></small>
+
+                    {% when 'coming-soon' %}
+                    <small><i>Coming Soon!</i></small>
+
+                    {% when 'active' %}
+                    {% if product.on_sale %}
+                      <small><i>On Sale!</i></small>
+                    {% endif %}
+                  {% endcase %}
                 </figcaption>
                 <svg class="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18" enable-background="new 0 0 20 18" xml:space="preserve"><polygon points="10.8,0 9.3,1.5 15.9,8 0,8 0,10.1 15.9,10.1 9.3,16.5 10.8,18 20,9 "/></svg>
               </figure>
