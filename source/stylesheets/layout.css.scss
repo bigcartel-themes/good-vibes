@@ -193,7 +193,11 @@ header {
       padding: 0;
     }
 
-    li { padding-left: 18px; }
+    li {
+      padding-left: 18px;
+
+      &:first-child { padding-left: 0; }
+    }
 
     a {
       display: inline-block;

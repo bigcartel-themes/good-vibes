@@ -390,12 +390,19 @@
   header
   =================================== */
 
-  header .nav {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 25px;
-  }
+  header {
+    .nav {
+      float: none;
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 25px;
+    }
 
+    .drop-pages, .drop-pages ul, .drop-cat, .drop-cat ul {
+      margin-top: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 434px) {
