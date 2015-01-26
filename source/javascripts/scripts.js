@@ -225,7 +225,8 @@ $(document).ready(function() {
 
     $selectionArea.text($listItem.text());
     $realSelect.val($listItem.data("item-id"));
-    $('.add-to-cart small').html(Format.money($listItem.data('item-price'), true, true));
+    $('#quantity').data('default-price', $listItem.data('item-price'));
+    $('.add-to-cart small').html(Format.money($listItem.data('item-price') * $('#quantity').val(), true, true));
   });
 
   // Close open dropdown when clicking outside
