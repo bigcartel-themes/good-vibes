@@ -1,27 +1,3 @@
-<section>
-      <div class="container clearfix">
-        <div class="grid_12">
-          {% if theme.store_tagline != blank %}
-            <h1>{{ theme.store_tagline }}</h1>
-
-          {% endif %}
-          <div class="control-wrap">
-
-          </div>
-        </div>
-      </div>
-       <div class="banner">
-        {% if theme.slideshow != blank %}
-        <ul class="bxslider">
-          {% if theme.image_sets.slideshow.size > 0 %}
-          {% for image in theme.image_sets.slideshow %}
-          <li><img src="{{ image.url | constrain: '1440' }}"></li>
-          {% endfor %}
-          {% endif %}
-        </ul>
-        {% endif %}
-      </div>
-    </section>
     <div class="main-content container clearfix">
       <h4 class="category">{% if page.name == 'products' %}All Products{% else %}{{ page.name }}{% endif %}</h4>
       {% paginate products from products.current by theme.products_per_page %}

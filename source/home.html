@@ -1,3 +1,4 @@
+{% if theme.store_tagline != blank || theme.image_sets.slideshow.size > 0 %}
 <section>
       <div class="container clearfix">
         <div class="grid_12">
@@ -22,6 +23,8 @@
         {% endif %}
       </div>
     </section>
+{% endif %}
+
     <div class="main-content container clearfix">
       <h4 class="category">Featured Products</h4>
 
