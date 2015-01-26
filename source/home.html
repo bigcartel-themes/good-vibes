@@ -3,10 +3,10 @@
         <div class="grid_12">
               {% if theme.store_tagline != blank %}
             <h1>{{ theme.store_tagline }}</h1>
-      
+
           {% endif %}
           <div class="control-wrap">
-            
+
           </div>
         </div>
       </div>
@@ -18,11 +18,11 @@
           <li><img src="{{ image.url | constrain: '1440' }}"></li>
           {% endfor %}
           {% endif %}
-        </ul> 
+        </ul>
         {% endif %}
       </div>
     </section>
-    <div class="main-content container clearfix"> 
+    <div class="main-content container clearfix">
       <h4 class="category">Featured Products</h4>
 
       {% get products from products.all limit:theme.featured_products %}

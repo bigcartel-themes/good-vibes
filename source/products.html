@@ -3,10 +3,10 @@
         <div class="grid_12">
           {% if theme.store_tagline != blank %}
             <h1>{{ theme.store_tagline }}</h1>
-      
+
           {% endif %}
           <div class="control-wrap">
-            
+
           </div>
         </div>
       </div>
@@ -18,11 +18,11 @@
           <li><img src="{{ image.url | constrain: '1440' }}"></li>
           {% endfor %}
           {% endif %}
-        </ul> 
+        </ul>
         {% endif %}
       </div>
     </section>
-    <div class="main-content container clearfix"> 
+    <div class="main-content container clearfix">
       <h4 class="category">{% if page.name == 'products' %}All Products{% else %}{{ page.name }}{% endif %}</h4>
       {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
@@ -63,7 +63,7 @@
         {% if paginate.next.is_link %}
           <a href="{{ paginate.next.url }}" class="next-link" title="Next"><svg version="1.1" id="next" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg></a>
         {% endif %}
-      {% endif %}  
+      {% endif %}
     {% endif %}
 
           {% else %}

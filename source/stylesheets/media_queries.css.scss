@@ -1,28 +1,28 @@
 @import "mixins";
 
 
-/* ========================================================================== 
- Start of Media Queries 
+/* ==========================================================================
+ Start of Media Queries
 ========================================================================== */
 
 @media screen and (max-width: 1200px) {
 
-  /* ================================ 
-   Banner 
+  /* ================================
+   Banner
   =================================== */
 
-  section .container .grid_12 h1 { 
-    margin-top: 120px; 
+  section .container .grid_12 h1 {
+    margin-top: 120px;
     padding: 0 20px;
   }
 
-  .control-wrap { 
+  .control-wrap {
     bottom: -100px;
     right: 2%;
   }
 
-  /* ================================ 
-   Cart 
+  /* ================================
+   Cart
   =================================== */
 
   .in-cart li {
@@ -39,8 +39,8 @@
     }
   }
 
-  /* ================================ 
-   contact form 
+  /* ================================
+   contact form
   =================================== */
 
   .contact .grid_middle:first-of-type div {
@@ -50,14 +50,14 @@
     input { width: 100%; }
   }
 
-  .contact .grid_middle:first-of-type div + div { margin-left: 0px !important; } 
+  .contact .grid_middle:first-of-type div + div { margin-left: 0px !important; }
 
 }
 
 @media screen and (max-width: 1040px) {
 
-  /* ================================ 
-  global 
+  /* ================================
+  global
   =================================== */
 
   .grid_12 {
@@ -70,8 +70,8 @@
       margin: 10px 2.25%;
     }
 
-  /* ================================ 
-   Banner 
+  /* ================================
+   Banner
   =================================== */
 
   section .container .grid_12 h1 {
@@ -79,8 +79,8 @@
     font-size: 2.4em;
   }
 
-  /* ================================ 
-   Products 
+  /* ================================
+   Products
   =================================== */
 
   .products {
@@ -93,14 +93,14 @@
 
   .logo h2 { max-width: 400px; }
 
-  /* ================================ 
-   Banner 
+  /* ================================
+   Banner
   =================================== */
 
   .control-wrap { bottom: -80px; }
 
-  /* ================================ 
-   Instagram 
+  /* ================================
+   Instagram
   =================================== */
 
   .instagram { margin-top: 40px; }
@@ -111,8 +111,8 @@
 @media screen and (max-width: 860px) {
 
 
-  /* ================================ 
-   Banner 
+  /* ================================
+   Banner
   =================================== */
 
   section .container .grid_12 h1 { margin-top: 70px; }
@@ -120,22 +120,22 @@
   .control-wrap { bottom: -60px; }
 
 
-  /* ================================ 
-   Cart 
+  /* ================================
+   Cart
   =================================== */
 
   .grid_middle {
-    width: 95.5%; 
+    width: 95.5%;
     margin: 10px 2.25%;
   }
 
 
-  /* ================================ 
-   Product 
+  /* ================================
+   Product
   =================================== */
 
-  .single-product .grid_6 { 
-    width: 95.5%; 
+  .single-product .grid_6 {
+    width: 95.5%;
     margin: 10px 2.25%;
   }
 
@@ -149,36 +149,36 @@
 
   .logo h2 { max-width: 400px; }
 
-  /* ================================ 
-   Banner 
+  /* ================================
+   Banner
   =================================== */
-  
+
   section .container .grid_12 h1 {
     margin-top: 60px;
     font-size: 2em;
   }
 
-  
+
 
 }
 
 
 @media screen and (max-width: 710px) {
 
-  .logo h2 { 
-    max-width: 250px; 
+  .logo h2 {
+    max-width: 250px;
     font-size: 1.25em;
   }
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
 
   .products a figure figcaption { margin-left: 25px; }
 
 
-  /* ================================ 
+  /* ================================
   Product
   =================================== */
 
@@ -187,19 +187,19 @@
     margin: 10px 2.25%;
   }
 
-  /* ================================ 
-  Banner 
+  /* ================================
+  Banner
   =================================== */
-  
+
   section .container .grid_12 h1 {
     margin-top: 50px;
     font-size: 1.75em;
   }
 
-  
 
 
-  /* ================================ 
+
+  /* ================================
   Categories
   =================================== */
 
@@ -211,10 +211,10 @@
   }
 
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
-  
+
   .products {
 
     ul .grid_6 {
@@ -232,26 +232,26 @@
 
 @media screen and (max-width: 640px) {
 
-  /* ================================ 
-  Banner 
+  /* ================================
+  Banner
   =================================== */
 
   header {
     .drop-cat {
       margin-top: 50px;
 
-      ul li { 
-        display: block; 
+      ul li {
+        display: block;
         padding-top: 10px;
       }
 
-    } 
+    }
 
     .drop-pages {
       margin-top: 50px;
 
-      ul li { 
-        display: block; 
+      ul li {
+        display: block;
         padding-top: 10px;
       }
     }
@@ -277,30 +277,30 @@
   }
 
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
   .products a figure figcaption { max-width: 280px; }
 
-  /* ================================ 
-   Cart 
+  /* ================================
+   Cart
   =================================== */
-  
 
- 
+
+
   .in-cart li {
     position: relative;
     height: auto;
 
-   
-    h3 { 
+
+    h3 {
       width: 340px;
       max-width: 340px;
     }
 
-    > h3:last-of-type { 
-      margin-top: 42px; 
+    > h3:last-of-type {
+      margin-top: 42px;
     }
 
     input[type="text"] {
@@ -308,13 +308,13 @@
       margin-top: 26px;
     }
 
-    .remove { 
+    .remove {
       position: absolute;
       top: 20px;
       right: 0;
-      margin-top: 0; 
+      margin-top: 0;
     }
-  } 
+  }
 
   .contact .spam { width: 100%; }
 
@@ -325,32 +325,32 @@
 
 @media screen and (max-width: 580px) {
 
-   .logo h2 { 
-    max-width: 100%; 
+   .logo h2 {
+    max-width: 100%;
     margin-bottom: 0;
   }
 
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
-  .products a figure figcaption { 
-    max-width: 190px; 
-    
+  .products a figure figcaption {
+    max-width: 190px;
+
     h2 { font-size: 1.5em; }
   }
 
 
-  /* ================================ 
-   Instagram 
+  /* ================================
+   Instagram
   =================================== */
 
   .instagram {
 
-    #instagram-icon { 
+    #instagram-icon {
       padding-top: 30px;
-      margin-bottom: 0; 
+      margin-bottom: 0;
     }
 
     .grid_3 {
@@ -360,8 +360,8 @@
   }
 
   .in-cart li {
-   
-    h3 { 
+
+    h3 {
       width: 280px;
       max-width: 280px;
     }
@@ -370,8 +370,8 @@
 
 @media screen and (max-width: 480px) {
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
   .products a figure figcaption { max-width: 150px; }
@@ -386,8 +386,8 @@
 
 @media screen and (max-width: 455px) {
 
-  /* ================================ 
-  header 
+  /* ================================
+  header
   =================================== */
 
   header .nav {
@@ -400,8 +400,8 @@
 
 @media screen and (max-width: 434px) {
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
   .products ul .grid_6 img { max-width: none; }
@@ -409,12 +409,12 @@
   .products a figure figcaption { max-width: none; }
 
 
-  /* ================================ 
+  /* ================================
   Product
   =================================== */
 
-  .description .add-to-cart { 
-    float: right; 
+  .description .add-to-cart {
+    float: right;
     margin-left: 0;
   }
 
@@ -424,14 +424,14 @@
 
 @media screen and (max-width: 400px) {
 
-  /* ================================ 
-  Products 
+  /* ================================
+  Products
   =================================== */
 
   .products ul .grid_6 img { max-width: 305px; }
 
 
-  /* ================================ 
+  /* ================================
   Product
   =================================== */
 
@@ -440,8 +440,8 @@
   .wrapper-dropdown .dropdown { width: 382px; }
 
 
-  /* ================================ 
-  Footer 
+  /* ================================
+  Footer
   =================================== */
 
   footer p:first-of-type { float: none; }
@@ -450,9 +450,9 @@
 
 }
 
-@media screen and (max-width: 375px) { 
+@media screen and (max-width: 375px) {
 
-  /* ================================ 
+  /* ================================
   Product
   =================================== */
 

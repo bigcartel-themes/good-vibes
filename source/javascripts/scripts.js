@@ -75,7 +75,7 @@ $(document).ready(function() {
     } else {
       enableSticky();
     }
-    
+
   });
 
   // Enable Masonry plugin only on Home page
@@ -97,7 +97,7 @@ $(document).ready(function() {
     $(document).on("click", ".shopping-cart a", function(e) {
       e.preventDefault();
 
-      $(".fixed").removeClass("fixed").removeAttr("style"); 
+      $(".fixed").removeClass("fixed").removeAttr("style");
 
       if (!cartShowing) { showCart() }
     }).on("click", "#close-cart", function(e) {
@@ -280,7 +280,7 @@ $(document).ready(function() {
   });
 
 
-  if ($('.banner').length == 0) { 
+  if ($('.banner').length == 0) {
     $('.main-content').css('margin-top', 200);
     $('section .container .grid_12 h1').css('margin-top', 0);
   } else {

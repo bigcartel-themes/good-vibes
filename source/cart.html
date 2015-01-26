@@ -57,7 +57,7 @@
         {% endif %}
         {% endif %}
         <div>
-    
+
           {% if cart.shipping.enabled or cart.discount.enabled %}
               {% unless cart.shipping.pending and cart.discount.pending %}
                 <ul>
@@ -65,14 +65,14 @@
                     <h4>Subtotal</h4>
                     <small class="clearfix">{{ cart.subtotal | money_with_sign }}</small>
                   </li>
-    
+
                   {% unless cart.shipping.pending %}
                     <li>
                       <h4>Shipping</h4>
                       <small class="clearfix">{{ cart.shipping.amount | money_with_sign }}</small>
                     </li>
                   {% endunless %}
-    
+
                   {% unless cart.discount.pending %}
                     <li>
                       <h4>Discounts</h4>

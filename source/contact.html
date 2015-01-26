@@ -28,11 +28,11 @@
     <div class="grid_middle">
       <label for="subject">Subject</label>
       {{ contact | contact_input: 'subject' }}
-  
+
       <label for="message">Message</label>
       {{ contact | contact_input: 'message' }}
-  
-      <div class="spam"> 
+
+      <div class="spam">
         <label for="captcha">Spam check</label>
         {{ contact | contact_input: 'captcha' }}
         {{ contact.captcha }}

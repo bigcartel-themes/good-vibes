@@ -6,8 +6,8 @@
  }
 
 
-/* ========================================================================== 
-global    
+/* ==========================================================================
+global
 ========================================================================== */
 
 html {
@@ -17,8 +17,8 @@ html {
   overflow-y: scroll;
 }
 
-body { 
-  font-family: $primary-font; 
+body {
+  font-family: $primary-font;
   background-color: $white;
   color: $primary-color;
 }
@@ -38,7 +38,7 @@ hr {
   border: 0;
   height: 1px;
   background: $white;
-  
+
 }
 
 ul li {
@@ -57,7 +57,7 @@ img {
 
 h1 {
   font: 2.625em $primary-font;
-  font-weight: 900; 
+  font-weight: 900;
 }
 
 h2 {
@@ -68,7 +68,7 @@ h2 {
 h3 {
   font: 1.125em $primary-font;
   font-weight: 900;
-  
+
 }
 
 h4 {
@@ -126,8 +126,8 @@ small {
     text-transform: uppercase;
    }
 
-   ul li { 
-    display: list-item; 
+   ul li {
+    display: list-item;
     list-style: disc;
   }
 }
@@ -162,8 +162,8 @@ label {
 }
 
 
-/* ========================================================================== 
-header   
+/* ==========================================================================
+header
 ========================================================================== */
 
 header {
@@ -219,14 +219,14 @@ header {
   }
 
   .drop-cat, .drop-pages {
-    
+
     ul {
       @include all-transitions;
       padding: 0;
       text-align: center;
 
-      li { 
-        padding: 5px 10px; 
+      li {
+        padding: 5px 10px;
         position: relative;
       }
     }
@@ -243,7 +243,7 @@ header {
       display: inline-block;
       width: 30px;
       height: 28px;
-      
+
       margin: 2px 3px 0 0;
     }
 
@@ -282,8 +282,8 @@ header {
   }
 }
 
-/* ========================================================================== 
-info-pages 
+/* ==========================================================================
+info-pages
 ========================================================================== */
 
 .info-pages {
@@ -291,7 +291,7 @@ info-pages
   margin-top: 40px;
 
   .grid_middle { margin-bottom: 100px; }
-  
+
   img { max-width: 830px; }
 
   h2:first-of-type {
@@ -301,8 +301,8 @@ info-pages
   }
 }
 
-/* ========================================================================== 
-footer 
+/* ==========================================================================
+footer
 ========================================================================== */
 
 footer {

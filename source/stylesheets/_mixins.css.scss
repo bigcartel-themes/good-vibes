@@ -23,7 +23,7 @@ $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts;
   text-align: center;
   padding: 15px 47px;
 
-  &:hover { 
+  &:hover {
     opacity: 1;
     filter:alpha(opacity=100); /* For IE8 and earlier */
   }
