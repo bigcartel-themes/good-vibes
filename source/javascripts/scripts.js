@@ -65,12 +65,12 @@ $(document).ready(function() {
     }
   }
 
-   var fixedContainerHeight = $(".sticky").outerHeight();
+  $(window).on("load resize", function() {
+    var windowHeight = $(window).height()
+      , containerHeight = $(".sticky").closest(".container").outerHeight()
+      , fixedContainerHeight = $(".sticky").outerHeight();
 
-    $(window).on("load resize", function() {
-    var windowHeight = $(window).height();
-
-    if (fixedContainerHeight > windowHeight) {
+    if (fixedContainerHeight > windowHeight || fixedContainerHeight > containerHeight) {
       $(".sticky").removeClass("fixed").removeAttr("style");
     } else {
       enableSticky();
