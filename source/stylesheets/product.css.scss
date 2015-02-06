@@ -20,7 +20,7 @@
   position: relative;
   width: 400px;
   height: 56px;
-  padding: 15px 20px;
+  padding: 15px 35px 0 20px;
   color: $primary-color;
   font: 1.125em $primary-font;
   font-weight: 900;
@@ -28,6 +28,13 @@
   background: #fff;
   cursor: pointer;
   @include all-transitions;
+
+  span {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   #downarrow {
     content: '';
