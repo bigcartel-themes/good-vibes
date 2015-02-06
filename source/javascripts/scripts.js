@@ -122,7 +122,7 @@ $(document).ready(function() {
     var showCart = function() {
       var $container = $("<div>");
 
-      $container.load("/cart" + " .cart", function() {
+      $container.load("/cart?" + $.now() + " .cart", function() {
         var $cart = $container.find(".cart")
 
         cartShowing = true;
@@ -195,7 +195,7 @@ $(document).ready(function() {
       var $container = $("<div>")
         , $cart = $(".cart");
 
-      $container.load("/cart" + " .cart", function() {
+      $container.load("/cart?" + $.now() + " .cart", function() {
         $cart.html($container.find(".cart").html())
 
         $cart.find('.grid_middle').append(
