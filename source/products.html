@@ -3,7 +3,7 @@
       {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
       <div class="products">
-        <ul class="masonry">
+        <ul class="masonry js-masonry">
           {% for product in products %}
           <li class="grid_6 {{ product.css_class }} item">
             <a href="{{ product.url }}" title="{{ product.name | escape }}">

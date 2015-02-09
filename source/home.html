@@ -24,12 +24,9 @@
       </div>
     </section>
 {% endif %}
-
     <div class="main-content container clearfix">
       <h4 class="category">Featured Products</h4>
-
       {% get products from products.all limit:theme.featured_products %}
-
       {% if products != blank %}
       <div class="products" >
         <ul class="masonry js-masonry">
