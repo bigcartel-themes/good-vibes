@@ -43,7 +43,7 @@ section {
 
   .banner {
     width: 100%;
-    height: 360px;
+    max-height: 360px;
     background-color: $secondary-color;
     overflow: hidden;
 

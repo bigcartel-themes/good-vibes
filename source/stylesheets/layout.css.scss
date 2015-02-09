@@ -131,6 +131,8 @@ input:not([type=submit]):not([type=file]) {
   font: 1.125em $primary-font;
   font-weight: 900;
   border: 2px solid $primary-color;
+  -webkit-appearance: none;
+  border-radius: 0;
 
   &:focus  {
     outline: none;
