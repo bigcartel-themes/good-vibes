@@ -395,7 +395,11 @@
   Products
   =================================== */
 
-  .products ul .grid_6 img { max-width: none; }
+  .products {
+    ul .grid_6 img { max-width: 100% }
+
+    a figure figcaption { margin-left: 0; }
+  }
 
   .products a figure figcaption { max-width: none; }
 
@@ -415,13 +419,7 @@
 
 @media screen and (max-width: 400px) {
 
-  /* ================================
-  Products
-  =================================== */
-
-  .products ul .grid_6 img { max-width: 305px; }
-
-
+  
   /* ================================
   Product
   =================================== */
