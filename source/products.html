@@ -1,68 +1,68 @@
-    <div class="main-content container clearfix">
-      <h4 class="category">{% if page.name == 'products' %}All Products{% else %}{{ page.name }}{% endif %}</h4>
-      {% paginate products from products.current by theme.products_per_page %}
-      {% if products != blank %}
-      <div class="products">
-        <ul class="masonry js-masonry">
-          {% for product in products %}
-          <li class="grid_6 {{ product.css_class }} item">
-            <a href="{{ product.url }}" title="{{ product.name | escape }}">
-              <figure data-hover="product">
-                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '680' }}">
-                <figcaption>
-                  <h2>{{ product.name | truncate: 40 }}</h2>
-                  <small>{{ product.default_price | money_with_sign }}</small>
-                  {% case product.status %}
-                    {% when 'sold-out' %}
-                    <small><i>Sold Out!</i></small>
+<div class="main-content container clearfix">
+<h4 class="category">{% if page.name == 'products' %}All Products{% else %}{{ page.name }}{% endif %}</h4>
+{% paginate products from products.current by theme.products_per_page %}
+{% if products != blank %}
+<div class="products">
+  <ul class="masonry">
+    {% for product in products %}
+    <li class="grid_6 {{ product.css_class }} item">
+      <a href="{{ product.url }}" title="{{ product.name | escape }}">
+        <figure data-hover="product">
+          <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '680' }}">
+          <figcaption>
+            <h2>{{ product.name | truncate: 40 }}</h2>
+            <small>{{ product.default_price | money_with_sign }}</small>
+            {% case product.status %}
+              {% when 'sold-out' %}
+              <small><i>Sold Out!</i></small>
 
-                    {% when 'coming-soon' %}
-                    <small><i>Coming Soon!</i></small>
+              {% when 'coming-soon' %}
+              <small><i>Coming Soon!</i></small>
 
-                    {% when 'active' %}
-                    {% if product.on_sale %}
-                      <small><i>On Sale!</i></small>
-                    {% endif %}
-                  {% endcase %}
-                </figcaption>
-                <svg class="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18" enable-background="new 0 0 20 18" xml:space="preserve"><polygon points="10.8,0 9.3,1.5 15.9,8 0,8 0,10.1 15.9,10.1 9.3,16.5 10.8,18 20,9 "/></svg>
-              </figure>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <div class="container clearfix">
+              {% when 'active' %}
+              {% if product.on_sale %}
+                <small><i>On Sale!</i></small>
+              {% endif %}
+            {% endcase %}
+          </figcaption>
+          <svg class="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18" enable-background="new 0 0 20 18" xml:space="preserve"><polygon points="10.8,0 9.3,1.5 15.9,8 0,8 0,10.1 15.9,10.1 9.3,16.5 10.8,18 20,9 "/></svg>
+        </figure>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+</div>
+<div class="container clearfix">
 
-    {% if paginate.previous.is_link or paginate.next.is_link %}
-      {% if paginate.previous %}
-        {% if paginate.previous.is_link %}
-        <a href="{{ paginate.previous.url }}" class="previous-link" title="Previous"><svg version="1.1" id="prev" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg></a>
-        {% endif %}
-      {% endif %}
+{% if paginate.previous.is_link or paginate.next.is_link %}
+{% if paginate.previous %}
+  {% if paginate.previous.is_link %}
+  <a href="{{ paginate.previous.url }}" class="previous-link" title="Previous"><svg version="1.1" id="prev" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg></a>
+  {% endif %}
+{% endif %}
 
-      {{ paginate | default_pagination }}
+{{ paginate | default_pagination }}
 
-      {% if paginate.next %}
-        {% if paginate.next.is_link %}
-          <a href="{{ paginate.next.url }}" class="next-link" title="Next"><svg version="1.1" id="next" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg></a>
-        {% endif %}
-      {% endif %}
+{% if paginate.next %}
+  {% if paginate.next.is_link %}
+    <a href="{{ paginate.next.url }}" class="next-link" title="Next"><svg version="1.1" id="next" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg></a>
+  {% endif %}
+{% endif %}
+{% endif %}
+
+    {% else %}
+      <div class="products"><p>No products found.</p></div>
     {% endif %}
 
-          {% else %}
-            <div class="products"><p>No products found.</p></div>
-          {% endif %}
-
-      {% endpaginate %}
-    </div>
-    {% if theme.instagram_username != blank %}
-      <div class="container clearfix instagram" data-instagram-count="{{ theme.instagram_photos_count }}" data-instagram-username="{{ theme.instagram_username }}">
-        <svg class="instagram-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve"><path d="M3.2,11.5H6c0,2.8,2.3,5,5,5s5-2.3,5-5h2.7h0.8H22V0H0v11.5h2.5H3.2z M14.5,3.3h4.3v3.6h-4.3V3.3z M8.4,11.5c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6v0c0,1.4-1.2,2.6-2.6,2.6C9.6,14.1,8.4,13,8.4,11.5L8.4,11.5z"/><polygon points="19.5,19.5 2.5,19.5 2.5,14.6 0,14.6 0,22 22,22 22,14.6 19.5,14.6 "/></svg>
-        <a href="http://instagram.com/{{ theme.instagram_username }}" target="_blank" title="{{ theme.instagram_username }}">@{{ theme.instagram_username }}</a>
-        <ul>
-        </ul>
-      </div>
-    {% endif %}
+{% endpaginate %}
+</div>
+{% if theme.instagram_username != blank %}
+<div class="container clearfix instagram" data-instagram-count="{{ theme.instagram_photos_count }}" data-instagram-username="{{ theme.instagram_username }}">
+  <svg class="instagram-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve"><path d="M3.2,11.5H6c0,2.8,2.3,5,5,5s5-2.3,5-5h2.7h0.8H22V0H0v11.5h2.5H3.2z M14.5,3.3h4.3v3.6h-4.3V3.3z M8.4,11.5c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6v0c0,1.4-1.2,2.6-2.6,2.6C9.6,14.1,8.4,13,8.4,11.5L8.4,11.5z"/><polygon points="19.5,19.5 2.5,19.5 2.5,14.6 0,14.6 0,22 22,22 22,14.6 19.5,14.6 "/></svg>
+  <a href="http://instagram.com/{{ theme.instagram_username }}" target="_blank" title="{{ theme.instagram_username }}">@{{ theme.instagram_username }}</a>
+  <ul>
+  </ul>
+</div>
+{% endif %}
 

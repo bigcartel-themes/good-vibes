@@ -79,16 +79,13 @@ $(document).ready(function() {
   });
 
   // Enable Masonry plugin only on Home page
-  if ($("body").attr("id") == "home") {
-    var $container = $(".masonry");
+  if ($('.masonry').length > 0) {
+     var $container = $(".masonry");
 
     $container.imagesLoaded(function() {
       $container.masonry();
     });
-    // $container.imagesLoaded( function() {
-    //   $container.masonry();
-    // });
-  }
+  };
 
   // Showing and hiding the cart
   if ($("body").attr("id") != "cart") {
