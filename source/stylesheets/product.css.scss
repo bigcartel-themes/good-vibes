@@ -148,11 +148,7 @@
     padding-right: 40px;
   }
 
-  h4 + em {
-    position: absolute;
-    top: 55px;
-    display: block;
-    margin: 5px 0;
+  .status em {
     font: 2.625em $primary-font;
     font-weight: 900;
     color: $secondary-color;
