@@ -188,7 +188,7 @@ $(document).ready(function() {
     $cartListItems.filter(":eq(1)").text(cart.item_count == 1 ? "Item:" : "Items:");
     $cartListItems.filter(":last").html(Format.money(cart.total, true, true));
 
-    if (cartShowing) {
+    if (cartShowing || $("body").attr("id") == "cart") {
       var $container = $("<div>")
         , $cart = $(".cart");
 
