@@ -1,14 +1,12 @@
-{% if theme.store_tagline != blank || theme.image_sets.slideshow.size > 0 %}
+{% if theme.image_sets.slideshow.size > 0 or theme.store_tagline != blank %}
 <section>
   <div class="container clearfix">
     <div class="grid_12">
-          {% if theme.store_tagline != blank %}
+      {% if theme.store_tagline != blank %}
         <h1>{{ theme.store_tagline }}</h1>
-
       {% endif %}
-      <div class="control-wrap">
 
-      </div>
+      <div class="control-wrap"></div>
     </div>
   </div>
   <div class="banner">
