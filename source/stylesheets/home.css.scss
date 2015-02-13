@@ -43,9 +43,10 @@ section {
 
   .banner {
     width: 100%;
-    height: 360px;
     background-color: $secondary-color;
     overflow: hidden;
+
+    &.tagline { height: 330px; }
 
     img {
       width:100%;
@@ -55,9 +56,9 @@ section {
 }
 
 .control-wrap {
+  bottom: 20px;
   position: absolute;
   display: inline-block;
-  top: 300px;
   right: 0;
 }
 

@@ -9,7 +9,7 @@
       <div class="control-wrap"></div>
     </div>
   </div>
-  <div class="banner">
+  <div class="banner{% if theme.slideshow == blank %} tagline{% endif %}">
     {% if theme.slideshow != blank %}
     <ul class="bxslider">
       {% if theme.image_sets.slideshow.size > 0 %}
