@@ -87,16 +87,16 @@ $(document).ready(function() {
   }
 
   $(window).on("load resize", function() {
-    var windowHeight = $(window).height()
-      , containerHeight = $(".sticky").closest(".container").outerHeight()
-      , fixedContainerHeight = $(".sticky").outerHeight();
+    var $sticky = $(".sticky")
+      , stickyHeight = $sticky.outerHeight() + 30
+      , containerHeight = $sticky.closest(".container").outerHeight()
+      , windowHeight = $(window).height();
 
-    if (fixedContainerHeight > windowHeight || fixedContainerHeight > containerHeight) {
-      $(".sticky").removeClass("fixed").removeAttr("style");
+    if (containerHeight > stickyHeight && stickyHeight < windowHeight) {
+      $sticky.addClass("fixed");
     } else {
-      enableSticky();
+      $sticky.removeClass("fixed");
     }
-
   });
 
   // Enable Masonry plugin only on Home page
