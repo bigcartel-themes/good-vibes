@@ -1,5 +1,26 @@
 $(document).ready(function() {
 
+  var populateDropdown = function(dropdown) {
+    var $fakeSelect = $(".wrapper-dropdown")
+      , $realSelect = $fakeSelect.next("select");
+
+    if ($realSelect.length > 0) {
+      var $options = $realSelect.find("option");
+
+      $.each($options, function(index, option) {
+        var $option = $(option);
+
+        if ($option.val() != "") {
+          var $item = $("<li>", { "data-country-id": $option.val() }).text($option.text());
+
+          $fakeSelect.find(".dropdown").append($item);
+        }
+      });
+    }
+  }
+
+  populateDropdown()
+
   $('.drop-cat').hide();
 
   $('.shop').on('click', function(e) {
@@ -130,6 +151,8 @@ $(document).ready(function() {
           $('<a>', { href: '#', id: 'close-cart'}).html('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="25.5 90 561 612" enable-background="new 25.5 90 561 612" xml:space="preserve"><polygon points="25.5,375.6 112.2,457.2 244.8,324.6 244.8,702 367.2,702 367.2,324.6 499.8,457.2 586.5,375.6 306,90 "/></svg>')
         );
 
+        populateDropdown();
+
         $cart.slideDown(300);
       });
     }
@@ -214,16 +237,21 @@ $(document).ready(function() {
   }
 
   // Choose dropdown option
-  $(document).on("click", ".wrapper-dropdown li", function() {
+  $(document).on("click", ".wrapper-dropdown li", function(e) {
     var $listItem = $(this)
       , $dropdown = $listItem.closest(".wrapper-dropdown")
       , $selectionArea = $dropdown.find(" > span")
       , $realSelect = $dropdown.next("select");
 
     $selectionArea.text($listItem.text());
-    $realSelect.val($listItem.data("item-id"));
-    $('#quantity').data('default-price', $listItem.data('item-price'));
-    $('.add-to-cart small').html(Format.money($listItem.data('item-price') * $('#quantity').val(), true, true));
+
+    if ($listItem.closest(".cart").length > 0) {
+      $realSelect.val($listItem.data("country-id"));
+    } else {
+      $realSelect.val($listItem.data("item-id"));
+      $('#quantity').data('default-price', $listItem.data('item-price'));
+      $('.add-to-cart small').html(Format.money($listItem.data('item-price') * $('#quantity').val(), true, true));
+    }
   });
 
   // Close open dropdown when clicking outside

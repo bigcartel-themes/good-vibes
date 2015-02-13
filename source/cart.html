@@ -31,17 +31,16 @@
           {% endfor %}
         </ul>
         {% if cart.shipping.enabled or cart.discount.enabled %}
-        <div>
+        <div class="shipping">
           <label>Shipping</label>
-          <div class="wrapper-dropdown" id="cart_options">Select your country
+          <div class="wrapper-dropdown" id="cart_options">
+            <span>Select your country</span>
+            <svg version="1.1" id="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
             <ul class="dropdown">
-              {% if cart.shipping.enabled %}
-                {% if cart.shipping.strict %}
-                <li id="cart-shipping-tax">{{ store.country | country_select }}</li>
-                {% endif %}
-              {% endif %}
             </ul>
           </div>
+
+          {{ store.country | country_select }}
         </div>
         {% if cart.discount.enabled %}
         <div id="discount_option" {% unless cart.shipping.strict %}class="solo"{% endunless %}>
