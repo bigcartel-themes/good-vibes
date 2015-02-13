@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var populateDropdown = function(dropdown) {
-    var $fakeSelect = $(".wrapper-dropdown")
+    var $fakeSelect = $(".cart .wrapper-dropdown")
       , $realSelect = $fakeSelect.next("select");
 
     if ($realSelect.length > 0) {
