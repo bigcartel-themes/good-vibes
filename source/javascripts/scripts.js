@@ -132,6 +132,8 @@ $(document).ready(function() {
 
       cartShowing = false;
 
+      $(window).trigger("resize");
+
       $cart.slideUp(300, function() {
         $(this).remove();
       });
