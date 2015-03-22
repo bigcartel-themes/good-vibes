@@ -205,22 +205,25 @@ $(document).ready(function() {
   });
 
   var updateCart = function(cart) {
+    var onCartPage = $("body").attr("id") === "cart";
     var $cartListItems = $(".shopping-cart ul a li");
 
     $cartListItems.filter(":first").text(cart.item_count);
     $cartListItems.filter(":eq(1)").text(cart.item_count == 1 ? "Item:" : "Items:");
     $cartListItems.filter(":last").html(Format.money(cart.total, true, true));
 
-    if (cartShowing || $("body").attr("id") == "cart") {
+    if (cartShowing || onCartPage) {
       var $container = $("<div>")
         , $cart = $(".cart");
 
       $container.load("/cart?" + $.now() + " .cart", function() {
         $cart.html($container.find(".cart").html())
 
-        $cart.find('.grid_middle').append(
-          $('<a>', { href: '#', id: 'close-cart'}).html('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="25.5 90 561 612" enable-background="new 25.5 90 561 612" xml:space="preserve"><polygon points="25.5,375.6 112.2,457.2 244.8,324.6 244.8,702 367.2,702 367.2,324.6 499.8,457.2 586.5,375.6 306,90 "/></svg>')
-        );
+        if (!onCartPage) {
+          $cart.find('.grid_middle').append(
+            $('<a>', { href: '#', id: 'close-cart'}).html('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="25.5 90 561 612" enable-background="new 25.5 90 561 612" xml:space="preserve"><polygon points="25.5,375.6 112.2,457.2 244.8,324.6 244.8,702 367.2,702 367.2,324.6 499.8,457.2 586.5,375.6 306,90 "/></svg>')
+          );
+        }
       });
     }
   }
