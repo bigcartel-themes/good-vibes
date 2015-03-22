@@ -77,6 +77,7 @@
     &.shipping { overflow: visible; }
 
     &.wrapper-dropdown {
+      display: inline-block;
       margin-bottom: 0;
       overflow: visible;
       text-align: left;
