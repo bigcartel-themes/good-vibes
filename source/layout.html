@@ -7,7 +7,13 @@
     <meta name="description" content="{{ page.meta_description }}">
     <meta name="keywords" content="{{ page.meta_keywords }}">
     <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
-
+    {% if product != blank and page.full_url contains '/product/' %}
+      <meta property="og:title" content="{{ product.name | escape }}">
+      <meta property="og:type" content="product">
+      <meta property="og:url" content="{{ page.full_url }}">
+      <meta property="og:image" content="{{ product.image.url }}">
+      <meta property="og:site_name" content="{{ store.name | escape }}">
+    {% endif %}
     <link href="{{ theme | theme_css_url }}" rel="stylesheet">
 
     {{ head_content }}
@@ -32,8 +38,7 @@
             </a>
             <ul>
               <a href="/cart">
-                <li>{{ cart.item_count }}</li>
-                <li>Items:</li>
+                <li>{{ cart.item_count | pluralize: 'Item', 'Items' }}:</li>
                 <li>{{ cart.total | money_with_sign }}</li>
               </a>
             </ul>
@@ -46,18 +51,6 @@
               <li>
                 <a class="pages" href="#" data-hover="Pages">Pages<svg class="up" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg></a>
               </li>
-             <!--  </li>
-              {% for page in pages.all %}
-              <li>Pages
-                <ul>
-                  <li>{{ page | link_to }}</li>
-                  {% endfor %}
-                  <li><a href="/contact" title="{{ page.name }}">Contact</a></li>
-                  {% if store.website != blank %}
-                  <li><a href="{{ store.website }}" title="{{ page.name }}">Back to Site</a></li>
-                  {% endif %}
-                </ul>
-              </li> -->
             </ul>
           </div>
           <div class="drop-cat">
