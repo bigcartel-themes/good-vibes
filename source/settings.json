@@ -75,20 +75,6 @@
       "description": "This tagline appears over slideshow and or banner area of shop. Highly recommended for this theme."
     },
     {
-      "variable": "instagram_username",
-      "label": "Instagram username",
-      "type": "text",
-      "description": "Instagram username without @ symbol"
-    },
-    {
-      "variable": "instagram_photos_count",
-      "label": "How many Instagram photos to show?",
-      "type": "select",
-      "options": [4, 8],
-      "default": 4,
-      "description": "The number of Instagram photos to show on the store."
-    },
-    {
       "variable": "share_buttons",
       "label": "Show social buttons",
       "type": "boolean",

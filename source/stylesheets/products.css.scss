@@ -143,31 +143,3 @@
     fill: $primary-color;
   }
 }
-
-.instagram {
-  margin: 70px auto 100px auto;
-  text-align: center;
-
-  a {
-    display: block;
-    font-size: 1.875em;
-    font-weight: 900;
-  }
-
-  .instagram-icon {
-    width: 23px;
-    fill: $primary-color;
-  }
-
-  ul {
-    margin: 20px 0 0 0;
-    padding: 0;
-
-  }
-
-  img {
-    width: 100%;
-    max-width: 270px;
-    max-height: 270px;
-  }
-}
