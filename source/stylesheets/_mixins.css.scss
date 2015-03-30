@@ -1,7 +1,10 @@
+@import 'compass/css3';
+@import 'compass';
+
 // Colors
 $primary-color: #{'{{ theme.primary_color }}'};
 $secondary-color: #{'{{ theme.secondary_color }}'};
-$white: #fff;
+$background-color: #{'{{ theme.background_color }}'};
 
 // Fonts
 $fallback-fonts: "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
@@ -50,3 +53,10 @@ $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts;
   filter:alpha(opacity=100);
 }
 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

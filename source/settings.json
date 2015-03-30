@@ -23,7 +23,12 @@
     }
   ],
   "colors": [
-   {
+    {
+      "variable": "background_color",
+      "label": "Background Color",
+      "default": "#EAEAEA"
+    },
+    {
       "variable": "primary_color",
       "label": "Primary Color",
       "default": "#222222"
