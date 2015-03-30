@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: $primary-font;
-  background-color: $white;
+  background-color: $background-color;
   color: $primary-color;
   overflow: hidden;
 }
@@ -38,7 +38,7 @@ a:hover {
 hr {
   border: 0;
   height: 1px;
-  background: $white;
+  background: $background-color;
 
 }
 
@@ -312,16 +312,16 @@ footer {
 
   p {
     font-weight: 900;
-    color: $white;
+    color: $background-color;
 
     &:first-of-type { float: left; }
 
     &:last-of-type { float: right; }
 
     a {
-      color: $white;
+      color: $background-color;
 
-      &:hover { color: $white; }
+      &:hover { color: $background-color; }
 
       &:before { content: none; }
     }
