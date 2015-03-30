@@ -1,269 +1,107 @@
 @import "mixins";
 
-
-.sticky { margin-top: 20px; }
-
-.fixed {
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.stat {
-  position: static;
-}
-
-.single-product { position: relative; }
-
-.wrapper-dropdown {
-  position: relative;
-  width: 400px;
-  height: 56px;
-  padding: 15px 35px 0 20px;
-  color: $primary-color;
-  font: 1.125em $primary-font;
-  font-weight: 900;
-  border: 2px solid $primary-color;
-  background: #fff;
-  cursor: pointer;
-  @include all-transitions;
-
-  > span {
-    white-space: nowrap;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.product_details { 
+  float: left;
+  width: 50%;
+  
+  #product_form { 
+    @include pie-clearfix;
   }
-
-  #downarrow {
-    content: '';
-    width: 13px;
-    height: 8px;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -4px;
-    fill: $primary-color;
-    @include all-transitions;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 81%;
-    left: -2px;
-    margin-top: 0;
-    padding: 0 0 10px 0;
-    width: 400px;
-    background: #fff;
-    font: inherit;
-    font-weight: inherit;
-    border: 2px solid $primary-color;
-    border-top: none;
-    max-height: 0;
-    overflow: hidden;
-    overflow-x: hidden;
-    @include all-transitions;
-
-    li {
-      display: block;
-      padding: 10px 20px;
-
-      a {
-        display: block;
-        color: inherit;
-        @include all-transitions;
-      }
-
-      &:hover a { color: $secondary-color; }
-    }
-  }
-
-  &.active { border-color: $secondary-color; }
-
-  &.active #downarrow {
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
-  &.active .dropdown {
-    max-height: 250px;
-    border-color: $secondary-color;
-    overflow: scroll;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-}
-
-.description {
-  position: relative;
-  margin-top: 0;
-
-  #back-to-all {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 60px;
-
-    a {
-      font-size: 1em;
-      font-weight: 900;
-      padding-left: 20px;
-      @include all-transitions;
-
-      .prev {
-        position: absolute;
-        fill: $primary-color;
-        width: 13px;
-        height: 12px;
-        top: 5px;
-        left: 0;
-        @include all-transitions;
-      }
-    }
-
-    &:hover a {
-      color: $secondary-color;
-
-      .prev {
-        fill: $secondary-color;
-      }
-    }
-  }
-
-  ul {
-    font: inherit;
-    width:570px;
-
-    li{
-      float: none;
-      display: block;
-      display: list-item;
-      list-style: disc;
-    }
-  }
-
-  p {
-    font-weight: 400;
-    padding-right: 40px;
-  }
-
-  .status em {
-    font: 2.625em $primary-font;
-    font-weight: 900;
-    color: $secondary-color;
-  }
-
-  .wrapper-dropdown {
-    margin-top: 40px;
-    z-index: 3;
-  }
-
+  
   input[type="text"] {
     float: left;
+    height: 56px;
+    width: 60px;
     padding: 10px;
-    margin-top: 30px;
-    max-width: 70px;
-    height: 56px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: none;
   }
-
+  
   .add-to-cart {
-    float:left;
-    position: relative;
-    border: 2px solid $primary-color;
-    width: 300px;
-    height: 56px;
-    margin: 30px 0 0 30px;
-    @include all-transitions;
-
-    button {
-      color: $primary-color;
-      font: 1.125em $primary-font;
-      font-weight: 900;
-      background: transparent;
-      border: 0;
-      height: 28px;
-      position: absolute;
-      top: 50%;
-      margin-top: -14px;
-      left: 20px;
-      @include all-transitions;
-
-      &:focus { outline: none; }
-
-      &:hover, &:active { color: $secondary-color; }
-    }
+    max-width: 290px;
+    padding-left: 15px;
+    position: relative; 
+    text-align: left;
+    width: 290px;    
 
     small {
-      position: absolute;
-      height: 30px;
       border-left: 2px solid $primary-color;
-      padding: 3px 20px;
-      top: 50%;
+      height: 30px;
       margin-top: -15px;
+      padding: 3px 20px;
+      position: absolute;
       right: 0;
-      @include all-transitions;
+      top: 50%;
     }
-
-    &:active, &:focus { border-color: $secondary-color; }
+    
+    &:hover small, &:focus small {
+      @include all-transitions;
+      color: $secondary-color;
+      border-left: 2px solid $secondary-color;
+    }
+  }
+  .sharing {
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 17px;
+    margin-top: 35px;
+    padding: 0;
+    
+    li {
+      border-right: 2px solid $primary-color; 
+      display:inline-block;
+      margin-right: 4px;
+      padding-right: 8px;
+      
+      &:last-child { 
+        border-right: 0px;
+      }
+    }
   }
 }
 
-#product_form select { display: none; }
+.product_photos { 
+  float: right;
+  max-width: 560px;
+  width: 50%;
+  
+  li { 
+    margin-bottom: 25px;
+    
+    a { 
+      display: block;
+    }
+  }
+  img { 
+    display: block;
+    width: 100%;
+  }
+}
+.mfp-title { 
+  display: none;
+}
 
-.product-shots {
+.back-to-all {
+  @include all-transitions;
+  font-size: 1em;
+  font-weight: 900;
+  margin-bottom: 20px;
+  padding-left: 20px;
   position: relative;
 
-  ul:first-of-type { padding: 20px 0 40px 0; }
+  svg {
+    @include all-transitions;
+    fill: $primary-color;
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 13px;
+  }
 
-  ul {
-    padding: 0;
-    margin: 0;
-
-    li {
-      padding-bottom: 25px;
-
-      img {
-        max-width: 570px;
-        width: 100%;
-        height: auto;
-      }
+  &:hover {
+    color: $secondary-color;
+    
+    svg {
+      fill: $secondary-color;
     }
   }
 }
-
-.mfp-title { display: none; }
-
-.sharing {
-  display: inline-block;
-  margin-top: 40px;
-
-  ul {
-    padding: 0;
-
-    li {
-      float: left;
-      display: inline-block;
-      list-style: none;
-      font: 1.125em $primary-font;
-      font-weight: 900;
-      margin: 0 2px;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
