@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>{{ store.name }} &mdash; {{ page.name }}</title>
-
     <meta charset="utf-8">
     <meta name="description" content="{{ page.meta_description }}">
     <meta name="keywords" content="{{ page.meta_keywords }}">
@@ -15,21 +14,19 @@
       <meta property="og:site_name" content="{{ store.name | escape }}">
     {% endif %}
     <link href="{{ theme | theme_css_url }}" rel="stylesheet">
-
     {{ head_content }}
   </head>
-
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
       <div class="container clearfix">
         <div class="grid_12">
           <div class="logo">
-           <a href="/" title="{{ store.name | escape }}">
-            {% if theme.logo != blank %}
-              <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-            {% else %}
-              <h2>{{ store.name }}</h2>
-            {% endif %}
+            <a href="/" title="{{ store.name | escape }}">
+              {% if theme.logo != blank %}
+                <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
+              {% else %}
+                <h2>{{ store.name }}</h2>
+              {% endif %}
             </a>
           </div>
           <div class="shopping-cart">
@@ -37,10 +34,7 @@
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 28" enable-background="new 0 0 30 28" xml:space="preserve"><g><path class="cart-icon" d="M26.4,13.5L30,0H0v2.3h4.6l0,10h0v7.5h20.8v-2.3H7v-4.1H26.4z M26.9,2.3l-2.4,8.9H7l0-8.9H26.9z"/><path class="cart-icon" d="M8.2,21.4c-1.9,0-3.4,1.5-3.4,3.3S6.4,28,8.2,28s3.4-1.5,3.4-3.3S10.1,21.4,8.2,21.4z M8.2,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C9.6,25.5,9,26.1,8.2,26.1z"/><path class="cart-icon" d="M21.7,21.4c-1.9,0-3.4,1.5-3.4,3.3s1.5,3.3,3.4,3.3s3.4-1.5,3.4-3.3S23.6,21.4,21.7,21.4z M21.7,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C23.1,25.5,22.5,26.1,21.7,26.1z"/></g></svg>
             </a>
             <ul>
-              <a href="/cart">
-                <li>{{ cart.item_count | pluralize: 'Item', 'Items' }}:</li>
-                <li>{{ cart.total | money_with_sign }}</li>
-              </a>
+              <li><a href="/cart">{{ cart.item_count | pluralize: 'Item', 'Items' }}: {{ cart.total | money_with_sign }}</a></li>
             </ul>
           </div>
           <div class="nav">
@@ -55,37 +49,36 @@
           </div>
           <div class="drop-cat">
             <ul>
-              <li><a href="/products" data-hover="{{ category.name }}">All Products</a></li>
+              <li><a href="/products" data-hover="All Products">All Products</a></li>
               {% for category in categories.active %}
-              <li data-hover="{{ category.name }}">{{ category | link_to }}</li>
+                <li data-hover="{{ category.name }}">{{ category | link_to }}</li>
               {% endfor %}
             </ul>
           </div>
           <div class="drop-pages">
             <ul>
               {% for page in pages.all %}
-              <li>{{ page | link_to }}</li>
+                <li>{{ page | link_to }}</li>
               {% endfor %}
-              <li><a href="/contact" title="contact">Contact</a></li>
+              <li><a href="/contact">Contact</a></li>
               {% if store.website != blank %}
-              <li><a href="{{ store.website }}" title="back to site">Back to Site</a></li>
+                <li><a href="{{ store.website }}">Back to Site</a></li>
               {% endif %}
             </ul>
           </div>
         </div>
       </div>
-    </header> <!-- END OF HEADER -->
-        {% if page.category == 'custom' %}
-        <div class="container clearfix info-pages">
-          <div class="grid_middle">
+    </header>
+    {% if page.category == 'custom' %}
+      <div class="container clearfix info-pages">
+        <div class="grid_middle">
           <h2>{{ page.name }}</h2>
           {{ page_content | paragraphs }}
-          </div>
         </div>
-        {% else %}
-          {{ page_content }}
-        {% endif %}
-
+      </div>
+    {% else %}
+      {{ page_content }}
+    {% endif %}
     <footer>
       <div class="container clearfix">
         <div class="grid_12">
@@ -93,8 +86,7 @@
           <p>{{ bigcartel_credit}}</p>
         </div>
       </div>
-    </footer> <!--END OF FOOTER -->
-
+    </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
     <script src="{{ theme | theme_js_url }}"></script>
