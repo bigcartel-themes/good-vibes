@@ -283,6 +283,27 @@ header {
         }
       }
     }
+    .text { 
+      
+      a { 
+        height: 100%
+      }
+    }
+    
+    .image { 
+      display: block;
+      height: 100%;
+      
+      a { 
+        display: block;
+        height: 100%;
+        
+        img { 
+          display: block;
+          height: 100%
+        }
+      }
+    }
     .top_nav {
       @include vertical-align;
       float: right;

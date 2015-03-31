@@ -20,7 +20,7 @@
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
       <div class="container">
-        <div class="logo">
+        <div class="logo {% if theme.logo != blank %}image{% else %}text{% endif %}">
           <a href="/" title="{{ store.name | escape }}">
             {% if theme.logo != blank %}
               <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
