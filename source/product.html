@@ -22,7 +22,7 @@
   <h4>{{ product.default_price | money_with_sign }}</h4>
 
   {% if product.status == 'active' %}
-    <form method="post" action="/cart" id="product_form">
+    <form method="post" action="/cart" class="product_form">
       {% if product.has_default_option %}
         {{ product.option | hidden_option_input }}
       {% else %}
