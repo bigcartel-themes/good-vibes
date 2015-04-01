@@ -237,14 +237,20 @@
   float: none;
 }
 
-#cart .cart_content { 
-  border:0px;
-  padding: 20px 0 100px;
+#cart {
+  
+  .cart_holder { 
+    border: 0px;
+  } 
+  .cart_content { 
+    padding: 20px 0 100px;
+  }
   
   .continue_shopping { 
     display:block;
   }
-  #close-cart { 
+  
+  .close-cart { 
     display: none;
   }
 }

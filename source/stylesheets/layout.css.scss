@@ -441,6 +441,19 @@ footer {
   }
 }
 
+.social_links { 
+  
+  li { 
+    display:inline-block;
+    
+    svg { 
+      height: 24px;
+      width: 24px;
+      fill: $background-color;
+    }
+  }
+}
+
 #maintenance, #checkout {
   position: absolute;
   width: 100%;

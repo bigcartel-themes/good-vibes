@@ -12,7 +12,14 @@
     {
       "variable": "slideshow",
       "label": "Homepage Slideshow",
-      "description": "1440px by 360px images recommended"
+      "description": "1440px by 360px images recommended",
+      "defaults": [
+        "test-banner.jpg", 
+        "test-banner.jpg", 
+        "test-banner.jpg", 
+        "test-banner.jpg", 
+        "test-banner.jpg"
+      ]
     }
   ],
   "fonts": [
@@ -85,7 +92,34 @@
       "type": "boolean",
       "default": true,
       "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
+    },
+    {
+      "variable": "twitter_username",
+      "label": "Twitter Username",
+      "type": "text",
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
+    },
+    {
+      "variable": "facebook_username",
+      "label": "Facebook Username",
+      "type": "text",
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
+    },
+    {
+      "variable": "tumblr_username",
+      "label": "Tumblr Username",
+      "type": "text",
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
+    },
+    {
+      "variable": "instagram_username",
+      "label": "Instagram Username",
+      "type": "text",
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
     }
   ]
-
 }
