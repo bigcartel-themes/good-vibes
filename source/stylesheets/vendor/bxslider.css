@@ -40,6 +40,12 @@
 }
 
 
+/*.grid_12 .control-wrap .bx-pager,
+.grid_12 .bx-wrapper .bx-controls-auto {
+	position: absolute;
+	bottom: -120px;
+	right: 0px;
+}*/
 
 /* LOADER */
 
