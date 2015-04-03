@@ -165,7 +165,6 @@ $(document).ready(function() {
       updateCart(cart) 
     });
   });
-  
 });
 
 // Masonry

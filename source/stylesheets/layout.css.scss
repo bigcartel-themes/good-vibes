@@ -172,10 +172,6 @@ label {
   position: relative;
   margin-bottom: 20px;
   width: 380px;
-  
-  &:hover { 
-    border-color: #{'{{ theme.secondary_color }}'};
-  }
 
   select {
     background:none;
@@ -204,6 +200,15 @@ label {
     top: 50%;
     width: 13px;
   }
+  
+  &:hover { 
+    border-color: #{'{{ theme.secondary_color }}'};
+    
+    .downarrow { 
+      fill: #{'{{ theme.secondary_color }}'};
+    }
+  }
+  
 }
 
 .errors {
@@ -418,8 +423,8 @@ footer {
   background-color: $primary-color;
   bottom: 0;
   color: $background-color;
-  font-size: 17px;
-  line-height: 17px;
+  font-size: 19px;
+  line-height: 19px;
   height: 100px;
   left: 0;
   position: absolute;
@@ -437,6 +442,7 @@ footer {
   .footer_name { 
     float: left;
     max-width: 25%;
+    padding-top: 5px;
     width: 25%;
   }
   .footer_social { 
@@ -448,6 +454,7 @@ footer {
   .footer_credit { 
     float: right;
     max-width: 25%;
+    padding-top: 5px;
     text-align: right;
     width: 25%;
   }
@@ -485,6 +492,7 @@ footer {
 }
 
 .page_content { 
+  @include pie-clearfix;
   padding-bottom: 55px;
 }
 
