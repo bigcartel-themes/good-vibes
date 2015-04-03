@@ -11,7 +11,9 @@
   width: 100%;
   
   
-  h2 { 
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
     margin-top: 0px;
   }
   .continue_shopping {
@@ -250,7 +252,7 @@
     display:block;
   }
   
-  .close-cart { 
+  .close_cart { 
     display: none;
   }
 }

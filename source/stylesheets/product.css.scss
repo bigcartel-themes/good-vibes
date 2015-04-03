@@ -16,6 +16,7 @@
   }
   
   .add-to-cart {
+    @include all-transitions;
     max-width: 290px;
     padding-left: 15px;
     position: relative; 
@@ -23,6 +24,8 @@
     width: 290px;    
 
     small {
+      @include all-transitions;
+      color: $primary-color;
       border-left: 2px solid $primary-color;
       height: 30px;
       margin-top: -15px;
@@ -33,7 +36,6 @@
     }
     
     &:hover small, &:focus small {
-      @include all-transitions;
       color: $secondary-color;
       border-left: 2px solid $secondary-color;
     }

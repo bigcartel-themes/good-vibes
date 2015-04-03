@@ -418,6 +418,8 @@ footer {
   background-color: $primary-color;
   bottom: 0;
   color: $background-color;
+  font-size: 17px;
+  line-height: 17px;
   height: 100px;
   left: 0;
   position: absolute;
@@ -425,26 +427,38 @@ footer {
   
   .container { 
     @include pie-clearfix;
+    padding-top: 15px;
   }
   
-  p {
-    float: right; 
-    margin:0;
-    padding:0;
-    
-    &:first-child { 
-      float: left;
-    }
-  }
   a { 
     color: $background-color;
+  }
+  
+  .footer_name { 
+    float: left;
+    max-width: 25%;
+    width: 25%;
+  }
+  .footer_social { 
+    float: left;
+    max-width: 50%;
+    text-align: center; 
+    width: 50%;
+  }
+  .footer_credit { 
+    float: right;
+    max-width: 25%;
+    text-align: right;
+    width: 25%;
   }
 }
 
 .social_links { 
+  text-align: center; 
   
   li { 
     display:inline-block;
+    margin: 0 10px;
     
     svg { 
       height: 24px;

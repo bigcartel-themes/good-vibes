@@ -1,12 +1,12 @@
+// Custom error handling
+
 API.onError = function(errors) {
   var $errorList = $('<ul>', { class: 'errors'} )
     , $cartErrorsLocation = $('.cart_form')
     , $productErrorsLocation = $('.product_form');
-
   $.each(errors, function(index, error) {
     $errorList.append($('<li>').html(error));
   });
-
   if ($cartErrorsLocation.length > 0) {
     $cartErrorsLocation.find('.errors').hide();
     $cartErrorsLocation.prepend($errorList);
@@ -17,7 +17,8 @@ API.onError = function(errors) {
   }
 }
 
-// HIDE CART
+// Hide cart function
+
 var hideCart = function() { 
   var $cart = $(".cart_holder");
   $cart.slideUp(300, function() {
@@ -25,7 +26,9 @@ var hideCart = function() {
     cartShowing = false;
   });
 }
-// UPDATE CART
+
+// Update cart function
+
 var updateCart = function(cart) {
   var $cartList = $(".header_cart_details");
   var $text = Format.pluralize(cart.item_count, 'Item:', 'Items:')+' '+Format.money(cart.total, true, true);
@@ -40,19 +43,25 @@ var updateCart = function(cart) {
     });
   }
 }
-// REMOVE FROM CART
+
+// Remove from cart function
+
 var removeFromCart = function(itemID) {
   Cart.removeItem(itemID, function(cart) { 
     updateCart(cart)
   });
 }
-// ADD TO CART
+
+// Add to cart function
+
 var addToCart = function(itemID, quantity) {
   Cart.addItem(itemID, quantity, function(cart) { 
     updateCart(cart) 
   });
 }
-// SHOW CART
+
+// Show cart function
+
 var showCart = function() { 
   var $container = $("<div>");
   $container.load("/cart?" + $.now() + " .cart_holder", function() {
@@ -67,6 +76,8 @@ var showCart = function() {
 
 $(document).ready(function() {
 
+  // Shop / pages dropdown
+  
   $('.open_shop a').on('click', function(e) {
     e.preventDefault();
     $('.page_links').slideUp('fast', function() { 
@@ -85,7 +96,8 @@ $(document).ready(function() {
 
   
 
-
+  // Hide / show cart
+  
   if ($("body").attr("id") != "cart") {
     cartShowing = false;
     $(document).on("click", ".open_cart a", function(e) {
@@ -98,49 +110,66 @@ $(document).ready(function() {
     });
   }
 
+  // Product image gallery
+  
   $('.image-link').magnificPopup({
     type:'image',
     gallery: {
       enabled: true
     }
   });
-  $('.flexslider').flexslider();
-});
-
-$('#quantity').keyup(function() {
-  var $quantityInput = $(this)
-    , $priceDisplay = $quantityInput.closest("#product_form").find("small")
-    , quantity = parseInt($quantityInput.val())
-    , price = $quantityInput.data("default-price");
-
-  if (quantity > 0) { 
-    $priceDisplay.html(Format.money(quantity * price, true, true));
+  
+  // Activate flexslider
+  
+  if ($('.slides').length) { 
+    $('.flexslider').flexslider();
   }
-});
-
-// Adding items to the cart
-$("#product_form").submit(function(e) {
-  e.preventDefault();
-  var quantity = $(this).find("#quantity").val()
-    , itemID = $(this).find("#option").val()
-    , addButton = $(this).find('.add-to-cart');
-  addToCart(itemID, quantity);
-  addButton.blur();
-});
-
-// Removing items from the cart
-$(document).on("click", ".remove a", function(e) {
-  e.preventDefault();
-  var itemID = $(this).data("item-id");
-  removeFromCart(itemID);
-});
-
-$(document).on("click", ".cart_holder #update", function(e) {
-  e.preventDefault();
-  Cart.updateFromForm("cart_form", function(cart) { 
-    updateCart(cart) 
+  
+  // Updating product price on quantity change
+  
+  $('#quantity').keyup(function() {
+    var $quantityInput = $(this)
+      , $priceDisplay = $quantityInput.closest(".product_form").find("small")
+      , quantity = parseInt($quantityInput.val())
+      , price = $quantityInput.data("default-price");
+  
+    if (quantity > 0) { 
+      $priceDisplay.html(Format.money(quantity * price, true, true));
+    }
   });
+  
+  // Adding items to the cart
+  
+  $(".product_form").submit(function(e) {
+    e.preventDefault();
+    var quantity = $(this).find("#quantity").val()
+      , itemID = $(this).find("#option").val()
+      , addButton = $(this).find('.add-to-cart');
+    addToCart(itemID, quantity);
+    addButton.blur();
+  });
+  
+  // Removing items from the cart
+  
+  $(document).on("click", ".remove a", function(e) {
+    e.preventDefault();
+    var itemID = $(this).data("item-id");
+    removeFromCart(itemID);
+  });
+  
+  // Updating cart
+  
+  $(document).on("click", ".cart_holder #update", function(e) {
+    e.preventDefault();
+    Cart.updateFromForm("cart_form", function(cart) { 
+      updateCart(cart) 
+    });
+  });
+  
 });
+
+// Masonry
+
 $(window).load(function() { 
   var $container = $('.product_list');  
   $container.imagesLoaded( function() {
