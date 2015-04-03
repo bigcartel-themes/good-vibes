@@ -3,6 +3,14 @@
 .cart_holder { 
   border-bottom: 2px solid $primary-color;
 }
+
+.cart_message { 
+  
+  h3 { 
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
 .cart_content {
   margin: 0 auto;
   max-width: 810px;
