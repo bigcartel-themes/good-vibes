@@ -2,7 +2,9 @@
 
 .product_details { 
   float: left;
+  padding-right: 75px;
   width: 50%;
+  
   
   .product_form { 
     @include pie-clearfix;
