@@ -36,7 +36,13 @@
     width: 17%
     
     
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 800px)
+  .container
+    padding: 10px
+    
+  .flex-control-nav
+    display: none
+    
   header .container .logo 
     max-width: 50%
     width: auto
@@ -66,6 +72,9 @@
     display: none 
   .cart_items li a.product_image 
     max-width: 60px
+  
+  header .container .top_nav .nav_items li a
+    padding-right: 0
   
   .cart_items li a.product_image img 
     max-width: 60px

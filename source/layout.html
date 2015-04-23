@@ -67,16 +67,16 @@
       {% if page.permalink == 'home' %}
         {% if theme.store_tagline != blank or theme.image_sets.slideshow.size > 0%}
           <div class="store_tagline">
-            {% if theme.store_tagline != blank %}<div class="text"><h2>{{ theme.store_tagline }}</h2></div>{% endif %}
-            {% if theme.image_sets.slideshow.size > 0 %}
-              <div class="flexslider">
+            <div class="flexslider">
+              {% if theme.store_tagline != blank %}<div class="text"><h2>{{ theme.store_tagline }}</h2></div>{% endif %}
+              {% if theme.image_sets.slideshow.size > 0 %}
                 <ul class="slides">
                   {% for image in theme.image_sets.slideshow %}
-                    <li><img src="{{ image.url | constrain: '1440' }}"></li>
+                    <li><img src="{{ image.url | constrain: '1300' }}"></li>
                   {% endfor %}
                 </ul>
-              </div>
-            {% endif %}
+              {% endif %}
+            </div>
           </div>
         {% endif %}
       {% endif %}
@@ -155,7 +155,14 @@
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="{{ 'api' | theme_js_url }}" type="text/javascript"></script>
+    <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
+    <script>
+      $(function() { 
+        if ($('.slides').length) { 
+          $('.flexslider').flexslider();
+        }
+      });
+    </script>
   </body>
 </html>

@@ -119,11 +119,6 @@ $(document).ready(function() {
     }
   });
   
-  // Activate flexslider
-  
-  if ($('.slides').length) { 
-    $('.flexslider').flexslider();
-  }
   
   // Updating product price on quantity change
   
