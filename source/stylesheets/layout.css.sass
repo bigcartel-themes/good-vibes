@@ -1,0 +1,469 @@
+@import "mixins"
+
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+ 
+html
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  min-height: 100%
+  overflow-y: scroll
+  position: relative
+
+body
+  background-color: $background-color
+  color: $primary-color
+  font-family: $primary-font
+  margin: 0 0 100px
+  overflow: hidden
+
+
+a, a:hover, a:active, a:focus
+  color: $primary-color
+  outline: none
+  text-decoration: none
+
+a:hover
+  opacity: .85
+  filter: alpha(opacity=85)
+
+ul, ol
+  list-style: none
+  margin: 0px
+  padding: 0px
+
+img 
+  display: block
+
+h1, h2, h3, h4
+  font-family: $primary-font
+  font-weight: 900
+  
+h1
+  font-size: 36px
+  line-height: 36px
+
+h2
+  font-size: 28px
+  line-height: 28px
+
+h3
+  font-size: 32px
+  font-weight: 900
+  line-height: 32px
+
+h4
+  font-size: 15px
+  font-style: italic
+  line-height: 15px
+  text-transform: uppercase
+
+p
+  font: 1em $primary-font
+  font-weight: normal
+  line-height: 24px
+
+  a
+    @include all-transitions
+    display: inline-block
+    position: relative
+
+    &:before 
+      @include all-transitions
+      border-bottom: 2px solid $primary-color
+      bottom: -1px
+      box-sizing: content-box
+      content: ''
+      height: 100%
+      position: absolute
+      width: 100%
+      
+    &:hover
+      color: $secondary-color
+
+    &:hover:before
+      border-color: $secondary-color
+      -webkit-transform: scale(1.1)
+      transform: scale(1.1)
+    
+small
+  font: .875em $primary-font
+  font-weight: 900
+  line-height: 24px
+
+button, .button
+  @include all-transitions
+  background-color: $background-color
+  border: 2px solid $primary-color
+  color: $primary-color
+  font: 1.125em $primary-font
+  font-weight: 900
+  margin-left: 30px
+  outline: none
+  padding: 15px 47px
+  text-align: center
+
+  &:hover, &:focus
+    border-color: $secondary-color
+    color: $secondary-color
+    
+  
+input, textarea
+  @include all-transitions
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  background: $background-color
+  border: 2px solid $primary-color
+  border-radius: 0
+  color: $primary-color
+  font: 1.125em $primary-font
+  font-weight: 900
+  
+  &:focus
+    border-color: $secondary-color
+    color: $secondary-color
+    outline: none
+  
+  &::-webkit-input-placeholder
+    color: $primary-color
+    font-weight: 900
+    font: 1.125em $primary-font
+  
+label
+  display: block
+  font: 1.125em $primary-font
+  font-weight: 900
+  
+.wrapper-dropdown
+  @include all-transitions
+  border: 2px solid $primary-color
+  background: $background-color
+  color: $primary-color
+  cursor: pointer
+  font: 1.125em $primary-font
+  font-weight: 900
+  height: 56px
+  margin-bottom: 20px
+  position: relative
+  width: 380px
+
+  select
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+    background: none
+    border: 0px
+    height: 100%
+    padding: 0px 47px 0px 10px
+    width: 100%
+
+    &:focus
+      box-shadow: none
+      outline: none
+
+  .downarrow
+    @include all-transitions
+    content: ''
+    fill: $primary-color
+    height: 8px
+    margin-top: -4px
+    position: absolute
+    right: 20px
+    top: 50%
+    width: 13px
+  
+  &:hover
+    border-color: $secondary-color
+    
+    .downarrow
+      fill: $secondary-color
+    
+.errors
+  color: $secondary-color
+  font-size: 18px
+  margin-bottom: 20px
+  padding: 0px
+
+  li
+    margin-bottom: 8px
+    
+    &:last-child
+      margin-bottom: 0
+    
+.store_tagline
+  margin: 0 auto
+  max-width: 1300px
+  width: 100%
+  
+  .text
+    display: none
+  
+
+.flexslider 
+  border: 0px
+  border-radius: 0px
+  -webkit-border-radius: 0px
+  -moz-border-radius: 0px
+  margin-bottom: 0
+
+.flex-direction-nav  
+  display: none
+
+
+.flex-control-nav 
+  position: absolute
+  bottom: 10px
+  z-index: 10
+  right: 15px
+  width: auto
+
+.flex-control-paging li a, .flex-control-paging li a.flex-active, .flex-control-paging li a:hover  
+  text-indent: 0
+  background: none
+  box-shadow: none
+  padding: 1px 3px
+  font-weight: 900
+
+
+.container 
+  margin: auto
+  max-width: 1200px
+  padding: 10px 15px
+  width: 100%
+
+
+header  
+  
+  height: 90px
+
+  .container  
+    @include pie-clearfix
+    height: 100%
+
+    .logo 
+      @include vertical-align 
+      float: left
+      max-width: 50%
+      
+      a  
+        display: block
+        
+        h1  
+          margin: 0
+        
+      
+    
+    .text  
+      
+      a  
+        height: 100%
+      
+    
+    
+    .image  
+      display: block
+      height: 100%
+      
+      a  
+        display: block
+        height: 100%
+        
+        img  
+          display: block
+          height: 100%
+        
+      
+    
+    .top_nav 
+      @include vertical-align
+      float: right
+      max-width: 50%
+      
+      .nav_items 
+        @include pie-clearfix 
+        font-size: 19px
+        font-weight: 900
+        line-height: 19px
+        margin: 0
+        padding: 0
+        
+        li  
+          float: right
+          margin-left: 15px
+          
+          a  
+            display: inline-block
+            padding-right: 5px
+            position: relative
+            
+            &:before
+              @include slide-rollover 
+            
+            &:hover
+              @include no-opacity 
+            
+            &:hover:before
+              max-width: 100% 
+            
+            .up 
+              @include all-transitions
+              width: 12px
+              height: 17px
+              fill: $primary-color
+              position: relative
+              top: 3px
+              right: -5px
+              
+            
+          
+        
+        .open_cart svg 
+          fill: $primary-color 
+          height: 26px
+          width: 36px
+          float: left
+          margin-top: -3px
+        
+      
+    
+  
+
+.mobile_nav 
+  display: none
+  text-align: center
+  
+  ul  
+    
+    li  
+      display: inline-block
+      
+      a  
+        display: inline-block
+        font-size: 19px
+        font-weight: 900
+        line-height: 19px
+        padding-right: 5px
+        position: relative
+        
+        &:before
+          @include slide-rollover 
+        
+        &:hover
+          @include no-opacity 
+        
+        &:hover:before
+          max-width: 100% 
+        
+        .up 
+          @include all-transitions
+          width: 12px
+          height: 17px
+          fill: $primary-color
+          position: relative
+          top: 3px
+          right: -5px
+          
+        
+      
+    
+  
+
+.dropdown_links 
+  text-align: center
+  
+  ul 
+    display: none
+    padding: 10px 0 20px
+    
+    li  
+      display: inline-block
+
+      a 
+        display: block
+        font-size: 17px
+        line-height: 17px
+        padding: 2px 7px
+      
+    
+  
+
+section.content h2  
+  margin-top: 25px
+
+footer 
+  background-color: $primary-color
+  bottom: 0
+  color: $background-color
+  font-size: 19px
+  line-height: 19px
+  height: 100px
+  left: 0
+  position: absolute
+  width: 100%
+  
+  .container  
+    @include pie-clearfix
+    padding-top: 15px
+  
+  
+  a  
+    color: $background-color
+  
+  
+  .footer_section
+    display: inline-block
+    max-width: 33%
+    padding-top: 10px
+    width: 33%
+    
+  .footer_credit
+    text-align: right
+
+.social_links  
+  text-align: center 
+  
+  li  
+    display: inline-block
+    margin: 0 10px
+    
+    svg  
+      height: 24px
+      width: 24px
+      fill: $background-color
+    
+  
+
+
+#maintenance, #checkout 
+  position: absolute
+  width: 100%
+  max-width: none
+  height: 100%
+  text-align: center
+  padding: 150px 15px
+  
+  h1  
+    font-size: 2em
+  
+  span  
+    margin-right: 2px
+  
+
+
+.page_content  
+  @include pie-clearfix
+  padding-bottom: 55px
+
+
+.custom .page_content  
+  max-width: 800px
+  
+  img  
+    max-width: 100%
+  
+
+

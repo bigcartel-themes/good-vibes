@@ -92,10 +92,10 @@
     
     <footer>
       <div class="container">
-        <div class="footer_name">
+        <div class="footer_section footer_name">
           &copy; {{ 'Today' | date: '%Y' }} {{ store.name }}
         </div>
-        <div class="footer_social">
+        <div class="footer_section footer_social">
           {% if theme.twitter_username != blank or theme.facebook_username != blank or theme.tumblr_username != blank or theme.instagram_username != blank %}
           <ul class="social_links">
             {% if theme.twitter_username != blank %}
@@ -148,7 +148,7 @@
           </ul>
           {% endif %}
         </div>
-        <div class="footer_credit">
+        <div class="footer_section footer_credit">
           {{ bigcartel_credit}}
         </div>
       </div>
