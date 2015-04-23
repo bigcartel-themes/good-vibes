@@ -2,7 +2,6 @@
   *= require_directory ./stylesheets/vendor
   *= require stylesheets/layout
   *= require stylesheets/cart
-  *= require stylesheets/home
   *= require stylesheets/product
   *= require stylesheets/products
   *= require stylesheets/media_queries

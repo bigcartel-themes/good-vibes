@@ -1,12 +1,10 @@
 @import 'compass/css3'
 @import 'compass'
 
-// Colors
 $primary-color: #{'{{ theme.primary_color }}'}
 $secondary-color: #{'{{ theme.secondary_color }}'}
 $background-color: #{'{{ theme.background_color }}'}
 
-// Fonts
 $fallback-fonts: "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif
 $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts
 
@@ -17,18 +15,19 @@ $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts
   transition: all 0.3s ease-in-out
 
 @mixin primary-button
+  border: 2px solid $primary-color
+  color: $primary-color
   font: 1.125em $primary-font
   font-weight: 900
-  color: $primary-color
-  border: 2px solid $primary-color
   padding: 15px 47px
   text-align: center
 
   &:hover 
-    opacity: 1
     filter: alpha(opacity=100)
-  
+    opacity: 1
+    
 @mixin slide-rollover
+  @include all-transitions
   position: absolute
   top: 0
   left: 0
@@ -40,14 +39,11 @@ $primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts
   border-bottom: 2px solid $secondary-color
   color: transparent
   content: attr(data-hover)
-  -webkit-transition: all 0.3s ease-in-out
-  -moz-transition: all 0.3s ease-in-out
-  transition: all 0.3s ease-in-out
 
 @mixin no-opacity
-  opacity: 1
   filter: alpha(opacity=100)
-
+  opacity: 1
+  
 @mixin vertical-align
   position: relative
   top: 50%
