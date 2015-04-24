@@ -16,8 +16,9 @@
 
   .add-to-cart 
     @include all-transitions
+    height: 56px
     max-width: 290px
-    padding-left: 15px
+    padding: 15px
     position: relative 
     text-align: left
     width: 290px    
@@ -26,12 +27,12 @@
       @include all-transitions
       border-left: 2px solid $primary-color
       color: $primary-color
+      float: right
+      padding: 0 0 0 15px
+    
+    span
       height: 30px
       margin-top: -15px
-      padding: 3px 20px
-      position: absolute
-      right: 0
-      top: 50%
     
     &:hover small, &:focus small 
       border-left: 2px solid $secondary-color
