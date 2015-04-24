@@ -1,18 +1,18 @@
 {
   "name": "Good Vibes",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "images": [
     {
       "variable": "logo",
-      "label": "Logo",
-      "description": "Add your logo to the header. 80px by 80px is recommended"
+      "label": "Header Logo",
+      "description": "80px by 80px image recommended"
     }
   ],
   "image_sets": [
     {
       "variable": "slideshow",
       "label": "Homepage Slideshow",
-      "description": "1440px by 360px images recommended",
+      "description": "1300px by 400px images recommended",
       "defaults": [
         "test-banner.jpg", 
         "test-banner.jpg", 
@@ -33,7 +33,7 @@
     {
       "variable": "background_color",
       "label": "Background Color",
-      "default": "#EAEAEA"
+      "default": "#F9F9F9"
     },
     {
       "variable": "primary_color",
@@ -84,7 +84,7 @@
       "variable": "store_tagline",
       "label": "Store Tagline",
       "type": "text",
-      "description": "This tagline appears over slideshow and or banner area of shop. Highly recommended for this theme."
+      "description": "This tagline appears over your slideshow"
     },
     {
       "variable": "share_buttons",
