@@ -5,6 +5,9 @@
   padding-right: 75px
   width: 50%
   
+  .status
+    color: $secondary-color
+  
   .product_form  
     @include pie-clearfix
   
@@ -21,7 +24,10 @@
     padding: 15px
     position: relative 
     text-align: left
-    width: 290px    
+    width: 290px
+    
+    >span
+      @include vertical-align    
 
     small 
       @include all-transitions
@@ -29,10 +35,6 @@
       color: $primary-color
       float: right
       padding: 0 0 0 15px
-    
-    span
-      height: 30px
-      margin-top: -15px
     
     &:hover small, &:focus small 
       border-left: 2px solid $secondary-color
@@ -94,3 +96,8 @@
     
     svg 
       fill: $secondary-color
+      
+.fixed
+  position: fixed
+  right: 50%
+  margin-right: -50%

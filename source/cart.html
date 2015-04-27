@@ -51,8 +51,8 @@
             {% endif %}
             {% if cart.discount.enabled %}
               <div class="cart_discounts">
+                <label class="cart_discount_label" for="cart_discount_code">Discount code</label>
                 {% if cart.discount.pending %}
-                  <label class="cart_discount_label" for="cart_discount_code">Discount code</label>
                   {{ cart.discount | discount_code_input }}
                 {% elsif cart.discount.free_shipping %}
                   <p>{{ cart.discount.name }} applied!</p>
@@ -72,9 +72,9 @@
                 Shipping
                 {% if cart.shipping.pending %}
                   {% if cart.country %}
-                    <span>Select another country</span>
+                    <span class="another_country">Select another country</span>
                   {% else %}
-                    <span>Select country</span>
+                    <span class="select_country">Select country</span>
                   {% endif %}
                 {% else %}
                   <span>{{ cart.shipping.amount | money_with_sign }}</span>

@@ -60,6 +60,7 @@
   
   .wrapper-dropdown  
     height: 48px
+    margin-bottom: 0
     width: 100%
   
   #cart_discount_code  
@@ -69,7 +70,7 @@
   
 .cart_shipping_discounts  
   @include pie-clearfix
-  margin-top: 20px
+  margin: 20px 0
   
   .cart_shipping  
     float: left
@@ -77,17 +78,24 @@
   
   .cart_discounts  
     float: right
-    width: 47%
     text-align: left
-    
+    width: 47%
+
     input  
       width: 100%
-
+      
+    p
+      font-size: 18px
+      font-weight: 900px
+      line-height: 48px
+      margin: 0
+      
 .cart_items 
   padding: 0
   border-top: 2px solid $primary-color
 
-  li 
+  li
+    @include pie-clearfix
     display: block
     height: 144px
     overflow: hidden
@@ -119,7 +127,6 @@
       margin: 0
       max-width: 250px
       padding: 0
-      text-transform: normal
       width: auto
       
       a  
@@ -130,12 +137,12 @@
           font-size: 20px
           line-height: 25px
           margin: 0
-        
 
         em 
           display: block
           font-style: normal
           font-size: 18px
+          font-weight: normal
           line-height: 25px
         
       
@@ -151,7 +158,7 @@
         display: inline-block
 
         &.quantity 
-          width: 88px
+          width: 70px
           
           input[type='text'] 
             height: 56px
