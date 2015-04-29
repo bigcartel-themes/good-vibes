@@ -1,3 +1,5 @@
+@import "mixins"
+
 #contact 
   .page_content  
     max-width: 800px
@@ -22,8 +24,22 @@
   
   .contact_name, .contact_spam, .contact_send  
     display: inline-block
+    position: relative
     width: 48%
+    
+  #captcha
+    &:active, &:focus
+      #captcha_image
+        border-left: 2px solid $secondary-color
+
+  #captcha_image
+    position: absolute
+    bottom: 2px
+    right: 2px
+    border-left: 2px solid $primary-color
+    height: 52px
   
   .contact_email  
     float: right
     width: 48%
+  

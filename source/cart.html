@@ -1,7 +1,6 @@
 <div class="cart_holder">
   <div class="cart_content">
     <h2>{{ page.name }}</h2>
-    
     {% if errors != blank %}
       <ul class="errors">
         {% for error in errors %}
@@ -9,7 +8,7 @@
         {% endfor %}
       </ul>
     {% endif %}
-          
+        
     {% if cart.items != blank %}
       <form method="post" action="/cart" id="cart_form" class="cart_form">
         <ul class="cart_items">
@@ -20,17 +19,15 @@
               </a>
               <div class="product_details">
                 <a href="{{ item.product.url }}">
-                  <h3>
-                    {{ item.product.name }}
-                    {% unless item.product.has_default_option %}
-                      <em>{{ item.option.name }}</em>
-                    {% endunless %}
-                  </h3>
+                  {{ item.product.name }}
+                  {% unless item.product.has_default_option %}
+                    <em>{{ item.option.name }}</em>
+                  {% endunless %}
                 </a>
               </div>
               <div class="product_actions">
                 <div class="quantity">{{ item | item_quantity_input }}</div>
-                <div class="price"><h3>{{ item.price | money_with_sign }}</h3></div>
+                <div class="price">{{ item.price | money_with_sign }}</div>
                 <div class="remove">
                   <a href="#" data-item-id="{{ item.id }}"><svg version="1.1" class="remove_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 75.6 612 651.2" enable-background="new 0 75.6 612 651.2" xml:space="preserve"><polygon points="612,175.7 517.4,75.6 306,303.7 94.6,75.6 0,175.7 213.8,401.2 0,626.6 94.6,726.8 306,498.6 517.4,726.8 612,626.6 398.2,401.2 "/></svg></a>
                 </div>
@@ -45,7 +42,7 @@
                 <label class="cart_shipping_label" for="country">Shipping</label>
                 <div class="wrapper-dropdown">
                   {{ store.country | country_select }}
-                  <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
+                  <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg>
                 </div>
               </div>
             {% endif %}
@@ -95,7 +92,7 @@
           <h3>Total  <span>{{ cart.total | money_with_sign }}</span></h3>
           <a class="button continue_shopping" href="/products">Continue Shopping</a>
           <button type="submit" name="update" title="Checkout" id="update">Update cart</button>
-          <button type="submit" name="checkout" title="Checkout">Checkout</button>
+          <button type="submit" name="checkout" title="Checkout" class="checkout_btn">Checkout</button>
         </div>
       </form>
     {% else %}

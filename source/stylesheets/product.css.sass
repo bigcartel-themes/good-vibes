@@ -5,6 +5,9 @@
   padding-right: 75px
   width: 50%
   
+  @media screen and (max-width: $break-large)
+    padding-right: 40px
+  
   .status
     color: $secondary-color
   
@@ -15,11 +18,12 @@
     float: left
     height: 56px
     padding: 10px
-    width: 60px
+    width: 50px
 
   .add-to-cart 
     @include all-transitions
     height: 56px
+    margin-left: 15px
     max-width: 290px
     padding: 15px
     position: relative 
@@ -27,16 +31,21 @@
     width: 290px
     
     >span
-      @include vertical-align    
+      @include vertical-align
+      position: absolute
+    
+    .add_text
+      left: 15px
+      width: 75%   
 
-    small 
+    .price_info 
       @include all-transitions
       border-left: 2px solid $primary-color
       color: $primary-color
-      float: right
-      padding: 0 0 0 15px
+      padding-left: 10px
+      right: 15px
     
-    &:hover small, &:focus small 
+    &:hover .price_info, &:focus .price_info 
       border-left: 2px solid $secondary-color
       color: $secondary-color
 

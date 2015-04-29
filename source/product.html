@@ -38,7 +38,7 @@
       <input autocomplete="off" type="text" value="1" id="quantity" data-default-price="{{ product.default_price }}">
       <button class="button add-to-cart" type="submit" data-added-text="Added!">
         <span class="add_text">Add to Cart</span>
-        <small>{{ product.default_price | money_with_sign }}</small>
+        <span class="price_info">{{ product.default_price | money_with_sign }}</small>
       </button>
     </form>
   {% endif %}

@@ -20,18 +20,16 @@
   <body id="{{ page.permalink }}" class="{{ page.category }}">
     <header>
       <div class="container">
-        <div class="logo {% if theme.logo != blank %}image{% else %}text{% endif %}">
-          <a href="/" title="{{ store.name | escape }}">
-            {% if theme.logo != blank %}
-              <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-            {% else %}
-              <h1>{{ store.name }}</h1>
-            {% endif %}
-          </a>
+        <div class="brand">
+          {% if theme.images.logo.url != blank %}
+            <a class="logo" href="/"></a>
+          {% else %}
+            <a class="text" href="/">{{ store.name }}</a>
+          {% endif %}
         </div>
         <div class="top_nav">
           <ul class="nav_items">
-            <li class="open_cart"><a href="/cart"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 28" enable-background="new 0 0 30 28" xml:space="preserve"><g><path d="M26.4,13.5L30,0H0v2.3h4.6l0,10h0v7.5h20.8v-2.3H7v-4.1H26.4z M26.9,2.3l-2.4,8.9H7l0-8.9H26.9z"/><path class="cart-icon" d="M8.2,21.4c-1.9,0-3.4,1.5-3.4,3.3S6.4,28,8.2,28s3.4-1.5,3.4-3.3S10.1,21.4,8.2,21.4z M8.2,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C9.6,25.5,9,26.1,8.2,26.1z"/><path class="cart-icon" d="M21.7,21.4c-1.9,0-3.4,1.5-3.4,3.3s1.5,3.3,3.4,3.3s3.4-1.5,3.4-3.3S23.6,21.4,21.7,21.4z M21.7,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C23.1,25.5,22.5,26.1,21.7,26.1z"/></g></svg> <span class="header_cart_details">{{ cart.item_count | pluralize: 'Item', 'Items' }}: {{ cart.total | money_with_sign }}</span></a></li>
+            <li class="open_cart"><a href="/cart"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 28" enable-background="new 0 0 30 28" xml:space="preserve"><g><path d="M26.4,13.5L30,0H0v2.3h4.6l0,10h0v7.5h20.8v-2.3H7v-4.1H26.4z M26.9,2.3l-2.4,8.9H7l0-8.9H26.9z"/><path class="cart-icon" d="M8.2,21.4c-1.9,0-3.4,1.5-3.4,3.3S6.4,28,8.2,28s3.4-1.5,3.4-3.3S10.1,21.4,8.2,21.4z M8.2,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C9.6,25.5,9,26.1,8.2,26.1z"/><path class="cart-icon" d="M21.7,21.4c-1.9,0-3.4,1.5-3.4,3.3s1.5,3.3,3.4,3.3s3.4-1.5,3.4-3.3S23.6,21.4,21.7,21.4z M21.7,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C23.1,25.5,22.5,26.1,21.7,26.1z"/></g></svg> <span class="header_cart_details">{{ cart.item_count | pluralize: 'Item', 'Items' }}<span class="hide_mobile">: {{ cart.total | money_with_sign }}</span></span></a></li>
             <li class="open_pages"><a href="#" data-hover="Pages">Pages <svg class="up" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg></a></li>
             <li class="open_shop"><a href="#" data-hover="Shop">Shop <svg class="up" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg></a></li>
           </ul>
@@ -66,7 +64,7 @@
       </div>
       {% if page.permalink == 'home' %}
         {% if theme.store_tagline != blank or theme.image_sets.slideshow.size > 0%}
-          <div class="store_tagline">
+          <div class="store_tagline {% if theme.image_sets.slideshow.size == 0 %}no_slideshow{% endif %}">
             <div class="flexslider">
               {% if theme.store_tagline != blank %}<div class="text"><h2>{{ theme.store_tagline }}</h2></div>{% endif %}
               {% if theme.image_sets.slideshow.size > 0 %}

@@ -89,11 +89,6 @@ p
       -webkit-transform: scale(1.1)
       transform: scale(1.1)
     
-small
-  font: .875em $primary-font
-  font-weight: 900
-  line-height: 24px
-
 button, .button
   @include all-transitions
   background-color: $background-color
@@ -101,7 +96,6 @@ button, .button
   color: $primary-color
   font: 1.125em $primary-font
   font-weight: 900
-  margin-left: 30px
   outline: none
   padding: 15px 47px
   text-align: center
@@ -160,10 +154,17 @@ label
     height: 100%
     padding: 0px 47px 0px 10px
     width: 100%
-
+    
+    option
+      background-color: #FFF
+      color: #000
+      
     &:focus
       box-shadow: none
       outline: none
+      
+    &::-ms-expand
+      display: none
 
   .downarrow
     @include all-transitions
@@ -215,11 +216,15 @@ label
       line-height: 36px
       margin: 0
       padding: 0
-  
 
-.flexslider 
+.no_slideshow
+  height: 300px
+  
+.flexslider
+  background-color: $secondary-color
   border: 0px
   border-radius: 0px
+  height: 100%
   -webkit-border-radius: 0px
   -moz-border-radius: 0px
   margin-bottom: 0
@@ -248,10 +253,11 @@ label
   max-width: 1200px
   padding: 10px 15px
   width: 100%
-
+  
+  @media screen and (max-width: $break-large)
+    padding: 10px
 
 header  
-  
   height: 90px
 
   .container  
@@ -259,40 +265,32 @@ header
     height: 100%
     min-height: 50px
 
-    .logo 
+    .brand 
       @include vertical-align 
       float: left
       max-width: 50%
       
-      a  
+      .text
         display: block
-        
-        h1  
-          margin: 0
-        
+        float: left
+        font-size: 28px
+        font-weight: 900
+        width: 100%
+        word-wrap: break-word
       
-    
-    .text  
-      
-      a  
-        height: 100%
-      
-    
-    
-    .image  
-      display: block
-      height: 100%
-      
-      a  
+      .logo
         display: block
-        height: 100%
-        
-        img  
-          display: block
+        height: 80px
+        width: 500px
+        background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url }}\") {% else %} none {% endif %}"}
+        background-size: contain
+        background-position: center left
+        background-repeat: no-repeat
+      
+        img 
           height: 100%
-        
-      
-    
+          width: auto
+
     .top_nav 
       @include vertical-align
       float: right
@@ -312,7 +310,7 @@ header
           
           a  
             display: inline-block
-            padding-right: 5px
+            padding-left: 5px
             position: relative
             
             &:before
@@ -332,20 +330,19 @@ header
               position: relative
               top: 3px
               right: -5px
-              
+        
+        .open_cart
+          svg 
+            fill: $primary-color 
+            height: 26px
+            width: 36px
+            float: left
+            margin-top: -3px
             
-          
+          &:hover svg
+            @include all-transitions
+            fill: $secondary-color
         
-        .open_cart svg 
-          fill: $primary-color 
-          height: 26px
-          width: 36px
-          float: left
-          margin-top: -3px
-        
-      
-    
-  
 
 .mobile_nav 
   display: none
@@ -382,11 +379,6 @@ header
           top: 3px
           right: -5px
           
-        
-      
-    
-  
-
 .dropdown_links 
   text-align: center
   
@@ -403,10 +395,7 @@ header
         line-height: 17px
         padding: 2px 7px
       
-    
-  
-
-section.content h2  
+section.content h2 
   margin-top: 25px
 
 footer 
@@ -424,10 +413,8 @@ footer
     @include pie-clearfix
     padding-top: 15px
   
-  
-  a  
+  a, a:hover, a:active, a:focus
     color: $background-color
-  
   
   .footer_section
     display: inline-block

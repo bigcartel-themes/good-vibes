@@ -1,73 +1,42 @@
 @import "mixins"
 
-@media screen and (max-width: 1200px) 
-  .product_list li a figure img 
-    width: 55% 
-  
-@media screen and (max-width: 1040px) 
+@media screen and (max-width: $break-extra-large) 
   .product_list li a figure img 
     width: 50% 
   
-@media screen and (max-width: 945px) 
-  .product_list li a figure img 
-    width: 43% 
-  
-  .product_list li a figure figcaption h3 
-    font-size: 1.7em
-  
-  .logo h2
-    max-width: 400px 
-  
-  .category_name 
-    font-size: 1.2em
-    margin-top: 15px
+@media screen and (max-width: $break-large) 
+  .container
+    padding: 10px
     
-@media screen and (max-width: 910px) 
   .product_list li a figure img 
     width: 100% 
-  
-  .product_list li a figure figcaption h3 
-    margin-bottom: 0px
-  
+    
   .product_list li a figure figcaption 
     max-width: 100%
     margin-left: 0px
     
+  .product_list li a figure figcaption h3 
+    font-size: 1.7em
+    margin-bottom: 0px
+  
   .product_details
     padding-right: 40px
     
   .product_details .add-to-cart
     width: 74%
-    
-  .product_details input[type="text"]
-    width: 17%
-    
-  header .container .logo a h1 
-    margin: 0
-    font-size: 30px
-    line-height: 30px
 
-@media screen and (max-width: 800px)
-  .container
-    padding: 10px
-    
+@media screen and (max-width: $break-medium)
+
+  .store_tagline
+    margin-top: 25px
+
   .flex-control-nav
     display: none
     
-  header .container .logo 
+  header .container .brand, header .container .top_nav 
     max-width: 50%
     width: auto
-  
-  header .container .top_nav 
-    max-width: 50%
-  
-  header .nav 
-    float: none
-    text-align: center
-    width: 100%
-    clear: both
-    margin-bottom: 20px
-    
+
   .mobile_nav 
     display: block
     
@@ -83,10 +52,7 @@
     display: none 
   .cart_items li a.product_image 
     max-width: 60px
-  
-  header .container .top_nav .nav_items li a
-    padding-right: 0
-  
+
   .cart_items li a.product_image img 
     max-width: 60px
   
@@ -97,10 +63,10 @@
     width: 230px
   
   .cart_items li .product_actions div.price 
-    width: 90px
+    width: 65px
   
   .cart_items li .product_actions div.remove 
-    width: 45px
+    width: 30px
   
   .product_details 
     float: none
@@ -114,11 +80,8 @@
     padding: 0px
     width: 100%
     
-  .product_details input[type="text"]
-    width: 60px
-  
   .product_list li a figure figcaption h3 
-    font-size: 1.5em
+    font-size: 1.4em
     
   footer
     height: auto
@@ -131,16 +94,20 @@
       text-align: center
       width: 100%
   
-@media screen and (max-width: 640px) 
-  .product_list li a figure figcaption h3 
-    font-size: 1.2em
   
-  header .container .logo a h1
+  header .container .brand, header .container .top_nav
+    top: 40%
+  
+@media screen and (max-width: $break-small) 
+  .product_list li a figure figcaption h3 
+    font-size: 1.1em
+  
+  header .container .brand .text
     font-size: 20px
     line-height: 20px
     
   header .container .top_nav .nav_items
-    font-size: 15px
+    font-size: 17px
     line-height: 15px
     
   header .container .top_nav .nav_items .open_cart svg
@@ -158,7 +125,20 @@
   .contact button
     margin-left: 0 !important 
  
-@media screen and (max-width: 580px) 
+@media screen and (max-width: $break-extra-small)
+  .hide_mobile
+    display: none
+
+  .mobile_nav ul li a
+    font-size: 17px
+
+  header .container .brand .logo
+    height: 60px
+    width: 100px
+    
+  .store_tagline .text h2
+    font-size: 18px
+    
   body 
     margin-bottom: 150px
   
@@ -167,9 +147,17 @@
     margin-left: 0
   
   .wrapper-dropdown
-    width: 100% 
+    width: 100%
+  
+  .cart_shipping_discounts
+  
+    .cart_shipping, .cart_discounts
+      float: none
+      width: 100%
     
-@media screen and (max-width: 500px) 
+    .cart_discounts
+      margin-top: 20px
+
   .product_list li 
     width: 100%
   
@@ -191,10 +179,13 @@
       padding: 9px 0
     
   button, .button 
-    padding: 10px 30px
-  
-  .cart_items li 
-    height: 100px
+    padding: 10px 25px
+
+  .no_slideshow
+    height: 150px
+    
+  .cart_items li
+    font-size: 14px
   
   .cart_items li a.product_image 
     display: none
@@ -203,19 +194,28 @@
     max-width: 40px
   
   .cart_items li .product_details 
-    height: 100px
     width: 38%
-  
-  .cart_items li .product_details a h3 
-    font-size: 15px
-    line-height: 23px
-  
+    
+  .cart_items li .product_actions div.quantity input[type='text']
+    font-size: 16px
+    height: 44px
+    width: 44px
+    
+  .cart_items li .product_actions div.remove a svg
+    height: 14px
+    width: 14px
+
   .cart_items li .product_actions 
     width: 62%
   
-  .product_details input[type="text"] 
+  .product_details input[type="text"]
+    font-size: 15px
     float: left
   
   .product_details .add-to-cart
+    font-size: 15px
     margin-left: 14px
+    
+  button.checkout_btn
+    margin-left: 10px
   
