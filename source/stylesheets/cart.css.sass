@@ -41,9 +41,13 @@
 
       &:last-of-type  
         margin-bottom: 30px
+        
   .checkout_btn
     margin-left: 30px
     
+    @media screen and (max-width: $break-extra-small)
+      margin-left: 10px
+      
   label 
     display: block
     margin-bottom: 10px
@@ -75,11 +79,20 @@
   .cart_shipping  
     float: left
     width: 47%
+    
+    @media screen and (max-width: $break-extra-small)
+      float: none
+      width: 100%
   
   .cart_discounts  
     float: right
     text-align: left
     width: 47%
+    
+    @media screen and (max-width: $break-extra-small)
+      float: none
+      margin-top: 20px
+      width: 100%
 
     input  
       width: 100%
@@ -104,6 +117,9 @@
     overflow: hidden
     border-bottom: 2px solid $primary-color
     
+    @media screen and (max-width: $break-extra-small)
+      font-size: 15px
+    
     a.product_image  
       display: inline
       float: left
@@ -117,6 +133,9 @@
       @media screen and (max-width: $break-medium)
         max-width: 60px
       
+      @media screen and (max-width: $break-extra-small)
+        display: none
+        
       img 
         display: block
         max-height: 120px
@@ -141,6 +160,9 @@
       @media screen and (max-width: $break-medium)
         max-width: 150px
       
+      @media screen and (max-width: $break-extra-small)
+        width: 38%
+      
       a  
         @include vertical-align
         display: block
@@ -151,6 +173,9 @@
           font-size: 18px
           font-weight: normal
           line-height: 25px
+          
+          @media screen and (max-width: $break-extra-small)
+            font-size: 14px
         
       
     
@@ -163,6 +188,9 @@
       
       @media screen and (max-width: $break-medium)
         max-width: 230px
+        
+      @media screen and (max-width: $break-extra-small)
+        width: 62%
       
       div 
         display: inline-block
@@ -175,6 +203,11 @@
             text-align: center
             text-indent: 0
             width: 56px
+            
+            @media screen and (max-width: $break-extra-small)
+              font-size: 16px
+              height: 44px
+              width: 44px
 
         &.price 
           width: 180px
@@ -196,6 +229,10 @@
               height: 16px
               width: 16px
               position: relative
+              
+              @media screen and (max-width: $break-extra-small)
+                height: 14px
+                width: 14px
             
             &:hover svg  
               fill: $secondary-color

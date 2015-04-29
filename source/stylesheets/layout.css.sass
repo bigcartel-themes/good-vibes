@@ -143,6 +143,9 @@ label
   margin-bottom: 20px
   position: relative
   width: 380px
+  
+  @media screen and (max-width: $break-extra-small)
+    width: 100%
 
   select
     appearance: none
@@ -218,9 +221,16 @@ label
       line-height: 36px
       margin: 0
       padding: 0
+      
+      @media screen and (max-width: $break-extra-small)
+        font-size: 18px
+        line-height: 18px
 
 .no_slideshow
   height: 300px
+  
+  @media screen and (max-width: $break-extra-small)
+    height: 150px
   
 .flexslider
   background-color: $secondary-color
@@ -300,6 +310,10 @@ header
         background-size: contain
         background-position: center left
         background-repeat: no-repeat
+        
+        @media screen and (max-width: $break-extra-small)
+          height: 60px
+          width: 100px
       
         img 
           height: 100%
@@ -372,7 +386,10 @@ header
           &:hover svg
             @include all-transitions
             fill: $secondary-color
-        
+
+.hide_mobile
+  @media screen and (max-width: $break-extra-small)
+    display: none        
 
 .mobile_nav 
   display: none
@@ -396,6 +413,9 @@ header
         line-height: 19px
         padding-right: 5px
         position: relative
+        
+        @media screen and (max-width: $break-extra-small)
+          font-size: 18px
         
         &:before
           @include slide-rollover 
@@ -427,12 +447,18 @@ header
     
     li  
       display: inline-block
+      
+      @media screen and (max-width: $break-extra-small)
+        display: block
 
       a 
         display: block
         font-size: 17px
         line-height: 17px
         padding: 2px 7px
+        
+        @media screen and (max-width: $break-extra-small)
+          padding: 9px 0
       
 section.content h2 
   margin-top: 25px
@@ -484,9 +510,6 @@ footer
       width: 24px
       fill: $background-color
     
-  
-
-
 #maintenance, #checkout 
   position: absolute
   width: 100%
@@ -501,8 +524,6 @@ footer
   span  
     margin-right: 2px
   
-
-
 .page_content  
   @include pie-clearfix
   padding-bottom: 55px
@@ -513,6 +534,3 @@ footer
   
   img  
     max-width: 100%
-  
-
-

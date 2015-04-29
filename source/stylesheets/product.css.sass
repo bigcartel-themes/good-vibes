@@ -12,7 +12,9 @@
     float: none
     padding: 0px
     width: 100%
-  
+  @media screen and (max-width: $break-small)
+    margin-top: 20px
+    
   .status
     color: $secondary-color
   
@@ -24,6 +26,9 @@
     height: 56px
     padding: 10px
     width: 50px
+    
+    @media screen and (max-width: $break-extra-small)
+      font-size: 15px
 
   .add-to-cart 
     @include all-transitions
@@ -34,6 +39,10 @@
     position: relative 
     text-align: left
     width: 290px
+    
+    @media screen and (max-width: $break-extra-small)
+      font-size: 15px
+      margin-left: 13px
     
     >span
       @include vertical-align
