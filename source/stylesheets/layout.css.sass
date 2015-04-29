@@ -200,6 +200,9 @@ label
   max-width: 1300px
   width: 100%
   
+  @media screen and (max-width: $break-medium)
+    margin-top: 25px
+  
   .text
     position: absolute
     z-index: 100
@@ -239,6 +242,9 @@ label
   z-index: 10
   right: 15px
   width: auto
+  
+  @media screen and (max-width: $break-medium)
+    display: none
 
 .flex-control-paging li a, .flex-control-paging li a.flex-active, .flex-control-paging li a:hover  
   text-indent: 0
@@ -269,6 +275,11 @@ header
       @include vertical-align 
       float: left
       max-width: 50%
+      top: 40%
+      
+      @media screen and (max-width: $break-medium)
+        max-width: 50%
+        width: auto
       
       .text
         display: block
@@ -296,6 +307,11 @@ header
       float: right
       max-width: 50%
       
+      @media screen and (max-width: $break-medium)
+        max-width: 50%
+        width: auto
+        top: 40%
+      
       .nav_items 
         @include pie-clearfix 
         font-size: 19px
@@ -307,6 +323,10 @@ header
         li  
           float: right
           margin-left: 15px
+          
+        .open_pages, .open_shop
+          @media screen and (max-width: $break-medium)
+            display: none
           
           a  
             display: inline-block
@@ -348,10 +368,16 @@ header
   display: none
   text-align: center
   
+  @media screen and (max-width: $break-medium)
+    display: block
+  
   ul  
     
     li  
       display: inline-block
+      
+      @media screen and (max-width: $break-medium)
+        padding: 0 10px
       
       a  
         display: inline-block
@@ -385,6 +411,9 @@ header
   ul 
     display: none
     padding: 10px 0 20px
+    
+    @media screen and (max-width: $break-medium)
+      padding-top: 25px
     
     li  
       display: inline-block
@@ -421,6 +450,14 @@ footer
     max-width: 33%
     padding-top: 10px
     width: 33%
+    
+    @media screen and (max-width: $break-medium)
+      display: block
+      margin: 18px 0
+      max-width: 100%
+      padding: 0
+      text-align: center
+      width: 100%
     
   .footer_credit
     text-align: right

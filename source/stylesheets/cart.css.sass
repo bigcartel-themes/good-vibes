@@ -112,12 +112,18 @@
       width: 100%
       @include vertical-align
       
+      @media screen and (max-width: $break-medium)
+        max-width: 60px
+      
       img 
         display: block
         max-height: 120px
         max-width: 120px
         width: auto
         margin: 0 auto
+        
+        @media screen and (max-width: $break-medium)
+          max-width: 60px
       
     .product_details  
       display: inline
@@ -129,6 +135,9 @@
       max-width: 250px
       padding: 0
       width: auto
+      
+      @media screen and (max-width: $break-medium)
+        max-width: 150px
       
       a  
         @include vertical-align
@@ -150,6 +159,9 @@
       text-align: right
       @include vertical-align
       
+      @media screen and (max-width: $break-medium)
+        max-width: 230px
+      
       div 
         display: inline-block
 
@@ -164,10 +176,16 @@
 
         &.price 
           width: 180px
+          
+          @media screen and (max-width: $break-medium)
+            width: 65px
 
         &.remove 
           width: 66px
           text-align: right
+          
+          @media screen and (max-width: $break-medium)
+            width: 30px
           
           a  
             svg 
