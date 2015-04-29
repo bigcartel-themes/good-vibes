@@ -21,15 +21,26 @@
       display: block
       margin-bottom: 10px
       
+
     button
       margin-left: 20px
     
   
-  .contact_name, .contact_spam, .contact_send  
+  .contact_name, .contact_spam, .contact_send, .contact_email 
     display: inline-block
     position: relative
     width: 48%
     
+    @media screen and (max-width: $break-small)
+      display: block
+      width: 100%
+  
+  .contact_email
+    float: right
+    
+    @media screen and (max-width: $break-small)
+      float: none
+
   #captcha
     &:active, &:focus
       #captcha_image
@@ -41,8 +52,4 @@
     right: 2px
     border-left: 2px solid $primary-color
     height: 52px
-  
-  .contact_email  
-    float: right
-    width: 48%
   

@@ -104,7 +104,6 @@ button, .button
     border-color: $secondary-color
     color: $secondary-color
     
-  
 input, textarea
   @include all-transitions
   appearance: none
@@ -288,6 +287,10 @@ header
         font-weight: 900
         width: 100%
         word-wrap: break-word
+        
+        @media screen and (max-width: $break-small)
+          font-size: 20px
+          line-height: 20px
       
       .logo
         display: block
@@ -320,6 +323,10 @@ header
         margin: 0
         padding: 0
         
+        @media screen and (max-width: $break-small)
+          font-size: 17px
+          line-height: 15px
+          
         li  
           float: right
           margin-left: 15px
@@ -358,6 +365,9 @@ header
             width: 36px
             float: left
             margin-top: -3px
+            
+            @media screen and (max-width: $break-small)
+              height: 20px
             
           &:hover svg
             @include all-transitions
