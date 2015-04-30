@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "0.0.9",
+  "version": "0.9.0",
   "images": [
     {
       "variable": "logo",
@@ -12,14 +12,7 @@
     {
       "variable": "slideshow",
       "label": "Homepage Slideshow",
-      "description": "1300px by 400px images recommended",
-      "defaults": [
-        "test-banner.jpg", 
-        "test-banner.jpg", 
-        "test-banner.jpg", 
-        "test-banner.jpg", 
-        "test-banner.jpg"
-      ]
+      "description": "1300px by 450px images recommended"
     }
   ],
   "fonts": [
@@ -46,22 +39,56 @@
       "default": "#f55253"
     }
   ],
-   "checkout": {
-    "logo": "{{ logo }}",
+  "checkout": {
+    "header_image": "{{ logo }}",
+    "title_font_size": "22px",
     "title_color": "{{ primary_color }}",
-    "title_font": "{{ primary_font }}",
-    "step_header_font": "{{ primary_font }}",
-    "background_color": "#fff",
+    "title_background_color": "transparent",
+    "background_color": "{{ background_color }}",
     "body_font": "{{ primary_font }}",
-    "input_border_radius": "0px",
-    "input_border_color": "{{ primary_color }}",
-    "input_border_width": "2px",
-    "button_background_color": "#fff",
-    "button_border_color": "{{ primary_color }}",
-    "button_border_width": "2px",
-    "button_border_radius": "0px",
-    "button_hover_border_color": "{{ secondary_color }}",
-    "link_color": "{{ secondary_color }}"
+    "body_font_size": "14px",
+    "step_border_color":"{{ secondary_color }}",
+    "step_header_color":"{{ primary_color }}",
+    "step_inactive_header_color":" {{ primary_color }}",
+    "step_background_color":"{{ background_color }}",
+    "content_background_color":"{{ background_color }}",
+    "content_banded": "true",
+    "content_header_background_color":"{{ background_color }}",
+    "content_header_color":"{{ primary_color }}",
+    "content_color":"{{ secondary_color }}",
+    "content_header_font_size":"18px",
+    "content_border_color":"transparent", 
+    "content_border_radius":"0px",
+    "error_background_color": "#ea4859",
+    "error_color": "#ffffff",
+    "error_border_radius": "0",
+    "error_border_color": "#ea4859",
+    "input_focus_color": "#000000",
+    "input_focus_background_color": "#ffffff",
+    "input_focus_border_color": "#bfbfbf",
+    "input_error_border_color": "#ea4859",
+    "input_color": "#000000",
+    "input_error_color": "#000000",
+    "input_border_color": "#bfbfbf",
+    "input_background_color": "#ffffff",
+    "input_error_background_color": "#ffffff",
+    "input_border_radius":"0px",
+    "button_color":"{{ primary_color }}",
+    "button_border_width":"2px",
+    "button_border_radius":"0px",
+    "button_hover_color":"{{ secondary_color }}",
+    "button_background_color":"transparent",
+    "button_hover_background_color":"transparent",
+    "button_border_color":"{{ primary_color }}",
+    "button_hover_border_color":"{{ secondary_color }}",
+    "link_color":"{{ primary_color }}",
+    "link_hover_color":"{{ secondary_color }}",
+    "step_header_font_size":"18px",
+    "summary_color":"{{ primary_color }}",
+    "summary_secondary_color":"{{ secondary_color }}",
+    "summary_submit_background_color":"{{ background_color }}",
+    "summary_item_border_color":"{{ primary_color }}",
+    "summary_item_list_border_color": "{{ primary_color }}"
   },
   "options": [
     {
@@ -69,17 +96,29 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 9,
+      "default": 12,
       "description": "The number of products shown per page"
+    },
+    { 
+      "variable": "product_list_layout",
+      "label": "Product List Layout",
+      "type": "select",
+      "options": [
+        ["Masonry", "masonry"],
+        ["Rows", "rows"]
+      ],
+      "default": "rows",
+      "description": "The arrangement of your products on the Home and Products pages"
     },
     {
       "variable": "featured_products",
       "label": "Featured Products",
       "type": "select",
-      "options": "1..100",
+      "options": "0..100",
       "default": 6,
-      "description": "The number of featured products"
+      "description": "The number of featured products on the Home page"
     },
+    
     {
       "variable": "store_tagline",
       "label": "Store Tagline",
@@ -97,29 +136,25 @@
       "variable": "twitter_username",
       "label": "Twitter Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "facebook_username",
       "label": "Facebook Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "tumblr_username",
       "label": "Tumblr Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "instagram_username",
       "label": "Instagram Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     }
   ]
 }
