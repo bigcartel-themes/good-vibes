@@ -6,12 +6,13 @@
   width: 50%
   
   @media screen and (max-width: $break-large)
-    padding-right: 40px
+    padding-right: 40px 
   
   @media screen and (max-width: $break-medium)
     float: none
     padding: 0px
     width: 100%
+    
   @media screen and (max-width: $break-small)
     margin-top: 20px
     
@@ -26,7 +27,17 @@
     
   .product_form  
     @include pie-clearfix
-  
+    
+  .wrapper-dropdown
+    width: 380px
+    
+    @media screen and (max-width: $break-large)
+      width: 340px
+    
+    @media screen and (max-width: $break-extra-small)
+      font-size: 15px
+      width: 298px
+    
   input[type="text"] 
     float: left
     height: 56px
@@ -35,20 +46,23 @@
     
     @media screen and (max-width: $break-extra-small)
       font-size: 15px
-
+  
   .add-to-cart 
     @include all-transitions
     height: 56px
     margin-left: 15px
-    max-width: 315px
     padding: 15px
     position: relative 
     text-align: left
     width: 315px
     
+    @media screen and (max-width: $break-large)
+      width: 275px
+    
     @media screen and (max-width: $break-extra-small)
       font-size: 15px
       margin-left: 13px
+      width: 235px
     
     >span
       @include vertical-align

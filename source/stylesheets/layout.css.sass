@@ -286,11 +286,14 @@ header
       @include vertical-align 
       float: left
       max-width: 50%
-      top: 40%
+      top: 50%
       
       @media screen and (max-width: $break-medium)
         max-width: 50%
         width: auto
+      
+      @media screen and (max-width: $break-extra-small)
+        top: 40%
       
       .text
         display: block
@@ -493,7 +496,7 @@ footer
   .footer_section
     display: inline-block
     max-width: 33%
-    padding-top: 10px
+    padding-top: 8px
     width: 33%
     
     @media screen and (max-width: $break-medium)
@@ -503,9 +506,12 @@ footer
       padding: 0
       text-align: center
       width: 100%
+  
+  .footer_social
+    padding-top: 6px
     
-.social_links  
-  text-align: center 
+.social_links
+  text-align: center
   
   li  
     display: inline-block

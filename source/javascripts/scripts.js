@@ -37,7 +37,7 @@ var updateCart = function(cart) {
 }
 
 var removeFromCart = function(itemID) {
-  Cart.removeItem(itemID, function(cart) { 
+  Cart.removeItem(itemID, function(cart) {
     updateCart(cart)
   });
 }
@@ -91,7 +91,7 @@ $(document).ready(function() {
   
   $('#quantity').keyup(function() {
     var $quantityInput = $(this)
-      , $priceDisplay = $quantityInput.closest(".product_form").find("small")
+      , $priceDisplay = $(".product_form .price_info")
       , quantity = parseInt($quantityInput.val())
       , price = $quantityInput.data("default-price");
     if (quantity > 0) { 
@@ -106,8 +106,7 @@ $(document).ready(function() {
       , addButton = $(this).find('.add-to-cart')
       , addText = $(this).find('.add_text')
       , addTextValue = addText.html()
-      , addedText = addButton.attr('data-added-text');
-    addButton.blur();
+      , addedText = addButton.data('added-text');
     Cart.addItem(itemID, quantity, function(cart) { 
       addText.html(addedText);
       if ($('.product_form .errors').length) { 
@@ -118,24 +117,30 @@ $(document).ready(function() {
       }, 1100);
       updateCart(cart);
     });
+    addButton.blur();
   });
 
   $(document).on("click", ".remove a", function(e) {
     e.preventDefault();
-    var itemID = $(this).data("item-id");
-    removeFromCart(itemID);
+    if ($("body").attr("id") == "cart") { 
+      $(this).closest('li').find('input[id$=_qty]').val(0).closest('form').submit();
+    }
+    else { 
+      var itemID = $(this).data("item-id");
+      removeFromCart(itemID);
+    }
   });
   
   $(document).on("click", ".cart_holder #update", function(e) {
-    e.preventDefault();
-    Cart.updateFromForm("cart_form", function(cart) { 
-      updateCart(cart); 
-    });
+    if ($("body").attr("id") != "cart") {
+      e.preventDefault();
+      Cart.updateFromForm("cart_form", function(cart) { 
+        updateCart(cart); 
+      });
+    }
   });
-
-  $('select').change(function(e) {
-    e.preventDefault();
-    $(this).blur();
+  $('#option').change(function(e) { 
+    $('.price_info').html(Format.money($('option:selected', this).data('option-price') * $('#quantity').val(), true, true));
   })
 });
 
