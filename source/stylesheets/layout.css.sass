@@ -19,7 +19,9 @@ body
   font-family: $primary-font
   margin: 0 0 100px
   overflow: hidden
-
+  
+  @media screen and (max-width: $break-medium)
+    margin-bottom: 160px
 
 a, a:hover, a:active, a:focus
   color: $primary-color
@@ -76,6 +78,8 @@ p
       border-bottom: 2px solid $primary-color
       bottom: -1px
       box-sizing: content-box
+      -moz-box-sizing: content-box
+      -webkit-box-sizing: content-box
       content: ''
       height: 100%
       position: absolute
@@ -236,14 +240,13 @@ label
   background-color: $secondary-color
   border: 0px
   border-radius: 0px
-  height: 100%
   -webkit-border-radius: 0px
   -moz-border-radius: 0px
+  height: 100%
   margin-bottom: 0
 
 .flex-direction-nav  
   display: none
-
 
 .flex-control-nav 
   position: absolute
@@ -262,14 +265,13 @@ label
   padding: 1px 3px
   font-weight: 900
 
-
 .container 
   margin: auto
   max-width: 1200px
-  padding: 10px 15px
+  padding: 10px 0
   width: 100%
   
-  @media screen and (max-width: $break-large)
+  @media screen and (max-width: $break-extra-large)
     padding: 10px
 
 header  
@@ -374,6 +376,7 @@ header
         
         .open_cart
           svg 
+            @include all-transitions
             fill: $primary-color 
             height: 26px
             width: 36px
@@ -384,7 +387,6 @@ header
               height: 20px
             
           &:hover svg
-            @include all-transitions
             fill: $secondary-color
 
 .hide_mobile
@@ -474,12 +476,19 @@ footer
   position: absolute
   width: 100%
   
+  @media screen and (max-width: $break-medium)
+    height: 100%
+    max-height: 200px
+  
   .container  
     @include pie-clearfix
     padding-top: 15px
   
   a, a:hover, a:active, a:focus
     color: $background-color
+
+  .footer_credit
+    text-align: right
   
   .footer_section
     display: inline-block
@@ -495,9 +504,6 @@ footer
       text-align: center
       width: 100%
     
-  .footer_credit
-    text-align: right
-
 .social_links  
   text-align: center 
   

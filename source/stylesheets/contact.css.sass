@@ -8,6 +8,16 @@
     &>div  
       margin-bottom: 30px
       text-align: left
+      
+      @media screen and (max-width: $break-small)
+        margin-bottom: 15px
+      
+    .contact_send
+      @media screen and (max-width: $break-small)
+        text-align: center
+        
+        button
+          margin-left: 0px
     
     input, textarea  
       width: 100%
@@ -32,7 +42,7 @@
     @media screen and (max-width: $break-small)
       display: block
       width: 100%
-  
+
   .contact_email
     float: right
     

@@ -110,6 +110,9 @@ $(document).ready(function() {
     addButton.blur();
     Cart.addItem(itemID, quantity, function(cart) { 
       addText.html(addedText);
+      if ($('.product_form .errors').length) { 
+        $('.product_form .errors').hide();
+      }
       setTimeout(function() {
         addText.html(addTextValue);
       }, 1100);
@@ -137,7 +140,7 @@ $(document).ready(function() {
 });
 
 $(window).load(function() { 
-  var $container = $('.product_list');  
+  var $container = $('.masonry');  
   $container.imagesLoaded(function() {
     $container.masonry();
   });

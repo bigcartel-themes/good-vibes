@@ -1,7 +1,7 @@
 <h2 class="category_name">{% if page.permalink contains '/products' %}All Products{% else %}{{ page.name }}{% endif %}</h2>
 {% paginate products from products.current by theme.products_per_page %}
   {% if products != blank %}
-    <ul class="product_list">
+    <ul class="product_list{% if theme.product_list_layout == 'masonry' %} masonry{% else %} flex{% endif %}">
       {% for product in products %}
         <li class="{{ product.css_class }} item">
           <a href="{{ product.url }}" title="{{ product.name | escape }}">

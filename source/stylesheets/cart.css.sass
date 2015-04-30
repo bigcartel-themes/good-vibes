@@ -12,7 +12,7 @@
 .cart_content 
   margin: 0 auto
   max-width: 810px
-  padding: 20px 15px 100px
+  padding: 20px 10px 100px
   position: relative
   width: 100%
   
@@ -41,12 +41,17 @@
 
       &:last-of-type  
         margin-bottom: 30px
+    
+    button
+      @media screen and (max-width: $break-extra-small)
+        width: 100%
+        margin: 10px 0
         
   .checkout_btn
     margin-left: 30px
     
     @media screen and (max-width: $break-extra-small)
-      margin-left: 10px
+      margin-left: 0
       
   label 
     display: block
@@ -158,10 +163,7 @@
       width: auto
       
       @media screen and (max-width: $break-medium)
-        max-width: 150px
-      
-      @media screen and (max-width: $break-extra-small)
-        width: 38%
+        max-width: 50%
       
       a  
         @include vertical-align
@@ -187,16 +189,13 @@
       @include vertical-align
       
       @media screen and (max-width: $break-medium)
-        max-width: 230px
+        max-width: 50%
         
-      @media screen and (max-width: $break-extra-small)
-        width: 62%
-      
       div 
         display: inline-block
 
         &.quantity 
-          width: 70px
+          width: 65px
           
           input[type='text'] 
             height: 56px
@@ -213,7 +212,7 @@
           width: 180px
           
           @media screen and (max-width: $break-medium)
-            width: 65px
+            width: 75px
 
         &.remove 
           width: 66px
