@@ -143,36 +143,32 @@
         ["Black", "#000000"],
         ["White", "#FFFFFF"]
       ],
-      "default": "black",
-      "description": "The color of your tagline text"
+      "description": "The color of your tagline text",
+      "default": "#000000"
     },
     {
       "variable": "twitter_username",
       "label": "Twitter Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "facebook_username",
       "label": "Facebook Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "tumblr_username",
       "label": "Tumblr Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     },
     {
       "variable": "instagram_username",
       "label": "Instagram Username",
       "type": "text",
-      "description": "Ex: bigcartel",
-      "default": "bigcartel"
+      "description": "Ex: bigcartel"
     }
   ]
 }
