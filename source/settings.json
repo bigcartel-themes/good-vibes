@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "images": [
     {
       "variable": "logo",
@@ -44,6 +44,7 @@
     "title_font_size": "22px",
     "title_color": "{{ primary_color }}",
     "title_background_color": "transparent",
+    "title_font": "{{ primary_font }}",
     "background_color": "{{ background_color }}",
     "body_font": "{{ primary_font }}",
     "body_font_size": "14px",
@@ -51,6 +52,7 @@
     "step_header_color":"{{ primary_color }}",
     "step_inactive_header_color":" {{ primary_color }}",
     "step_background_color":"{{ background_color }}",
+    "step_header_font": "{{ primary_font }}",
     "content_background_color":"{{ background_color }}",
     "content_banded": "true",
     "content_header_background_color":"{{ background_color }}",
@@ -66,6 +68,7 @@
     "input_focus_color": "#000000",
     "input_focus_background_color": "#ffffff",
     "input_focus_border_color": "#bfbfbf",
+    "input_font": "{{ primary_font }}",
     "input_error_border_color": "#ea4859",
     "input_color": "#000000",
     "input_error_color": "#000000",
@@ -75,6 +78,7 @@
     "input_border_radius":"0px",
     "button_color":"{{ primary_color }}",
     "button_border_width":"2px",
+    "button_font": "{{ primary_font }}",
     "button_border_radius":"0px",
     "button_hover_color":"{{ secondary_color }}",
     "button_background_color":"transparent",
@@ -91,6 +95,14 @@
     "summary_item_list_border_color": "{{ primary_color }}"
   },
   "options": [
+    {
+      "variable": "featured_products",
+      "label": "Featured Products",
+      "type": "select",
+      "options": "0..100",
+      "default": 6,
+      "description": "The number of featured products on the Home page"
+    },
     {
       "variable": "products_per_page",
       "label": "Products per page",
@@ -111,21 +123,6 @@
       "description": "The arrangement of your products on the Home and Products pages"
     },
     {
-      "variable": "featured_products",
-      "label": "Featured Products",
-      "type": "select",
-      "options": "0..100",
-      "default": 6,
-      "description": "The number of featured products on the Home page"
-    },
-    
-    {
-      "variable": "store_tagline",
-      "label": "Store Tagline",
-      "type": "text",
-      "description": "This tagline appears over your slideshow"
-    },
-    {
       "variable": "share_buttons",
       "label": "Show social buttons",
       "type": "boolean",
@@ -133,28 +130,49 @@
       "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
     },
     {
+      "variable": "store_tagline",
+      "label": "Store Tagline",
+      "type": "text",
+      "description": "This tagline appears over your slideshow"
+    },
+    { 
+      "variable": "tagline_color",
+      "label": "Tagline Color",
+      "type": "select",
+      "options": [
+        ["Black", "#000000"],
+        ["White", "#FFFFFF"]
+      ],
+      "default": "black",
+      "description": "The color of your tagline text"
+    },
+    {
       "variable": "twitter_username",
       "label": "Twitter Username",
       "type": "text",
-      "description": "Ex: bigcartel"
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
     },
     {
       "variable": "facebook_username",
       "label": "Facebook Username",
       "type": "text",
-      "description": "Ex: bigcartel"
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
     },
     {
       "variable": "tumblr_username",
       "label": "Tumblr Username",
       "type": "text",
-      "description": "Ex: bigcartel"
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
     },
     {
       "variable": "instagram_username",
       "label": "Instagram Username",
       "type": "text",
-      "description": "Ex: bigcartel"
+      "description": "Ex: bigcartel",
+      "default": "bigcartel"
     }
   ]
 }
