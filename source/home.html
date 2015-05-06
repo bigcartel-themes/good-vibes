@@ -1,6 +1,6 @@
 {% if theme.featured_products > 0 %}
   <h2 class="category_name">Featured Products</h2>
-  {% paginate products from products.current limit: theme.featured_products %}
+  {% get products from products.current limit: theme.featured_products %}
     {% if products != blank %}
       <ul class="product_list{% if theme.product_list_layout == 'masonry' %} masonry{% else %} flex{% endif %}">
         {% for product in products %}
@@ -31,5 +31,5 @@
     {% else %}
       <div class="products"><p>No products found.</p></div>
     {% endif %}
-  {% endpaginate %}
+  {% endget %}
 {% endif %}

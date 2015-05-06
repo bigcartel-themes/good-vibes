@@ -10,7 +10,7 @@
   
   @media screen and (max-width: $break-medium)
     float: none
-    padding: 0px
+    padding: 0
     width: 100%
     
   @media screen and (max-width: $break-small)
@@ -110,7 +110,7 @@
       padding-right: 8px
       
       &:last-child  
-        border-right: 0px
+        border-right: 0
 
 .product_photos  
   float: right
@@ -121,7 +121,7 @@
     float: none
     margin-top: 50px
     max-width: 100%
-    padding: 0px
+    padding: 0
     width: 100%
   
   li  
@@ -140,27 +140,22 @@
 .back_to_all
   @include all-transitions
   display: inline-block
-  height: 25px
   font-size: 1em
   font-weight: 900
   margin-bottom: 20px
 
   svg 
     @include all-transitions
-    @include vertical-align
+    display: inline-block
     fill: $primary-color
-    height: 14px
+    height: 12px
+    margin-right: 8px
   
   &:hover 
     color: $secondary-color
     
     svg 
       fill: $secondary-color
-      
-  span
-    @include vertical-align
-    display: inline-block
-    margin-left: 10px
       
 .fixed
   position: fixed
