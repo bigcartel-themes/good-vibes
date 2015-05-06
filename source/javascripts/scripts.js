@@ -100,8 +100,9 @@ $(document).ready(function() {
   
   if ($('#option').length && $('.price_info').length && $('#quantity').length) { 
     if ($('#option option:selected').data('option-price')) {
-      var $optionPrice = $('#option option:selected').data('option-price'); 
-      $('.price_info').html(Format.money($optionPrice, true, true));
+      var $optionPrice = $('#option option:selected').data('option-price')
+        , $optionQuantity = $('#quantity').val();
+      $('.price_info').html(Format.money($optionPrice * $optionQuantity, true, true));
       $('#quantity').data('default-price',$optionPrice);
     }
   }
@@ -145,8 +146,11 @@ $(document).ready(function() {
       });
     }
   });
-  $('#option').change(function(e) { 
-    $('.price_info').html(Format.money($('option:selected', this).data('option-price') * $('#quantity').val(), true, true));
+  $('#option').change(function(e) {
+    var $optionPrice = $('option:selected', this).data('option-price')
+      , $optionQuantity = $('#quantity').val(); 
+    $('.price_info').html(Format.money($optionPrice * $optionQuantity, true, true));
+    $('#quantity').data('default-price',$optionPrice);
   })
 });
 
