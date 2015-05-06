@@ -54,7 +54,6 @@ var showCart = function() {
   });
 }
 
-   
 $(document).ready(function() {
   $('.open_shop a').on('click', function(e) {
     e.preventDefault();
