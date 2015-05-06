@@ -98,6 +98,13 @@ $(document).ready(function() {
     }
   });
   
+  if ($('#option').length && $('.price_info').length && $('#quantity').length) { 
+    if ($('#option option:selected').data('option-price')) {
+      var $optionPrice = $('#option option:selected').data('option-price'); 
+      $('.price_info').html(Format.money($optionPrice, true, true));
+      $('#quantity').data('default-price',$optionPrice);
+    }
+  }
   $(".product_form").submit(function(e) {
     e.preventDefault();
     var quantity = $(this).find("#quantity").val()
