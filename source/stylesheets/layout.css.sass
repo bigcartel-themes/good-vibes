@@ -312,9 +312,6 @@ header
         max-width: 50%
         width: auto
       
-      @media screen and (max-width: $break-extra-small)
-        top: 40%
-      
       .text
         display: block
         float: left
@@ -330,15 +327,15 @@ header
       .logo
         display: block
         height: 80px
-        width: 500px
+        width: 300px
         background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url }}\") {% else %} none {% endif %}"}
         background-size: contain
         background-position: center left
         background-repeat: no-repeat
         
-        @media screen and (max-width: $break-extra-small)
-          height: 60px
-          width: 100px
+        @media screen and (max-width: $break-medium)
+          max-width: 100%
+          width: 200px
       
         img 
           height: 100%
