@@ -160,7 +160,9 @@ label
     border: 0
     height: 100%
     padding: 0 47px 0 10px
+    position: relative
     width: 100%
+    z-index: 2
     
     option
       background-color: #FFF
@@ -183,6 +185,7 @@ label
     right: 20px
     top: 50%
     width: 13px
+    z-index: 1
   
   &:hover
     border-color: $secondary-color
@@ -502,6 +505,12 @@ footer
   .container
     @include pie-clearfix
     @include vertical-align
+    
+    @media screen and (max-width: $break-medium)
+      -moz-transform: none
+      -webkit-transform: none
+      transform: none
+      top: auto
 
   a, a:hover, a:active, a:focus
     color: $background-color
