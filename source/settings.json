@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "images": [
     {
       "variable": "logo",
@@ -41,6 +41,8 @@
   ],
   "checkout": {
     "header_image": "{{ logo }}",
+    "header_image_max_width": "80px",
+    "header_image_max_height": "80px",
     "title_font_size": "22px",
     "title_color": "{{ primary_color }}",
     "title_background_color": "transparent",
