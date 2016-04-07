@@ -1,6 +1,10 @@
 {
   "name": "Good Vibes",
+<<<<<<< HEAD
   "version": "1.0.7",
+=======
+  "version": "1.0.6",
+>>>>>>> master
   "images": [
     {
       "variable": "logo",
