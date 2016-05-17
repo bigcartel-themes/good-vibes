@@ -331,7 +331,7 @@ header
         display: block
         height: 80px
         width: 300px
-        background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url }}\") {% else %} none {% endif %}"}
+        background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: 600, 600 }}\") {% else %} none {% endif %}"}
         background-size: contain
         background-position: center left
         background-repeat: no-repeat
