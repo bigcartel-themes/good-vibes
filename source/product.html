@@ -44,7 +44,7 @@
   {% endif %}
   {% if theme.share_buttons %}
     <ul class="sharing">
-      <li><a target="_blank" href="http://twitter.com/share?url={{ store.url }}{{ product.url }}&text=Check out {{store.name}}'s">Tweet</a></li>
+      <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ product.name | escape }}%20-%20{{ store.name | escape }}%20{{ store.url }}{{ product.url }}">Tweet</a></li>
       <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
       <li><a target="_blank" data-pin-custom="true" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{ page.full_url }}&media={{ product.images.first.url }}&description={{ product.description | escape }}">Pin</a></li>
     </ul>

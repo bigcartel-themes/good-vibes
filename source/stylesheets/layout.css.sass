@@ -490,7 +490,7 @@ footer
   background-color: $primary-color
   bottom: 0
   color: $background-color
-  font-size: 19px
+  font-size: 16px
   font-weight: 900
   line-height: 19px
   height: 100px
@@ -500,7 +500,10 @@ footer
   
   @media screen and (max-width: $break-medium)
     height: 100%
-    max-height: 200px
+    max-height: 130px
+    
+  @media screen and (max-width: $break-small)
+    font-size: 14px
   
   .container
     @include pie-clearfix
@@ -509,6 +512,7 @@ footer
     @media screen and (max-width: $break-medium)
       -moz-transform: none
       -webkit-transform: none
+      margin-top: 10px
       transform: none
       top: auto
 
@@ -519,12 +523,7 @@ footer
     float: right
     line-height: 24px
     text-align: right
-    
-  .footer_name
-    float: left
-    line-height: 24px
-    text-align: left
-  
+
   .footer_social
     float: left
     
@@ -534,18 +533,27 @@ footer
     
     @media screen and (max-width: $break-medium)
       float: none
-      margin: 18px 0
+      margin: 0
       max-width: 100%
-      padding: 0
+      padding: 12px 0
       text-align: center
       width: 100%
 
 .social_links
-  text-align: center
+  text-align: left
   
+  @media screen and (max-width: $break-medium)
+    text-align: center
+    
   li  
     display: inline-block
     margin: 0 10px
+    
+    &:first-child
+      margin-left: 0
+      
+      @media screen and (max-width: $break-medium)
+        margin-left: 10px
     
     a
       display: block
