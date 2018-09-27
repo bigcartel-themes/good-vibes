@@ -20,7 +20,7 @@
         </div>
         <div class="top_nav">
           <ul class="nav_items">
-            <li class="open_cart"><a href="/cart"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 28" enable-background="new 0 0 30 28" xml:space="preserve"><g><path d="M26.4,13.5L30,0H0v2.3h4.6l0,10h0v7.5h20.8v-2.3H7v-4.1H26.4z M26.9,2.3l-2.4,8.9H7l0-8.9H26.9z"/><path class="cart-icon" d="M8.2,21.4c-1.9,0-3.4,1.5-3.4,3.3S6.4,28,8.2,28s3.4-1.5,3.4-3.3S10.1,21.4,8.2,21.4z M8.2,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C9.6,25.5,9,26.1,8.2,26.1z"/><path class="cart-icon" d="M21.7,21.4c-1.9,0-3.4,1.5-3.4,3.3s1.5,3.3,3.4,3.3s3.4-1.5,3.4-3.3S23.6,21.4,21.7,21.4z M21.7,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C23.1,25.5,22.5,26.1,21.7,26.1z"/></g></svg> <span class="header_cart_details">{{ cart.item_count | pluralize: 'Item', 'Items' }}<span class="hide_mobile">: {{ cart.total | money_with_sign }}</span></span></a></li>
+            <li class="open_cart"><a href="/cart"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 28" enable-background="new 0 0 30 28" xml:space="preserve"><g><path d="M26.4,13.5L30,0H0v2.3h4.6l0,10h0v7.5h20.8v-2.3H7v-4.1H26.4z M26.9,2.3l-2.4,8.9H7l0-8.9H26.9z"/><path class="cart-icon" d="M8.2,21.4c-1.9,0-3.4,1.5-3.4,3.3S6.4,28,8.2,28s3.4-1.5,3.4-3.3S10.1,21.4,8.2,21.4z M8.2,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C9.6,25.5,9,26.1,8.2,26.1z"/><path class="cart-icon" d="M21.7,21.4c-1.9,0-3.4,1.5-3.4,3.3s1.5,3.3,3.4,3.3s3.4-1.5,3.4-3.3S23.6,21.4,21.7,21.4z M21.7,26.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.7,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C23.1,25.5,22.5,26.1,21.7,26.1z"/></g></svg> <span class="header_cart_details">{{ cart.item_count | pluralize: 'Item', 'Items' }}<span class="hide_mobile">: {{ cart.total | money: theme.money_format }}</span></span></a></li>
             <li class="open_pages"><a href="#" data-hover="Pages">Pages <svg class="up" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg></a></li>
             <li class="open_shop"><a href="#" data-hover="Shop">Shop <svg class="up" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg></a></li>
           </ul>
@@ -78,10 +78,10 @@
         {% endif %}
       </div>
     </section>
-    
+
     <footer>
       <div class="container">
-        {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank %}
+        {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
           <div class="footer_section footer_social">
             <ul class="social_links">
               {% if theme.twitter_url != blank %}
@@ -96,6 +96,9 @@
               {% if theme.tumblr_url != blank %}
                 <li><a title="Tumblr" href="{{ theme.tumblr_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="117.504 90 377.114 611.937"><path d="M493.272 571.276c-14.566 13.832-55.692 26.194-55.692 26.194-115.18 27.907-107.957-66.464-107.957-66.464v-189.72h144.31v-96.818h-144.31V90H241.74c-11.383 139.658-124.236 164.628-124.236 164.628v87.394h67.81v224.604c-.98 62.424 36.475 92.656 36.475 92.656 115.055 89.964 272.83 9.67 272.83 9.67v-99.02l-1.348 1.344z"/></svg></a></li>
               {% endif %}
+              {% if theme.pinterest_url != blank %}
+                <li><a title="Pinterest" href="{{ theme.pinterest_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 12 16"><path d="M4.933 10.582c-.406 2.203-.9 4.314-2.366 5.418-.452-3.33.665-5.83 1.183-8.484C2.866 6 3.9 2.9 5.7 3.63c2.315.97-2 5.77.9 6.34 3 .6 4.225-5.4 2.365-7.36C6.285-.22 1.1 2.5 1.8 6.596c.154 1 1.1 1.3.4 2.658C.48 8.858-.034 7.45.032 5.574.138 2.504 2.692.352 5.255.054c3.24-.376 6.3 1.2 6.7 4.396.473 3.568-1.462 7.433-4.927 7.2C6.063 11.5 5.7 11 4.9 10.582z"/></svg></a></li>
+              {% endif %}
             </ul>
           </div>
         {% endif %}
@@ -104,13 +107,23 @@
         </div>
       </div>
     </footer>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
-    <script src="{{ theme | theme_js_url }}"></script>
     <script>
-      $(function() { 
-        if ($('.slides').length) { 
+      var formatMoney = Format.money;
+
+      Format.money = function(number) {
+        {% case theme.money_format %}
+        {% when 'sign' %}
+          return formatMoney(number, true, true, false);
+        {% when 'code' %}
+          return formatMoney(number, true, false, true);
+        {% when 'sign_and_code' %}
+          return formatMoney(number, true, true, true);
+        {% endcase %}
+      };
+      $(function() {
+        if ($('.slides').length) {
           $('.flexslider').flexslider({
             "animation": "slide",
             "useCSS": false
@@ -118,6 +131,7 @@
         }
       });
     </script>
+    <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}
       <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
     {% endif %}

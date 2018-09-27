@@ -12,14 +12,14 @@
         <h3 class="status">On Sale</h3>
       {% endif %}
   {% endcase %}
-  
+
   {% if product.description != blank %}
     <div class="product_description">
       {{ product.description | paragraphs }}
     </div>
   {% endif %}
 
-  <h4>{{ product.default_price | money_with_sign }}</h4>
+  <h4>{{ product.default_price | money: theme.money_format }}</h4>
 
   {% if product.status == 'active' %}
     <form method="post" action="/cart" class="product_form">
@@ -29,7 +29,7 @@
         <div class="wrapper-dropdown">
           <select id="option" name="[cart][add][id]">
             {% for option in product.options %}
-              <option value="{{ option.id }}" data-option-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled"{% endif %}>{{ option.name }}{% if option.has_custom_price %} ({{ option.price | money_with_sign }}){% endif %}</option>
+              <option value="{{ option.id }}" data-option-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled"{% endif %}>{{ option.name }}{% if option.has_custom_price %} ({{ option.price | money: theme.money_format }}){% endif %}</option>
             {% endfor %}
           </select>
           <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
@@ -38,7 +38,7 @@
       <input autocomplete="off" type="text" value="1" id="quantity" data-default-price="{{ product.default_price }}">
       <button class="button add-to-cart" type="submit" data-added-text="Added!">
         <span class="add_text">Add to Cart</span>
-        <span class="price_info">{{ product.default_price | money_with_sign }}</small>
+        <span class="price_info">{{ product.default_price | money: theme.money_format }}</small>
       </button>
     </form>
   {% endif %}

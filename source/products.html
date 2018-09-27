@@ -9,7 +9,7 @@
               <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '680' }}">
               <figcaption>
                 <h3>{{ product.name }}</h3>
-                <small>{{ product.default_price | money_with_sign }}</small>
+                <small>{{ product.default_price | money: theme.money_format }}</small>
                 {% case product.status %}
                   {% when 'sold-out' %}
                     <small><i>Sold Out</i></small>
@@ -28,7 +28,7 @@
       {% endfor %}
     </ul>
     {{ paginate | default_pagination, 'pagination', 'pagination', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg>', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="6.4,0 4.8,1.7 7.4,4.3 0,4.3 0,6.7 7.4,6.7 4.8,9.3 6.4,11 12,5.5 "/></svg>' }}
-    
+
   {% else %}
     <div class="products"><p>No products found.</p></div>
   {% endif %}
