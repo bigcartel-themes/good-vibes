@@ -3,7 +3,7 @@
   <head>
     <title>{{ page.name }} | {{ store.name }}</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{ theme | theme_css_url }}" rel="stylesheet">
     {{ head_content }}
   </head>
@@ -107,11 +107,10 @@
         </div>
       </div>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script>
       var formatMoney = Format.money;
-
       Format.money = function(number) {
         {% case theme.money_format %}
         {% when 'sign' %}
@@ -134,6 +133,10 @@
     <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}
       <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+      <script>
+        var show_sold_out_product_options = '{{ theme.show_sold_out_product_options }}';
+        Product.find('{{ product.permalink }}', processProduct)
+      </script>
     {% endif %}
   </body>
 </html>
