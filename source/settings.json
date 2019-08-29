@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "images": [
     {
       "variable": "logo",
@@ -128,8 +128,16 @@
       "variable": "share_buttons",
       "label": "Show social buttons",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
+    },
+    {
+      "variable": "show_sold_out_product_options",
+      "label": "Show sold out product options",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows sold out product options in the Product page dropdowns",
+      "requires": "inventory"
     },
     {
       "variable": "store_tagline",
