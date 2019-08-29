@@ -63,7 +63,7 @@
       <input autocomplete="off" type="text" value="1" id="quantity">
       <button data-selected-price="" class="button add-to-cart-button" name="submit" type="submit" title="Add to Cart" data-added-text="Added!" data-add-title="Add to Cart" data-sold-title="Sold out">
         <span class="add_text">Add to Cart</span>
-        <span class="price_info">{{ product.default_price | money: theme.money_format }}</small>
+        <span class="price_info">{{ product.default_price | money: theme.money_format }}</span>
       </button>
     </form>
   {% endif %}
