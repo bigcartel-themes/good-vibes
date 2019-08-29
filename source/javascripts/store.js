@@ -138,12 +138,6 @@ $(document).ready(function() {
       });
     }
   });
-  $('#option').change(function(e) {
-    var $optionPrice = $('option:selected', this).data('option-price')
-      , $optionQuantity = $('#quantity').val();
-    $('.price_info').html(Format.money($optionPrice * $optionQuantity, true, true));
-    $('#quantity').data('default-price',$optionPrice);
-  })
 });
 
 var $container = $('.masonry');
@@ -249,9 +243,9 @@ function enableAddButton(updated_price) {
   if (updated_price) {
     quantity = parseInt($('#quantity').val());
     if (quantity > 0) {
-      updated_price = quantity * updated_price;
+      updated_total_price = quantity * updated_price;
     }
-    addButtonPriceTextElement.html(Format.money(updated_price, true, true));
+    addButtonPriceTextElement.html(Format.money(updated_total_price, true, true));
     addButton.attr('data-selected-price',updated_price);
     addButtonPriceTextElement.show();
   }
