@@ -4,7 +4,7 @@
   -moz-box-sizing: border-box
   -webkit-box-sizing: border-box
   box-sizing: border-box
- 
+
 html
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
@@ -19,7 +19,7 @@ body
   font-family: $primary-font
   margin: 0 0 100px
   overflow: hidden
-  
+
   @media screen and (max-width: $break-medium)
     margin-bottom: 160px
 
@@ -37,13 +37,13 @@ ul, ol
   margin: 0
   padding: 0
 
-img 
+img
   display: block
 
 h1, h2, h3, h4
   font-family: $primary-font
   font-weight: 900
-  
+
 h1
   font-size: 36px
   line-height: 36px
@@ -73,7 +73,7 @@ p
     display: inline-block
     position: relative
 
-    &:before 
+    &:before
       @include all-transitions
       border-bottom: 2px solid $primary-color
       bottom: -1px
@@ -84,7 +84,7 @@ p
       height: 100%
       position: absolute
       width: 100%
-      
+
     &:hover
       color: $secondary-color
 
@@ -92,7 +92,7 @@ p
       border-color: $secondary-color
       -webkit-transform: scale(1.1)
       transform: scale(1.1)
-    
+
 button, .button
   @include all-transitions
   background-color: $background-color
@@ -107,7 +107,13 @@ button, .button
   &:hover, &:focus
     border-color: $secondary-color
     color: $secondary-color
-    
+
+  &:disabled, &.disabled
+    border: 2px solid $primary-color
+    color: $primary-color
+    cursor: not-allowed
+    opacity: .3
+
 input, textarea
   @include all-transitions
   appearance: none
@@ -119,22 +125,22 @@ input, textarea
   color: $primary-color
   font: 1.125em $primary-font
   font-weight: 900
-  
+
   &:focus
     border-color: $secondary-color
     color: $secondary-color
     outline: none
-  
+
   &::-webkit-input-placeholder
     color: $primary-color
     font-weight: 900
     font: 1.125em $primary-font
-  
+
 label
   display: block
   font: 1.125em $primary-font
   font-weight: 900
-  
+
 .wrapper-dropdown
   @include all-transitions
   border: 2px solid $primary-color
@@ -148,7 +154,7 @@ label
   margin-bottom: 20px
   position: relative
   width: 380px
-  
+
   @media screen and (max-width: $break-extra-small)
     width: 100%
 
@@ -163,15 +169,18 @@ label
     position: relative
     width: 100%
     z-index: 2
-    
+
     option
       background-color: #FFF
       color: #000
-      
+
+      &:disabled
+        color: graytext
+
     &:focus
       box-shadow: none
       outline: none
-      
+
     &::-ms-expand
       display: none
 
@@ -186,13 +195,20 @@ label
     top: 50%
     width: 13px
     z-index: 1
-  
+
   &:hover
     border-color: $secondary-color
-    
+    color: $secondary-color
+
+    select
+      color: $secondary-color
+
+      option:disabled
+        color: graytext
+
     .downarrow
       fill: $secondary-color
-    
+
 .errors
   color: $secondary-color
   font-size: 18px
@@ -201,19 +217,19 @@ label
 
   li
     margin-bottom: 8px
-    
+
     &:last-child
       margin-bottom: 0
-    
+
 .store_tagline
   color: $tagline-color
   margin: 0 auto
   max-width: 1300px
   width: 100%
-  
+
   @media screen and (max-width: $break-medium)
     margin-top: 25px
-  
+
   .text
     position: absolute
     z-index: 100
@@ -223,14 +239,14 @@ label
     left: 0
     text-align: center
     padding: 0 25px
-    
+
     h2
       +vertical-align
       font-size: 36px
       line-height: 36px
       margin: 0
       padding: 0
-      
+
       @media screen and (max-width: $break-extra-small)
         font-size: 18px
         line-height: 18px
@@ -238,10 +254,10 @@ label
 .no_slideshow
   background-color: $secondary-color
   height: 300px
-  
+
   @media screen and (max-width: $break-extra-small)
     height: 150px
-  
+
 .flexslider
   background: none
   border: 0
@@ -250,31 +266,31 @@ label
   -moz-border-radius: 0
   height: 100%
   margin-bottom: 0
-  
+
   .slides
     transform-style: preserve-3d
     -webkit-transform-style: preserve-3d
-    
+
     >li
       transform: translateZ(0px)
       -moz-transform: translateZ(0px)
       -webkit-transform: translateZ(0px)
-    
+
   .flex-viewport
     transform-style: preserve-3d
     -webkit-transform-style: preserve-3d
     -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)
 
-.flex-direction-nav  
+.flex-direction-nav
   display: none
 
-.flex-control-nav 
+.flex-control-nav
   position: absolute
   bottom: 10px
   z-index: 10
   right: 15px
   width: auto
-  
+
   @media screen and (max-width: $break-medium)
     display: none
 
@@ -288,33 +304,33 @@ label
   padding: 1px 3px
   text-indent: 0
 
-.container 
+.container
   margin: auto
   max-width: 1200px
   padding: 10px 0
   width: 100%
-  
+
   @media screen and (max-width: $break-extra-large)
     padding: 10px
 
-header  
+header
   height: 90px
 
-  .container  
+  .container
     @include pie-clearfix
     height: 100%
     min-height: 50px
 
-    .brand 
-      @include vertical-align 
+    .brand
+      @include vertical-align
       float: left
       max-width: 50%
       top: 50%
-      
+
       @media screen and (max-width: $break-medium)
         max-width: 50%
         width: auto
-      
+
       .text
         display: block
         float: left
@@ -322,11 +338,11 @@ header
         font-weight: 900
         width: 100%
         word-wrap: break-word
-        
+
         @media screen and (max-width: $break-small)
           font-size: 20px
           line-height: 20px
-      
+
       .logo
         display: block
         height: 80px
@@ -335,58 +351,58 @@ header
         background-size: contain
         background-position: center left
         background-repeat: no-repeat
-        
+
         @media screen and (max-width: $break-medium)
           max-width: 100%
           width: 200px
-      
-        img 
+
+        img
           height: 100%
           width: auto
 
-    .top_nav 
+    .top_nav
       @include vertical-align
       float: right
       max-width: 50%
-      
+
       @media screen and (max-width: $break-medium)
         max-width: 50%
         width: auto
-      
-      .nav_items 
-        @include pie-clearfix 
+
+      .nav_items
+        @include pie-clearfix
         font-size: 19px
         font-weight: 900
         line-height: 19px
         margin: 0
         padding: 0
-        
+
         @media screen and (max-width: $break-small)
           font-size: 17px
           line-height: 15px
-          
-        li  
+
+        li
           float: right
           margin-left: 15px
-          
+
         .open_pages, .open_shop
           @media screen and (max-width: $break-medium)
             display: none
-          
-          a  
+
+          a
             display: inline-block
             padding: 0 3px
             position: relative
-            
+
             &:before
-              @include slide-rollover 
-            
+              @include slide-rollover
+
             &:hover
-              @include no-opacity 
-            
+              @include no-opacity
+
             &:hover:before
-              max-width: 100% 
-            
+              max-width: 100%
+
             .up
               @include all-transitions
               fill: $primary-color
@@ -395,61 +411,61 @@ header
               width: 12px
 
         .open_cart
-          svg 
+          svg
             @include all-transitions
-            fill: $primary-color 
+            fill: $primary-color
             float: left
             height: 26px
             margin-top: -3px
             margin-right: 4px
             width: 36px
-            
+
             @media screen and (max-width: $break-small)
               height: 20px
-            
+
           &:hover svg
             fill: $secondary-color
 
 .hide_mobile
   @media screen and (max-width: $break-extra-small)
-    display: none        
+    display: none
 
-.mobile_nav 
+.mobile_nav
   display: none
   text-align: center
-  
+
   @media screen and (max-width: $break-medium)
     display: block
-  
-  ul  
-    
-    li  
+
+  ul
+
+    li
       display: inline-block
-      
+
       @media screen and (max-width: $break-medium)
         padding: 0 10px
-      
-      a  
+
+      a
         display: inline-block
         font-size: 19px
         font-weight: 900
         line-height: 19px
         padding-right: 5px
         position: relative
-        
+
         @media screen and (max-width: $break-extra-small)
           font-size: 18px
-        
+
         &:before
-          @include slide-rollover 
-        
+          @include slide-rollover
+
         &:hover
-          @include no-opacity 
-        
+          @include no-opacity
+
         &:hover:before
-          max-width: 100% 
-        
-        .up 
+          max-width: 100%
+
+        .up
           @include all-transitions
           width: 12px
           height: 17px
@@ -457,36 +473,36 @@ header
           position: relative
           top: 3px
           right: -5px
-          
-.dropdown_links 
+
+.dropdown_links
   text-align: center
-  
-  ul 
+
+  ul
     display: none
     padding: 10px 0 20px
-    
+
     @media screen and (max-width: $break-medium)
       padding-top: 25px
-    
-    li  
+
+    li
       display: inline-block
-      
+
       @media screen and (max-width: $break-extra-small)
         display: block
 
-      a 
+      a
         display: block
         font-size: 17px
         line-height: 17px
         padding: 2px 7px
-        
+
         @media screen and (max-width: $break-extra-small)
           padding: 9px 0
-      
-section.content h2 
+
+section.content h2
   margin-top: 25px
 
-footer 
+footer
   background-color: $primary-color
   bottom: 0
   color: $background-color
@@ -497,18 +513,18 @@ footer
   left: 0
   position: absolute
   width: 100%
-  
+
   @media screen and (max-width: $break-medium)
     height: 100%
     max-height: 130px
-    
+
   @media screen and (max-width: $break-small)
     font-size: 14px
-  
+
   .container
     @include pie-clearfix
     @include vertical-align
-    
+
     @media screen and (max-width: $break-medium)
       -moz-transform: none
       -webkit-transform: none
@@ -526,11 +542,11 @@ footer
 
   .footer_social
     float: left
-    
+
   .footer_section
     max-width: 33%
     width: 33%
-    
+
     @media screen and (max-width: $break-medium)
       float: none
       margin: 0
@@ -541,58 +557,58 @@ footer
 
 .social_links
   text-align: left
-  
+
   @media screen and (max-width: $break-medium)
     text-align: center
-    
-  li  
+
+  li
     display: inline-block
     margin: 0 10px
-    
+
     &:first-child
       margin-left: 0
-      
+
       @media screen and (max-width: $break-medium)
         margin-left: 10px
-    
+
     a
       display: block
-    
-      svg  
+
+      svg
         height: 22px
         width: 22px
         fill: $background-color
-    
-#maintenance, #checkout 
+
+#maintenance, #checkout
   position: absolute
   width: 100%
   max-width: none
   height: 100%
   text-align: center
   padding: 150px 15px
-  
-  h1  
+
+  h1
     font-size: 2em
-  
-  span  
+
+  span
     margin-right: 2px
-  
-.page_content  
+
+.page_content
   @include pie-clearfix
   padding-bottom: 55px
 
-.custom .page_content  
+.custom .page_content
   max-width: 800px
-  
+
   ol, ul
     margin: 1em 0
     padding-left: 1em
-    
+
   ul
     list-style: disc
-  
+
   ol
     list-style: decimal
-    
-  img  
+
+  img
     max-width: 100%
