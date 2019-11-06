@@ -75,7 +75,10 @@
     text-align: right
 
   .add-to-cart-button
-    @include all-transitions
+    -webkit-transition: none
+    -moz-transition: none
+    -o-transition: none
+    transition: none
     height: 56px
     margin-left: 15px
     padding: 15px
@@ -185,3 +188,6 @@
   display: none
   opacity: 0
   visibility: hidden
+
+#instant-checkout-button
+  margin-top: 12px
