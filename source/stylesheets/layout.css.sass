@@ -25,10 +25,9 @@ body
 
 a, a:hover, a:active, a:focus
   color: $primary-color
-  outline: none
   text-decoration: none
 
-a:hover
+a:hover, a:focus
   opacity: .85
   filter: alpha(opacity=85)
 
@@ -85,10 +84,10 @@ p
       position: absolute
       width: 100%
 
-    &:hover
+    &:hover, &:focus
       color: $secondary-color
 
-    &:hover:before
+    &:hover:before, &:focus:before
       border-color: $secondary-color
       -webkit-transform: scale(1.1)
       transform: scale(1.1)

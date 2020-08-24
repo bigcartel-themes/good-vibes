@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "images": [
     {
       "variable": "logo",
@@ -19,24 +19,24 @@
     {
       "variable": "primary_font",
       "label": "Primary Font",
-      "default": "Lato"
+      "default": "Helvetica"
     }
   ],
   "colors": [
     {
       "variable": "background_color",
       "label": "Background Color",
-      "default": "#F9F9F9"
+      "default": "#F7F7F3"
     },
     {
       "variable": "primary_color",
       "label": "Primary Color",
-      "default": "#222222"
+      "default": "#323A39"
     },
     {
       "variable": "secondary_color",
       "label": "Secondary Color",
-      "default": "#f55253"
+      "default": "#EB4636"
     }
   ],
   "checkout": {
