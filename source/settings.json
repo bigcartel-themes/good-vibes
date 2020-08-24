@@ -36,7 +36,7 @@
     {
       "variable": "secondary_color",
       "label": "Secondary Color",
-      "default": "#EB4636"
+      "default": "#A21C10"
     }
   ],
   "checkout": {
