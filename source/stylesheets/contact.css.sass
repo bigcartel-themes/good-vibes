@@ -1,68 +1,56 @@
 @import "mixins"
 
-#contact 
-  .page_content  
+#contact
+  .page_content
     max-width: 800px
-  
-  .contact_form  
-    &>div  
+
+  .contact_form
+    &>div
       margin-bottom: 30px
       text-align: left
-      
+
       @media screen and (max-width: $break-small)
         margin-bottom: 15px
-      
+
     .contact_send
       @media screen and (max-width: $break-small)
         text-align: center
-        
+
         button
           margin-left: 0
-    
-    input, textarea  
+
+    input, textarea
       width: 100%
       height: 56px
       padding: 10px
-    
-    textarea  
+
+    textarea
       height: 350px
-    
-    label  
+
+    label
       display: block
       margin-bottom: 10px
-      
-    button
-      margin-left: 20px
-    
-  .contact_name, .contact_spam, .contact_send, .contact_email 
+
+  .contact_name, .contact_send, .contact_email
     display: inline-block
     position: relative
     width: 48%
-    
+
     @media screen and (max-width: $break-small)
       display: block
       width: 100%
-  
+
   .contact_name
     float: left
-    
+
     @media screen and (max-width: $break-small)
       float: none
-      
+
   .contact_email
     float: right
-    
+
     @media screen and (max-width: $break-small)
       float: none
 
-  #captcha
-    &:active, &:focus
-      #captcha_image
-        border-left: 2px solid $secondary-color
-
-  #captcha_image
-    position: absolute
-    bottom: 2px
-    right: 2px
-    border-left: 2px solid $primary-color
-    height: 52px
+  .contact_recaptcha a
+    text-decoration: underline
