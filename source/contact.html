@@ -31,10 +31,8 @@
       {{ contact | contact_input: 'message' }}
     </div>
 
-    <div class="contact_spam">
-      <label for="captcha">Spam check</label>
-      {{ contact | contact_input: 'captcha' }}
-      {{ contact.captcha }}
+    <div class="contact_recaptcha">
+      {{ contact.recaptcha }}
     </div>
 
     <div class="contact_send">

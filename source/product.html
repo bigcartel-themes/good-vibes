@@ -1,31 +1,31 @@
 <div class="product_details">
     <a href="/products" class="back_to_all" title="All products"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg><span>All products</span></a>
 
-  <h2>{{ product.name }}</h2>
-  {% case product.status %}
-    {% when 'sold-out' %}
-      <h3 class="status">Sold Out</h3>
-    {% when 'coming-soon' %}
-      <h3 class="status">Coming soon</h3>
-    {% when 'active' %}
-      {% if product.on_sale %}
-        <h3 class="status">On Sale</h3>
-      {% endif %}
-  {% endcase %}
-
+  <h2 class="product_title">{{ product.name }}</h2>
+  <div class="product_subtitle">
+    {% if product.variable_pricing %}
+      {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
+    {% else %}
+      {{ product.default_price | money: theme.money_format }}
+    {% endif %}
+    {% case product.status %}
+      {% when 'sold-out' %}
+        <span class="product_status">Sold Out</span>
+      {% when 'coming-soon' %}
+        <span class="product_status">Coming Soon</span>
+      {% when 'active' %}
+        {% if product.on_sale %}
+          <span class="product_status">On Sale</span>
+        {% endif %}
+    {% endcase %}
+  </div>
   {% if product.description != blank %}
     <div class="product_description">
       {{ product.description | paragraphs }}
     </div>
   {% endif %}
 
-  <h4>
-    {% if product.variable_pricing %}
-      {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
-    {% else %}
-      {{ product.default_price | money: theme.money_format }}
-    {% endif %}
-  </h4>
+
 
   {% if product.status == 'active' %}
     <form method="post" class="product_form {% if theme.show_sold_out_product_options %}show-sold-out{% else %}hide-sold-out{% endif %}" action="/cart" accept-charset="utf8">
