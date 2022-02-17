@@ -126,9 +126,7 @@ button, .button
 
 input, textarea
   @include all-transitions
-  appearance: none
-  -webkit-appearance: none
-  -moz-appearance: none
+  +appearance(none)
   background: $background-color
   border: 2px solid $primary-color
   border-radius: 0
@@ -591,7 +589,7 @@ footer
         width: 22px
         fill: $background-color
 
-#maintenance, #checkout
+#maintenance
   position: absolute
   width: 100%
   max-width: none
@@ -604,6 +602,14 @@ footer
 
   span
     margin-right: 2px
+
+  .social_links
+    +flexbox
+    +justify-content(center)
+    margin: 40px auto
+
+    svg
+      fill: $primary-color
 
 .page_content
   @include pie-clearfix

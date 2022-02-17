@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.4.7",
+  "version": "1.5.0",
   "images": [
     {
       "variable": "logo",
@@ -97,6 +97,13 @@
     "summary_item_list_border_color": "{{ primary_color }}"
   },
   "options": [
+    {
+      "variable": "maintenance_message",
+      "label": "Maintenance mode message",
+      "type": "text",
+      "description": "A message visitors see when your shop is in Maintenance Mode",
+      "default": "We're working on our shop right now.<br /><br />Please check back soon."
+    },
     {
       "variable": "featured_products",
       "label": "Featured Products",
