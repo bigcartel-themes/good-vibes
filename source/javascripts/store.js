@@ -28,7 +28,7 @@ var updateCart = function(cart) {
   var $text = Format.pluralize(cart.item_count, 'Item<span class="hide_mobile">:', 'Items<span class="hide_mobile">:')+' '+Format.money(cart.total, true, true) +'</span>';
   $cartList.html($text);
   if (cartShowing || $("body").attr("id") == "cart") {
-    var $container = $("<div>")
+    var $container = $("#cart_slider_container")
       , $cart = $(".cart_holder");
     $container.load("/cart?" + $.now() + " .cart_holder", function() {
       $cart.html($container.find(".cart_holder").html())
@@ -43,12 +43,11 @@ var removeFromCart = function(itemID) {
 }
 
 var showCart = function() {
-  var $container = $("<div>");
+  var $container = $("#cart_slider_container");
   $container.load("/cart?" + $.now() + " .cart_holder", function() {
     var $cart = $container.find(".cart_holder")
     $cart.css("display", "none");
-    $("body").prepend($cart);
-    $cart.slideDown(200, function() {
+    $cart.slideDown('fast', function() {
       cartShowing = true;
     });
   });

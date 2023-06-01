@@ -9,19 +9,24 @@ html
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
   -moz-osx-font-smoothing: grayscale
+  height: 100%
   min-height: 100%
-  overflow-y: scroll
   position: relative
 
 body
   background-color: $background-color
   color: $primary-color
   font-family: $primary-font
-  margin: 0 0 100px
-  overflow: hidden
+  margin: 0 0 140px
+  height: 100%
+  display: flex
+  flex-direction: column
 
   @media screen and (max-width: $break-medium)
-    margin-bottom: 160px
+    margin-bottom: 120px
+
+section.content
+  flex: 1
 
 a, a:hover, a:active, a:focus
   color: $primary-color
@@ -324,6 +329,7 @@ label
     padding: 10px
 
 header
+  flex-shrink: 0
   height: 90px
 
   .container
@@ -514,80 +520,60 @@ section.content h2
 
 footer
   background-color: $primary-color
-  bottom: 0
   color: $background-color
   font-size: 16px
+  flex-shrink: 0
   font-weight: 900
-  line-height: 19px
-  height: 100px
-  left: 0
-  position: absolute
   width: 100%
 
-  @media screen and (max-width: $break-medium)
-    height: 100%
-    max-height: 130px
-
-  @media screen and (max-width: $break-small)
-    font-size: 14px
-
   .container
-    @include pie-clearfix
-    @include vertical-align
-
-    @media screen and (max-width: $break-medium)
-      -moz-transform: none
-      -webkit-transform: none
-      margin-top: 10px
-      transform: none
-      top: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 100%
+    justify-content: center
+    gap: 30px
+    padding: 40px 0
 
   a, a:hover, a:active, a:focus
     color: $background-color
 
-  .footer_credit
-    float: right
-    line-height: 24px
-    text-align: right
+.bigcartel-credit
+  line-height: 1em
+  font-size: 15px
+  display: flex
+  align-items: center
+  gap: 8px
+  outline-offset: 4px
+  padding: 2px 0
+  text-decoration: none
 
-  .footer_social
-    float: left
+  &:hover
+    text-decoration: none
 
-  .footer_section
-    max-width: 33%
-    width: 33%
+  &__text
+    position: relative
 
-    @media screen and (max-width: $break-medium)
-      float: none
-      margin: 0
-      max-width: 100%
-      padding: 12px 0
-      text-align: center
-      width: 100%
+  &__lockup
+    display: block
+    fill: currentColor
+    padding-top: 1px
+    width: 86px
 
 .social_links
-  text-align: left
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 20px
 
-  @media screen and (max-width: $break-medium)
-    text-align: center
+  a
+    display: block
 
-  li
-    display: inline-block
-    margin: 0 10px
-
-    &:first-child
-      margin-left: 0
-
-      @media screen and (max-width: $break-medium)
-        margin-left: 10px
-
-    a
+    svg
       display: block
-
-      svg
-        height: 22px
-        width: 22px
-        fill: $background-color
+      height: 22px
+      width: 22px
+      fill: $background-color
 
 #maintenance
   position: absolute
