@@ -1,0 +1,115 @@
+@import 'mixins'
+
+.dropdowns
+  display: flex
+  gap: 20px
+
+.category-nav
+  cursor: pointer
+  position: relative
+  width: auto
+  z-index: 3
+
+  @media screen and (max-width: $break-medium)
+    display: none
+    font-size: 1.25em
+
+  @media screen and (max-width: $break-small)
+    font-size: 1em
+    max-width: 100%
+
+.category-nav-heading
+  padding: 4px
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
+  gap: 8px
+
+  &:after
+    @include slide-rollover
+    top: auto
+    left: 4px
+    bottom: 0
+
+  &:hover
+    color: $secondary-color
+
+    &:after
+      width: calc(100% - 8px)
+
+  &[aria-expanded="true"]
+    color: $secondary-color
+
+    &:after
+      width: calc(100% - 8px)
+
+  svg
+    fill: currentColor
+    pointer-events: none
+    width: 14px
+
+.category-dropdown
+  background: $background-color
+  transition: opacity .2s ease, visibility .2s ease
+  border-radius: 0
+  border: 2px solid $primary-color
+  left: -10px
+  margin: 0 auto
+  min-width: 200px
+  opacity: 0
+  overflow-y: scroll
+  padding: 10px
+  position: absolute
+  text-align: left
+  visibility: hidden
+  height: auto
+  max-height: 50vh
+  z-index: 3
+  top: calc(100% + 6px)
+  scrollbar-width: thin
+  scrollbar-color: #{"rgba(var(--primary-color-rgb),.5)"} transparent
+  scrollbar-gutter: stable
+
+  &[aria-hidden="false"]
+    opacity: 1
+    visibility: visible
+
+  &::-webkit-scrollbar
+    height: .375rem
+    width: .75rem
+
+  &::-webkit-scrollbar-track
+    background-color: transparent
+
+  &::-webkit-scrollbar-thumb
+    border-radius: .375rem
+    border: 3px solid transparent
+    background-color: #{"rgba(var(--primary-color-rgb),.5)"}
+    background-clip: content-box
+
+.dropdown-list
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+  z-index: 4
+  display: flex
+  flex-direction: column
+  gap: 4px
+  font-size: 16px
+
+  li
+    display: block
+
+    a
+      display: block
+      padding: 8px
+
+      &:hover
+        text-decoration: underline
+
+.category-nav-title
+  font-size: 1.1em
+
+  @media screen and (max-width: $break-medium)
+    display: none

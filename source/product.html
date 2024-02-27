@@ -1,7 +1,10 @@
 <div class="product_details">
-    <a href="/products" class="back_to_all" title="All products"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg><span>All products</span></a>
+  <a href="/products" class="back_to_all">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg>
+    <span>All products</span>
+  </a>
 
-  <h2 class="product_title">{{ product.name }}</h2>
+  <h1 class="product_title">{{ product.name }}</h1>
   <div class="product_subtitle">
     {% if product.variable_pricing %}
       {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
@@ -25,8 +28,6 @@
     </div>
   {% endif %}
 
-
-
   {% if product.status == 'active' %}
     <form method="post" class="product_form {% if theme.show_sold_out_product_options %}show-sold-out{% else %}hide-sold-out{% endif %}" action="/cart" accept-charset="utf8">
       <input type="hidden" name="utf8" value='✓'>
@@ -38,7 +39,7 @@
             <input id="option" name="cart[add][id]" type="hidden" value="0">
             {% for option_group in product.option_groups %}
               <div class="select wrapper-dropdown">
-                <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" title="Select {{ option_group.name | escape }}" required>
+                <select data-unavailable-text="(Unavailable)" data-sold-text="(Sold out)" data-group-id="{{ option_group.id }}" data-group-name="{{ option_group.name | escape }}" class="product_option_group" name="option_group[{{ option_group.id }}]" aria-label="Select {{ option_group.name | escape }}" required>
                   <option value="" disabled="disabled" selected>Select {{ option_group.name }}</option>
                   {% for value in option_group.values %}
                     <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
@@ -50,7 +51,7 @@
           </div>
         {% else %}
           <div class="select wrapper-dropdown">
-            <select class="product_option_select" id="option" name="cart[add][id]" title="Select variant" required>
+            <select class="product_option_select" id="option" name="cart[add][id]" aria-label="Select variant" required>
               <option value="" disabled="disabled" selected>Select variant</option>
               {% for option in product.options %}
                 <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
@@ -60,15 +61,17 @@
           </div>
         {% endif %}
       {% endif %}
-      <input autocomplete="off" type="text" value="1" id="quantity" name="cart[add][quantity]">
-      <button data-selected-price="" class="button add-to-cart-button" name="submit" type="submit" title="Add to Cart" data-added-text="Added!" data-add-title="Add to Cart" data-sold-title="Sold out">
-        <span class="add_text">Add to Cart</span>
-        <span class="price_info">{{ product.default_price | money: theme.money_format }}</span>
-      </button>
+      <div class="product_quantity_button">
+        <input autocomplete="off" type="text" value="1" id="quantity" name="cart[add][quantity]" aria-label="Adjust quantity">
+        <button data-selected-price="" class="button add-to-cart-button" name="submit" type="submit" title="Add to cart" data-added-text="Added!" data-add-title="Add to cart" data-sold-title="Sold out">
+          <span class="add_text">Add to cart</span>
+          <span class="price_info">{{ product.default_price | money: theme.money_format }}</span>
+        </button>
+      </div>
       {{ store | instant_checkout_button: 'black', '44px' }}
       {% if product.has_option_groups %}
         <div class="reset-selection-button-container">
-          <button class="button minimal-button reset-selection-button" title="Reset selection" type="reset">Reset selection</button>
+          <button class="button minimal-button reset-selection-button" type="reset">Reset selection</button>
         </div>
       {% endif %}
     </form>
@@ -86,7 +89,11 @@
 <div class="product_photos">
   <ul>
     {% for image in product.images %}
-    <li><a class="image-link" href="{{ image | product_image_url | constrain: 1500 }}" title="{{ product.name | escape }}"><img src="{{ image | product_image_url | constrain: 1120 }}" alt="Image of {{ product.name | escape }}"></a></li>
+    <li>
+      <a class="image-link" href="{{ image | product_image_url | constrain: 1500 }}" title="View image {{ forloop.index }} in gallery view">
+        <img loading="lazy" src="{{ image | product_image_url | constrain: 1120 }}" alt="">
+      </a>
+    </li>
     {% endfor %}
   </ul>
 </div>

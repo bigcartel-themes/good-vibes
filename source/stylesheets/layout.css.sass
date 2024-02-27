@@ -1,4 +1,7 @@
 @import "mixins"
+\:root
+  --announcement-background-color: #{"{{ theme.announcement_background_color }}"}
+  --announcement-text-color: #{"{{ theme.announcement_text_color }}"}
 
 *, *:before, *:after
   -moz-box-sizing: border-box
@@ -17,6 +20,7 @@ body
   background-color: $background-color
   color: $primary-color
   font-family: $primary-font
+  font-size: 16px
   margin: 0 0 140px
   height: 100%
   display: flex
@@ -25,16 +29,30 @@ body
   @media screen and (max-width: $break-medium)
     margin-bottom: 120px
 
+a.skip-link
+  +transition(all .3s)
+  background: $background-color
+  border: 2px solid $primary-color
+  color: $primary-color
+  left: 25px
+  padding: 12px 24px
+  position: absolute
+  text-decoration: underline
+  top: -150px
+  z-index: 100
+
+  &:focus
+    top: 20px
+
 section.content
   flex: 1
 
-a, a:hover, a:active, a:focus
+a
   color: $primary-color
   text-decoration: none
 
-a:hover, a:focus
-  opacity: .85
-  filter: alpha(opacity=85)
+  &:hover
+    color: $secondary-color
 
 ul, ol
   list-style: none
@@ -70,41 +88,31 @@ h4
 p
   font: 1em $primary-font
   font-weight: normal
-  line-height: 24px
+  line-height: 1.5
 
   a
-    @include all-transitions
-    display: inline-block
-    position: relative
-
-    &:before
-      @include all-transitions
-      border-bottom: 2px solid $primary-color
-      bottom: -1px
-      box-sizing: content-box
-      -moz-box-sizing: content-box
-      -webkit-box-sizing: content-box
-      content: ''
-      height: 100%
-      position: absolute
-      width: 100%
+    text-decoration: underline
+    text-underline-offset: 4px
+    text-decoration-thickness: 1px
 
     &:hover, &:focus
       color: $secondary-color
+      text-decoration: underline
+      text-underline-offset: 4px
+      text-decoration-thickness: 2px
 
-    &:hover:before, &:focus:before
-      border-color: $secondary-color
-      -webkit-transform: scale(1.1)
-      transform: scale(1.1)
+button
+  +appearance(none)
+  background: none
+  border: none
 
-button, .button
-  @include all-transitions
+.button
   background-color: $background-color
   border: 2px solid $primary-color
   color: $primary-color
   font: 16px $primary-font
   font-weight: 900
-  outline: none
+  outline-offset: 4px
   padding: 15px 47px
   text-align: center
 
@@ -117,7 +125,6 @@ button, .button
 
     &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
       background: none
-      text-decoration: underline
 
   &:disabled, &.disabled
     border: 2px solid $primary-color
@@ -129,6 +136,17 @@ button, .button
     border-color: $secondary-color
     color: $secondary-color
 
+.heavy-underline, .minimal-button
+  text-decoration: underline
+  text-underline-offset: 4px
+  text-decoration-thickness: 1px
+
+  &:hover, &:focus
+    color: $secondary-color
+    text-decoration: underline
+    text-underline-offset: 4px
+    text-decoration-thickness: 2px
+
 input, textarea
   @include all-transitions
   +appearance(none)
@@ -139,15 +157,8 @@ input, textarea
   font: 16px $primary-font
   font-weight: 900
 
-  &:focus
-    border-color: $secondary-color
-    color: $secondary-color
-    outline: none
-
-  &::-webkit-input-placeholder
-    color: $primary-color
-    font-weight: 900
-    font: 1.125em $primary-font
+  &:hover, &:focus
+    border: 2px solid $secondary-color
 
 label
   display: block
@@ -195,7 +206,6 @@ label
 
     &:focus
       box-shadow: none
-      outline: none
 
     &::-ms-expand
       display: none
@@ -322,201 +332,63 @@ label
 .container
   margin: auto
   max-width: 1200px
-  padding: 10px 0
+  padding: 16px
   width: 100%
 
   @media screen and (max-width: $break-extra-large)
     padding: 10px
 
 header
+  font-size: 19px
+  font-weight: 900
   flex-shrink: 0
-  height: 90px
+  padding: 4px 0
 
   .container
-    @include pie-clearfix
+    display: flex
+    align-items: center
     height: 100%
-    min-height: 50px
+    gap: 20px
 
-    .brand
-      @include vertical-align
-      float: left
-      max-width: 50%
-      top: 50%
+  .brand
+    img
+      max-height: 70px
 
-      @media screen and (max-width: $break-medium)
-        max-width: 50%
-        width: auto
+      @media screen and (max-width: $break-small)
+        max-height: 60px
 
-      .text
-        display: block
-        float: left
-        font-size: 28px
-        font-weight: 900
-        width: 100%
-        word-wrap: break-word
+.open_cart
+  margin-left: auto
 
-        @media screen and (max-width: $break-small)
-          font-size: 20px
-          line-height: 20px
+  a
+    display: flex
+    align-items: center
+    font-weight: bold
+    padding: 4px
+    gap: 8px
+    position: relative
+    white-space: nowrap
 
-      .logo
-        display: block
-        height: 80px
-        width: 300px
-        background-image: #{"{% if theme.images.logo != blank %} url(\"{{ theme.images.logo.url | constrain: 600, 600 }}\") {% else %} none {% endif %}"}
-        background-size: contain
-        background-position: center left
-        background-repeat: no-repeat
+    &:after
+      @include slide-rollover
+      top: auto
+      left: 4px
+      bottom: 0px
 
-        @media screen and (max-width: $break-medium)
-          max-width: 100%
-          width: 200px
+    &:hover:after
+      width: calc(100% - 8px)
 
-        img
-          height: 100%
-          width: auto
+    svg
+      flex-shrink: 0
+      fill: currentColor
+      height: 18px
 
-    .top_nav
-      @include vertical-align
-      float: right
-      max-width: 50%
+  .header_cart_details
+    display: flex
 
-      @media screen and (max-width: $break-medium)
-        max-width: 50%
-        width: auto
-
-      .nav_items
-        @include pie-clearfix
-        font-size: 19px
-        font-weight: 900
-        line-height: 19px
-        margin: 0
-        padding: 0
-
-        @media screen and (max-width: $break-small)
-          font-size: 17px
-          line-height: 15px
-
-        li
-          float: right
-          margin-left: 15px
-
-        .open_pages, .open_shop
-          @media screen and (max-width: $break-medium)
-            display: none
-
-          a
-            display: inline-block
-            padding: 0 3px
-            position: relative
-
-            &:before
-              @include slide-rollover
-
-            &:hover
-              @include no-opacity
-
-            &:hover:before
-              max-width: 100%
-
-            .up
-              @include all-transitions
-              fill: $primary-color
-              height: 8px
-              margin-left: 5px
-              width: 12px
-
-        .open_cart
-          svg
-            @include all-transitions
-            fill: $primary-color
-            float: left
-            height: 26px
-            margin-top: -3px
-            margin-right: 4px
-            width: 36px
-
-            @media screen and (max-width: $break-small)
-              height: 20px
-
-          &:hover svg
-            fill: $secondary-color
-
-.hide_mobile
-  @media screen and (max-width: $break-extra-small)
-    display: none
-
-.mobile_nav
-  display: none
-  text-align: center
-
-  @media screen and (max-width: $break-medium)
-    display: block
-
-  ul
-
-    li
-      display: inline-block
-
-      @media screen and (max-width: $break-medium)
-        padding: 0 10px
-
-      a
-        display: inline-block
-        font-size: 19px
-        font-weight: 900
-        line-height: 19px
-        padding-right: 5px
-        position: relative
-
-        @media screen and (max-width: $break-extra-small)
-          font-size: 18px
-
-        &:before
-          @include slide-rollover
-
-        &:hover
-          @include no-opacity
-
-        &:hover:before
-          max-width: 100%
-
-        .up
-          @include all-transitions
-          width: 12px
-          height: 17px
-          fill: $primary-color
-          position: relative
-          top: 3px
-          right: -5px
-
-.dropdown_links
-  text-align: center
-
-  ul
-    display: none
-    padding: 10px 0 20px
-
-    @media screen and (max-width: $break-medium)
-      padding-top: 25px
-
-    li
-      display: inline-block
-
-      @media screen and (max-width: $break-extra-small)
-        display: block
-
-      a
-        display: block
-        font-size: 17px
-        line-height: 17px
-        padding: 2px 7px
-
-        @media screen and (max-width: $break-extra-small)
-          padding: 9px 0
-
-section.content h2
-  margin: 25px 0 40px
+  .hide_mobile
+    @media screen and (max-width: $break-small)
+      display: none
 
 footer
   background-color: $primary-color
@@ -526,17 +398,22 @@ footer
   font-weight: 900
   width: 100%
 
+  a
+    color: $background-color
+    opacity: .85
+
+    &:hover, &:focus
+      color: $background-color
+      opacity: 1
+
   .container
     display: flex
     flex-direction: column
     align-items: center
     height: 100%
     justify-content: center
-    gap: 30px
-    padding: 40px 0
-
-  a, a:hover, a:active, a:focus
-    color: $background-color
+    gap: 40px
+    padding: 50px 24px
 
 .bigcartel-credit
   line-height: 1em
@@ -560,20 +437,31 @@ footer
     padding-top: 1px
     width: 86px
 
-.social_links
-  display: flex
-  align-items: center
+.social_icons
+  +flexbox
+  gap: 8px
+  list-style: none
+  margin: 0
+  padding: 0
+  flex-wrap: wrap
   justify-content: center
-  gap: 20px
 
   a
-    display: block
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    outline-offset: 4px
+    width: 36px
+    height: 36px
 
     svg
-      display: block
-      height: 22px
-      width: 22px
-      fill: $background-color
+      fill: currentColor
+      height: 20px
+      width: 20px
+
+      &.tumblr-icon
+        width: 14px
 
 #maintenance
   position: absolute
@@ -581,7 +469,7 @@ footer
   max-width: none
   height: 100%
   text-align: center
-  padding: 150px 15px
+  padding: 150px 24px
 
   h1
     font-size: 2em
@@ -589,17 +477,13 @@ footer
   span
     margin-right: 2px
 
-  .social_links
-    +flexbox
-    +justify-content(center)
-    margin: 40px auto
-
-    svg
-      fill: $primary-color
-
 .page_content
   @include pie-clearfix
-  padding-bottom: 55px
+  padding-top: 60px
+  padding-bottom: 120px
+
+  @media screen and (max-width: $break-small)
+    padding-top: 24px
 
 .custom .page_content
   max-width: 800px
@@ -616,3 +500,19 @@ footer
 
   img
     max-width: 100%
+
+.sr-only
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+
+.alert-message
+  font-weight: normal
+
+  a
+    text-decoration: underline

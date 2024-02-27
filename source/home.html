@@ -1,15 +1,15 @@
 {% if theme.featured_products > 0 %}
-  <h2 class="category_name">Featured Products</h2>
+  <h1 class="category_name">Featured Products</h1>
   {% get products from products.current limit: theme.featured_products %}
     {% if products != blank %}
       <ul class="product_list{% if theme.product_list_layout == 'masonry' %} masonry{% else %} flex{% endif %}">
         {% for product in products %}
           <li class="{{ product.css_class }} item">
             <a href="{{ product.url }}" title="{{ product.name | escape }}">
-              <figure data-hover="product">
-                <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '680' }}">
+              <figure>
+                <img alt="" src="{{ product.image | product_image_url | constrain: '680' }}">
                 <figcaption>
-                  <h3>{{ product.name }}</h3>
+                  <div class="product-name">{{ product.name }}</div>
                   <small>{{ product.default_price | money: theme.money_format }}</small>
                   {% case product.status %}
                     {% when 'sold-out' %}

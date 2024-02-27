@@ -5,6 +5,8 @@
   *= require stylesheets/product
   *= require stylesheets/products
   *= require stylesheets/contact
+  *= require stylesheets/dropdowns
+  *= require stylesheets/announcement
 */
 
 /*============================================================

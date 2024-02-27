@@ -16,7 +16,7 @@
   @media screen and (max-width: $break-small)
     margin-top: 20px
 
-  h2.product_title
+  h1.product_title
     margin-bottom: 10px
 
   .product_subtitle
@@ -24,15 +24,27 @@
     font-weight: bold
     margin-bottom: 40px
 
+    @media screen and (max-width: $break-large)
+      margin-bottom: 20px
+
   .product_status
     color: $secondary-color
     font-style: italic
 
   .product_description
+    margin-bottom: 48px
+
+    p
+      margin: revert
+
+    &>:first-child
+      margin-top: 0
+
+    &>:last-child
+      margin-bottom: 0
 
     ol, ul
-      margin: 1em 0
-      padding-left: 1em
+      margin: 1em
 
     ul
       list-style: disc
@@ -53,18 +65,17 @@
   .wrapper-dropdown
     width: 100%
 
-    @media screen and (max-width: $break-small)
-      font-size: 15px
+  .product_quantity_button
+    display: flex
+    gap: 16px
 
   input[type="text"]
     float: left
+    outline-offset: 4px
     height: 56px
     padding: 10px
     text-align: center
-    width: 50px
-
-    @media screen and (max-width: $break-extra-small)
-      font-size: 15px
+    width: 56px
 
   .reset-selection-button-container
     +flexbox
@@ -79,20 +90,11 @@
 
   .add-to-cart-button
     +transition(none)
+    flex: 1
     height: 56px
-    margin-left: 15px
     padding: 15px
     position: relative
     text-align: left
-    width: 315px
-
-    @media screen and (max-width: $break-large)
-      width: 275px
-
-    @media screen and (max-width: $break-small)
-      font-size: 15px
-      margin-left: 15px
-      width: calc(100% - 65px)
 
     >span
       @include vertical-align
