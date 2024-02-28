@@ -5,8 +5,7 @@
     {
       "variable": "logo",
       "label": "Header Logo",
-      "description": "Good for an image up to 70px high",
-      "default": "goodvibes-logo.png"
+      "description": "Good for an image up to 70px high"
     }
   ],
   "image_sets": [
@@ -16,6 +15,101 @@
       "description": "1300px by 450px images recommended"
     }
   ],
+  "preset_styles": {
+    "preview": {
+      "title_font": "primary_font",
+      "body_font": "primary_font",
+      "text_color": "primary_color",
+      "background_color": "background_color"
+    },
+    "presets": [
+      {
+        "group_name": "Natural",
+        "styles": [
+          {
+            "style_name": "Natural #1",
+            "fonts": {
+              "primary_font": "Helvetica"
+            },
+            "colors": {
+              "background_color": "#F7F7F3",
+              "primary_color": "#323A39",
+              "secondary_color": "#A21C10",
+              "tagline_color": "#323A39",
+              "announcement_text_color": "#F7F7F3",
+              "announcement_background_color": "#323A39"
+            }
+          },
+          {
+            "style_name": "Natural #2",
+            "fonts": {
+              "primary_font": "Cutive Mono"
+            },
+            "colors": {
+              "background_color": "#FEF5EF",
+              "primary_color": "#584B53",
+              "secondary_color": "#9D5C63",
+              "tagline_color": "#584B53",
+              "announcement_text_color": "#FEF5EF",
+              "announcement_background_color": "#584B53"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "primary_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "primary_color": "#111111",
+              "secondary_color": "#5900FF",
+              "tagline_color": "#111111",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#111111"
+            }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "primary_font": "Marcellus"
+            },
+            "colors": {
+              "background_color": "#141415",
+              "primary_color": "#F8F8F8",
+              "secondary_color": "#D0D0D0",
+              "tagline_color": "#F8F8F8",
+              "announcement_text_color": "#141415",
+              "announcement_background_color": "#F8F8F8"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "primary_font": "Syne"
+            },
+            "colors": {
+              "background_color": "#CEFF66",
+              "primary_color": "#000000",
+              "secondary_color": "#0000FF",
+              "tagline_color": "#000000",
+              "announcement_text_color": "#CEFF66",
+              "announcement_background_color": "#000000"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "primary_font",
@@ -164,7 +258,7 @@
       "variable": "share_buttons",
       "label": "Show social buttons",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
     },
     {

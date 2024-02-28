@@ -1,6 +1,6 @@
 <div class="product_details">
   <a href="/products" class="back_to_all">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg>
+    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 11" enable-background="new 0 0 12 11" xml:space="preserve"><polygon points="5.5,11 7.2,9.3 4.6,6.7 12,6.7 12,4.3 4.6,4.3 7.2,1.7 5.5,0 0,5.5 "/></svg>
     <span>All products</span>
   </a>
 
@@ -45,7 +45,7 @@
                     <option value="{{ value.id }}" data-name="{{ value.name | escape }}">{{ value.name }}</option>
                   {% endfor %}
                 </select>
-                <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
+                <svg aria-hidden="true" version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
               </div>
             {% endfor %}
           </div>
@@ -57,23 +57,20 @@
                 <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
               {% endfor %}
             </select>
-            <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
+            <svg aria-hidden="true" version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6   "/></g></svg>
           </div>
         {% endif %}
       {% endif %}
       <div class="product_quantity_button">
         <input autocomplete="off" type="text" value="1" id="quantity" name="cart[add][quantity]" aria-label="Adjust quantity">
-        <button data-selected-price="" class="button add-to-cart-button" name="submit" type="submit" title="Add to cart" data-added-text="Added!" data-add-title="Add to cart" data-sold-title="Sold out">
-          <span class="add_text">Add to cart</span>
-          <span class="price_info">{{ product.default_price | money: theme.money_format }}</span>
-        </button>
+        <button class="button add-to-cart-button" name="submit" type="submit" data-add-title="Add to cart" data-sold-title="Sold out">Add to cart</button>
       </div>
-      {{ store | instant_checkout_button: 'black', '44px' }}
-      {% if product.has_option_groups %}
-        <div class="reset-selection-button-container">
-          <button class="button minimal-button reset-selection-button" type="reset">Reset selection</button>
-        </div>
-      {% endif %}
+        {{ store | instant_checkout_button: 'dark', '44px' }}
+        {% if product.has_option_groups %}
+          <div class="reset-selection-button-container">
+            <button class="button button--minimal reset-selection-button" type="reset">Reset selection</button>
+          </div>
+        {% endif %}
     </form>
   {% endif %}
   {% if theme.share_buttons %}

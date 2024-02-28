@@ -5,4 +5,5 @@
 //= require javascripts/dropdowns.js
 //= require javascripts/product-option-groups
 //= require javascripts/product
+//= require javascripts/home-carousel
 //= require javascripts/product-carousel

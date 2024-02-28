@@ -47,5 +47,14 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Add support for closing any other dropdowns that exist when one is focused
-// Add support for closing any other dropdowns that exist when one is clicked on
+const adjustDropdownHeights = () => {
+  dropdowns.forEach((dropdown) => {
+    const dropdownRect = dropdown.getBoundingClientRect();
+    const availableSpace = window.innerHeight - dropdownRect.top - 20;
+    dropdown.style.maxHeight = `${availableSpace}px`;
+  });
+};
+
+adjustDropdownHeights();
+
+window.addEventListener('resize', adjustDropdownHeights);

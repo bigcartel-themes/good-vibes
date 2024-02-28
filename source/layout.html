@@ -90,22 +90,6 @@
       </div>
     </header>
     <section class="content">
-      {% if page.permalink == 'home' %}
-        {% if theme.store_tagline != blank or theme.image_sets.slideshow.size > 0%}
-          <div class="store_tagline {% if theme.image_sets.slideshow.size == 0 %}no_slideshow{% endif %}">
-            <div class="flexslider">
-              {% if theme.store_tagline != blank %}<div class="text"><h2>{{ theme.store_tagline }}</h2></div>{% endif %}
-              {% if theme.image_sets.slideshow.size > 0 %}
-                <ul class="slides">
-                  {% for image in theme.image_sets.slideshow %}
-                    <li><img src="{{ image.url | constrain: '1300' }}"></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
-          </div>
-        {% endif %}
-      {% endif %}
       <main class="container page_content" id="main">
         {% if page.category == 'custom' %}
           <h1>{{ page.name }}</h1>

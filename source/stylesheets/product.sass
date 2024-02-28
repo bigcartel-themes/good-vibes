@@ -50,6 +50,9 @@
     ol
       list-style: decimal
 
+    a
+      text-decoration: underline
+
   .product_form
     @include pie-clearfix
     width: 380px
@@ -93,26 +96,6 @@
     padding: 15px
     position: relative
     text-align: left
-
-    >span
-      @include vertical-align
-      position: absolute
-
-    .add_text
-      left: 15px
-      width: 75%
-
-    .price_info
-      @include all-transitions
-      border-left: 2px solid var(--primary-color)
-      color: var(--primary-color)
-      display: none
-      padding-left: 15px
-      right: 15px
-
-    &:hover .price_info, &:focus .price_info
-      border-left: 2px solid var(--secondary-color)
-      color: var(--secondary-color)
 
   .sharing
     font-weight: 900

@@ -22,22 +22,6 @@ API.onError = function(errors) {
   }
 }
 
-$(document).ready(function() {
-  $('.open_shop button').on('click', function(e) {
-    e.preventDefault();
-    $('.page_links').slideUp('fast', function() {
-      $('ul.category_links').slideToggle(150);
-    });
-  });
-
-  $('.open_pages button').on('click', function(e) {
-    e.preventDefault();
-    $('.category_links').slideUp('fast', function() {
-      $('.page_links').slideToggle(150);
-    });
-  });
-});
-
 var $container = $('.masonry');
 if ($container.length) {
   $container.imagesLoaded(function() {

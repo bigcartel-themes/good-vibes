@@ -1,80 +1,70 @@
-.main-content
-  position: relative
-
 .category_name
-  font-size: 1.5em
-  font-weight: 900
-  margin-bottom: 15px
   text-align: center
 
 .product_list
-  margin: 0 -15px 20px
+  display: grid
+  grid-template-columns: 1fr 1fr
+  margin: 0
   padding: 0
   position: relative
+  gap: 32px
 
   li
     display: block
-    float: left
-    padding: 15px
-    padding-bottom: 0
-    width: 50%
 
     a
       display: block
 
       figure
         border-bottom: 2px solid var(--primary-color)
-        display: inline-block
+        display: flex
+        column-gap: 24px
+        line-height: 1.3
         position: relative
         margin: 0
         padding-bottom: 20px
         width: 100%
 
-        img
-          display: block
-          float: left
-          position: relative
-          width: 62%
-          z-index: 1
+        @media screen and (max-width: $break-large)
+          flex-direction: column
+          padding: 0
 
-          @media screen and (max-width: $break-extra-large)
-            width: 50%
+        img
+          position: relative
+          width: 55%
+          z-index: 1
 
           @media screen and (max-width: $break-large)
             width: 100%
 
         figcaption
           @include all-transitions
-          float: left
-          margin-left: 25px
-          max-width: 185px
+          display: flex
+          flex-direction: column
+          gap: 8px
 
           @media screen and (max-width: $break-large)
-            max-width: 100%
-            margin-left: 0
+            padding: 10px 0
 
-          .product-name
-            font-weight: 600
-            font-size: 1.5em
-            margin-bottom: 8px
+        .product-name
+          font-weight: 600
+          font-size: 1.5em
 
-            @media screen and (max-width: $break-large)
-              margin: 10px 0
+          @media screen and (max-width: $break-medium)
+            font-size: 1.2em
 
-            @media screen and (max-width: $break-medium)
-              font-size: 1.2em
+          @media screen and (max-width: $break-small)
+            margin-bottom: 5px
+            font-size: 1.1em
 
-            @media screen and (max-width: $break-small)
-              margin-bottom: 5px
-              font-size: 1.1em
+        .product-price-status
+          display: flex
+          gap: 8px
+          font-size: 1.1em
+          font-weight: 900
 
-          small
-            font-size: 1em
-            font-weight: 900
-
-          small + small
-            color: var(--secondary-color)
-            margin-left: 4px
+        .product-status
+          color: var(--secondary-color)
 
         .arrow
           @include all-transitions
@@ -104,10 +94,6 @@
 
         &:hover:after
           width: 100%
-.flex
-  @include flexbox
-  @include flex-direction(row)
-  @include flex-wrap(wrap)
 
 .pagination
   font-size: 1.2em
