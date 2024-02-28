@@ -9,6 +9,9 @@
   position: relative
   gap: 32px
 
+  @media screen and (max-width: $break-small)
+    gap: 16px
+
   li
     display: block
 
@@ -54,13 +57,12 @@
             font-size: 1.2em
 
           @media screen and (max-width: $break-small)
-            margin-bottom: 5px
             font-size: 1.1em
 
         .product-price-status
           display: flex
           gap: 8px
-          font-size: 1.1em
+          font-size: 1em
           font-weight: 900
 
         .product-status

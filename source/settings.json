@@ -136,7 +136,7 @@
     {
       "variable": "tagline_color",
       "label": "Tagline Color",
-      "default": "#000000"
+      "default": "#323A39"
     },
     {
       "variable": "announcement_text_color",

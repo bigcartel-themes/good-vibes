@@ -14,7 +14,7 @@
         {% endfor %}
       </div>
       {% if theme.store_tagline != blank %}
-        <div class="store-tagline">
+        <div class="store-tagline{% if theme.image_sets.slideshow.size == 0 %} no-slideshow{% endif %}">
           <div class="store-tagline__text">{{ theme.store_tagline }}</div>
         </div>
       {% endif %}

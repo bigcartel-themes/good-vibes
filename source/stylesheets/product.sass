@@ -1,163 +1,82 @@
-.product_details
-  float: left
-  padding-right: 75px
-  width: 50%
+.product-breadcrumb
+  margin-bottom: 16px
+  display: flex
+  white-space: pre-wrap
 
-  @media screen and (max-width: $break-large)
-    padding-right: 40px
-
-  @media screen and (max-width: $break-medium)
-    float: none
-    padding: 0
-    width: 100%
-
-  @media screen and (max-width: $break-small)
-    margin-top: 20px
-
-  h1.product_title
-    margin-bottom: 10px
-
-  .product_subtitle
-    font-size: 18px
+  a
     font-weight: bold
-    margin-bottom: 40px
-
-    @media screen and (max-width: $break-large)
-      margin-bottom: 20px
-
-  .product_status
-    color: var(--secondary-color)
-    font-style: italic
-
-  .product_description
-    margin-bottom: 48px
-
-    p
-      margin: revert
-
-    &>:first-child
-      margin-top: 0
-
-    &>:last-child
-      margin-bottom: 0
-
-    ol, ul
-      margin: 1em
-
-    ul
-      list-style: disc
-
-    ol
-      list-style: decimal
-
-    a
-      text-decoration: underline
-
-  .product_form
-    @include pie-clearfix
-    width: 380px
-
-    @media screen and (max-width: $break-large)
-      width: 340px
-
-    @media screen and (max-width: $break-small)
-      width: 100%
-
-  .wrapper-dropdown
-    width: 100%
-
-  .product_quantity_button
     display: flex
-    gap: 16px
-
-  input[type="text"]
-    float: left
-    outline-offset: 4px
-    height: 56px
-    padding: 10px
-    text-align: center
-    width: 56px
-
-  .reset-selection-button-container
-    +flexbox
-    width: 100%
-
-  .reset-selection-button
-    display: none
-    font-size: 15px
-    margin-left: auto
-    margin-top: 20px
-    text-align: right
-
-  .add-to-cart-button
-    +transition(none)
-    flex: 1
-    height: 56px
-    padding: 15px
-    position: relative
-    text-align: left
-
-  .sharing
-    font-weight: 900
-    font-size: 17px
-    line-height: 17px
-    margin-top: 35px
-    padding: 0
-
-    li
-      border-right: 2px solid var(--primary-color)
-      display: inline-block
-      margin-right: 4px
-      padding-right: 8px
-
-      a
-        cursor: pointer
-
-      &:last-child
-        border-right: 0
-
-.product_photos
-  float: right
-  max-width: 560px
-  width: 50%
-
-  @media screen and (max-width: $break-medium)
-    float: none
-    margin-top: 50px
-    max-width: 100%
-    padding: 0
-    width: 100%
-
-.back_to_all
-  @include all-transitions
-  display: inline-block
-  font-size: 1em
-  font-weight: 900
-  margin-bottom: 20px
+    align-items: center
+    justify-content: center
+    gap: 8px
 
   svg
-    @include all-transitions
-    display: inline-block
-    fill: var(--primary-color)
+    fill: currentColor
     height: 12px
-    margin-right: 8px
     width: 13px
 
-  &:hover
+.product-container
+  display: grid
+  grid-template-columns: 1fr 360px
+  column-gap: 60px
+  row-gap: 40px
+
+  @media screen and (max-width: $break-large)
+    column-gap: 32px
+
+  @media screen and (max-width: $break-medium)
+    row-gap: 24px
+    grid-template-columns: 1fr
+
+.reset-selection-button-container
+  text-align: center
+  width: 100%
+
+  button.reset-selection-button
+    display: none
+    margin-top: 8px
+
+.product-form
+  width: 100%
+
+  button
+    max-width: 100%
+    width: 100%
+
+  @media screen and (max-width: $break-large)
+    max-width: 100%
+
+.product-selects
+  margin-bottom: 20px
+
+.product-option-groups
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.product-detail
+  display: flex
+  flex-direction: column
+  row-gap: 36px
+
+  &__header
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__status
+    margin-left: 8px
     color: var(--secondary-color)
 
-    svg
-      fill: var(--secondary-color)
+  &__pricing
+    display: flex
+    align-items: center
+    font-size: 1.25em
+    font-weight: bold
 
-.fixed
-  position: fixed
-  right: 50%
-  margin-right: -50%
-
-.product-form select span, .product-form select span option
-  display: none
-  opacity: 0
-  visibility: hidden
+  .page-title
+    margin-bottom: 0
+    text-align: left
 
 #instant-checkout-button
   margin-top: 12px

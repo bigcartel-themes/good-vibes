@@ -58,6 +58,7 @@ h1, h2, h3, h4
 h1
   font-size: 1.75em
   margin-bottom: 48px
+  text-align: center
 
 h2
   font-size: 1.5em
@@ -143,7 +144,6 @@ label
   color: var(--primary-color)
   font-weight: bold
   height: 58px
-  margin-bottom: 20px
   max-width: 100%
   padding: 0
   position: relative
@@ -213,6 +213,11 @@ header
     justify-content: flex-start
 
   .brand
+    font-size: 1.5em
+
+    @media screen and (max-width: $break-small)
+      font-size: 1.25em
+
     img
       max-height: 70px
 
@@ -334,6 +339,9 @@ footer
 
   h1
     font-size: 2em
+
+  p
+    margin-bottom: 48px
 
   span
     margin-right: 2px
