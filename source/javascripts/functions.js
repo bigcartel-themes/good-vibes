@@ -85,8 +85,7 @@ Array.prototype.count = function (filterMethod) {
 };
 
 const htmlHighlight = function(element, newText) {
-  element.style.transition = "opacity .2s ease";
-  element.style.opacity = 0;
+  element.style.opacity = 1;
   setTimeout(() => {
     element.innerHTML = newText;
     element.style.opacity = 1;

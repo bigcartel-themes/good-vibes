@@ -1,30 +1,58 @@
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
-  let contactFields = document.querySelectorAll(".contact_form input, .contact_form textarea");
+  document.body.classList.remove("preloader");
+  let contactFields = document.querySelectorAll(".contact-form input, .contact-form textarea");
   contactFields.forEach(function (contactField) {
     contactField.removeAttribute("tabindex");
   });
+  const numShades = 5;
+
+  let cssProperties = [];
+
+  for (const themeColor in themeColors) {
+    const hexValue = themeColors[themeColor];
+    var hsl = tinycolor(hexValue).toHsl();
+    for (var i = numShades - 1; i >= 0; i -= 1) {
+      hsl.l = (i + 0.5) / numShades;
+      cssProperties.push(`--${camelCaseToDash(themeColor)}-${((i * 100) / 1000) * 200}: ${tinycolor(hsl).toRgbString()};`);
+    }
+    numColor = tinycolor(hexValue).toRgb();
+    cssProperties.push(`--${camelCaseToDash(themeColor)}-rgb: ${numColor["r"]}, ${numColor["g"]}, ${numColor["b"]};`);
+  }
+
+  const headTag = document.getElementsByTagName("head")[0];
+  const styleTag = document.createElement("style");
+
+  styleTag.innerHTML = `
+    :root {
+      ${cssProperties.join("\n")}
+    }
+  `;
+  headTag.appendChild(styleTag);
+});
+
+window.addEventListener("load", () => {
+  document.body.classList.remove("transition-preloader");
 });
 API.onError = function(errors) {
   var $errorList = $('<ul>', { class: 'errors'} )
-    , $cartErrorsLocation = $('.cart_form')
-    , $productErrorsLocation = $('.product_form');
+    , $cartErrorsLocation = $('.cart-form');
   $.each(errors, function(index, error) {
     $errorList.append($('<li>').html(error));
   });
   if ($cartErrorsLocation.length > 0) {
-    $cartErrorsLocation.find('.errors').hide();
     $cartErrorsLocation.prepend($errorList);
-    $('.cart-wrapper').scrollTop(0);
-  } else if ($productErrorsLocation.length > 0) {
-    $productErrorsLocation.find('.errors').hide();
-    $productErrorsLocation.prepend($errorList);
   }
 }
 
 var $container = $('.masonry');
 if ($container.length) {
   $container.imagesLoaded(function() {
-    $container.masonry();
+    $container.masonry({
+      itemSelector: '.product',
+      percentPosition: true,
+      gutter: '.gutter-sizer'
+    });
   });
 }

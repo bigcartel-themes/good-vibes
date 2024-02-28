@@ -80,3 +80,29 @@
 
 #instant-checkout-button
   margin-top: 12px
+
+.sharing
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 12px
+  color: var(--primary-color)
+  font-weight: bold
+
+  li
+    position: relative
+
+    &:after
+      content: ''
+      height: calc(100% - 8px)
+      top: 4px
+      position: absolute
+      width: 2px
+      background: var(--primary-color)
+
+    a
+      margin-right: 12px
+
+    &:last-child
+      &:after
+        display: none

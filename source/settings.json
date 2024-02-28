@@ -1,11 +1,11 @@
 {
   "name": "Good Vibes",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "images": [
     {
       "variable": "logo",
       "label": "Header Logo",
-      "description": "Good for an image up to 70px high"
+      "description": "Good for an image up to 80px high"
     }
   ],
   "image_sets": [

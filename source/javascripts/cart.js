@@ -65,19 +65,13 @@ updateCartCounts = (cart) => {
   const item_count = cart.item_count;
   const itemOrItems = Format.pluralize(item_count, 'item', 'items');
 
-  const cartCountElements = document.querySelectorAll('.cart_item_count');
-  const cartTotalElements = document.querySelectorAll('.cart_amount');
+  const cartCountElement = document.querySelector('.cart_item_count');
 
   const cartSubtotal = document.querySelector('.cart-subtotal__amount');
 
-  cartCountElements.forEach((element) => {
-    htmlHighlight(element,itemOrItems)
-  });
-  cartTotalElements.forEach((element) => {
-    htmlHighlight(element,sub_total)
-  });
+  cartCountElement.innerHTML = itemOrItems;
 
-  if (cartSubtotal) { htmlHighlight(cartSubtotal, sub_total); }
+  if (cartSubtotal) { cartSubtotal.innerHTML = sub_total; }
 
 }
 
@@ -99,7 +93,7 @@ processUpdate = (input, item_id, new_val, cart) => {
         item_price = cart.items[itemIndex].price;
         formatted_item_price = Format.money(item_price, true, true);
         let priceElement = document.querySelector('.cart-item-price__update[data-item-id="'+item_id+'"]');
-        htmlHighlight(priceElement,formatted_item_price);
+        priceElement.innerHTML = formatted_item_price;
       }
     }
   }

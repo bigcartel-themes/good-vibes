@@ -140,7 +140,6 @@ label
 
 .select
   +all-transitions
-  border: 2px solid var(--primary-color)
   color: var(--primary-color)
   font-weight: bold
   height: 58px
@@ -150,6 +149,7 @@ label
   width: 100%
 
   select
+    border: 2px solid var(--primary-color)
     border-radius: 0
     height: 100%
     padding: 0 66px 0 16px
@@ -182,10 +182,12 @@ label
     z-index: 1
 
 .errors
-  color: var(--secondary-color)
-  font-size: 18px
-  margin-bottom: 20px
-  padding: 0
+  color: var(--error-text-color)
+  background: var(--error-background-color)
+  font-size: 1em
+  margin-bottom: 32px
+  padding: 16px
+  font-weight: bold
 
   li
     margin-bottom: 8px
@@ -200,37 +202,65 @@ label
   width: 100%
 
 header
-  font-size: 1.25em
   font-weight: 900
   flex-shrink: 0
-  padding: 4px 0
 
   .container
     display: flex
     align-items: center
     height: 100%
-    gap: 20px
+    gap: 32px
+    padding: 24px 16px
     justify-content: flex-start
 
+    @media screen and (max-width: $break-medium)
+      left: -8px
+      gap: 16px
+
   .brand
-    font-size: 1.5em
+    line-height: 1.3
+    max-width: 50%
+    font-size: 2em
 
     @media screen and (max-width: $break-small)
-      font-size: 1.25em
+      font-size: 1.35em
 
     img
-      max-height: 70px
+      max-height: 80px
 
       @media screen and (max-width: $break-small)
-        max-height: 60px
+        max-height: 70px
+
+  .nav
+    display: flex
+    gap: 32px
+    margin-left: auto
+
+  a, button
+    outline-offset: 4px
+
+.page-link
+  position: relative
+
+  &:after
+    @include slide-rollover
+    top: auto
+    bottom: 0px
+
+  &:hover:after
+    width: 100%
 
 .open_cart
+  font-size: 1.25em
+
+  @media screen and (max-width: $break-small)
+    font-size: 1.1em
+    margin-left: auto
 
   a
     display: flex
     align-items: center
     font-weight: bold
-    padding: 4px
     gap: 8px
     position: relative
     white-space: nowrap
@@ -238,16 +268,15 @@ header
     &:after
       @include slide-rollover
       top: auto
-      left: 4px
       bottom: 0px
 
     &:hover:after
-      width: calc(100% - 8px)
+      width: 100%
 
     svg
       flex-shrink: 0
       fill: currentColor
-      height: 18px
+      height: 20px
 
   .header_cart_details
     display: flex
@@ -279,7 +308,7 @@ footer
     height: 100%
     justify-content: center
     gap: 40px
-    padding: 50px 24px
+    padding: 50px 16px
 
 .bigcartel-credit
   line-height: 1em
@@ -353,6 +382,7 @@ footer
 
   @media screen and (max-width: $break-small)
     padding-top: 24px
+    padding-bottom: 60px
 
 .custom .page_content
   max-width: 800px
@@ -378,7 +408,7 @@ footer
   a
     text-decoration: underline
 
-.sr-only
+.visually-hidden
   border: 0
   clip: rect(0 0 0 0)
   height: 1px

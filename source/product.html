@@ -183,5 +183,14 @@
     {% if product.description != blank %}
       <div class="product-detail__description">{{ product.description | paragraphs }}</div>
     {% endif %}
+    {% if theme.share_buttons %}
+      {% capture tweet_string %}{{ product.name }} - {{ store.name }} {{ page.full_url }}{% endcapture %}
+      {% assign tweet_string = tweet_string | url_encode %}
+      <ul class="sharing">
+        <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ tweet_string }}">Tweet</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{store.url}}{{product.url}}">Share</a></li>
+        <li><a target="_blank" data-pin-custom="true" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{ page.full_url }}&media={{ product.images.first.url }}&description={{ product.description | escape }}">Pin</a></li>
+      </ul>
+    {% endif %}
   </section>
 </div>

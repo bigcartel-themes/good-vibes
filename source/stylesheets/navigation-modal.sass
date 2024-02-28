@@ -1,0 +1,110 @@
+.open-mobile-navigation
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 40px
+  width: 40px
+  position: relative
+  left: -8px
+
+  @media screen and (min-width: $break-medium + 1)
+    display: none
+
+  span
+    transform: rotate(0deg)
+    display: block
+    background: currentColor
+    width: 100%
+    height: 2px
+    position: absolute
+    width: 24px
+
+    &:nth-child(1)
+      top: 12px
+
+    &:nth-child(2), &:nth-child(3)
+      top: 50%
+
+    &:nth-child(4)
+      bottom: 10px
+
+.navigation-modal
+  transition: opacity 0.2s, visibility 0s 0.2s
+  height: 100%
+  left: 0
+  opacity: 0
+  position: fixed
+  top: 0
+  visibility: hidden
+  width: 100%
+  z-index: 1000
+  overscroll-behavior: contain
+  background: var(--background-color)
+  display: none
+
+  &[aria-hidden="false"]
+    display: block
+    transition: opacity 0.2s
+    opacity: 1
+    visibility: visible
+
+  &__content
+    height: 100%
+    overflow-y: scroll
+    padding: 0 0 90px
+
+  &__header
+    padding: 24px 8px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+  &__close
+    cursor: pointer
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0px
+    width: 40px
+
+    svg
+      fill: currentColor
+      height: 18px
+      width: 18px
+
+  &__main
+    padding: 0 16px
+
+  &__list
+    text-align: left
+    font-size: 1.25rem
+    display: flex
+    flex-direction: column
+    gap: 24px
+    margin: 16px 0 32px
+    font-weight: bold
+
+    a
+      &:hover
+        text-decoration: underline
+
+.navigation-modal__categories
+  &-toggle
+    display: flex
+    align-items: center
+    gap: 8px
+
+    &[aria-expanded="true"]
+      svg
+        transform: rotate(180deg)
+    svg
+      width: 14px
+
+  .category-list
+    display: block
+    margin-top: 8px
+    margin-left: 8px
+
+    &[aria-hidden="true"]
+      display: none
