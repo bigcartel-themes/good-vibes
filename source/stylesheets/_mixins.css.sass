@@ -1,11 +1,3 @@
-$primary-color: #{'{{ theme.primary_color }}'}
-$secondary-color: #{'{{ theme.secondary_color }}'}
-$background-color: #{'{{ theme.background_color }}'}
-$tagline-color: #{'{{ theme.tagline_color }}'}
-
-$fallback-fonts: "Lato", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif
-$primary-font: "#{'{{ theme.primary_font }}'}", $fallback-fonts
-
 $break-extra-large: 1200px
 $break-large: 945px
 $break-medium: 800px
@@ -28,7 +20,7 @@ $break-extra-small: 500px
   width: 0
   font-size: 4em
   padding-bottom: 2px
-  border-bottom: 2px solid $secondary-color
+  border-bottom: 2px solid var(--secondary-color)
   color: transparent
   content: ""
 
@@ -96,5 +88,3 @@ $break-extra-small: 500px
 
 @mixin align-content($value: stretch)
   align-content: $value
-
-@import 'reset'

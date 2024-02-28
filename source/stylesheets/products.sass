@@ -1,14 +1,10 @@
-@import "mixins"
-
 .main-content
   position: relative
 
 .category_name
-  font-size: 1.3em
-  font-style: italic
+  font-size: 1.5em
   font-weight: 900
-  margin-top: 0
-  text-transform: uppercase
+  margin-bottom: 15px
   text-align: center
 
 .product_list
@@ -27,7 +23,7 @@
       display: block
 
       figure
-        border-bottom: 2px solid $primary-color
+        border-bottom: 2px solid var(--primary-color)
         display: inline-block
         position: relative
         margin: 0
@@ -59,12 +55,11 @@
 
           .product-name
             font-weight: 600
-            font-size: 1.6em
+            font-size: 1.5em
             margin-bottom: 8px
 
             @media screen and (max-width: $break-large)
               margin: 10px 0
-              font-size: 1.5em
 
             @media screen and (max-width: $break-medium)
               font-size: 1.2em
@@ -78,13 +73,13 @@
             font-weight: 900
 
           small + small
-            color: $secondary-color
+            color: var(--secondary-color)
             margin-left: 4px
 
         .arrow
           @include all-transitions
           bottom: 20px
-          fill: $secondary-color
+          fill: var(--secondary-color)
           filter: alpha(opacity= 0)
           height: 18px
           left: 0
@@ -100,7 +95,7 @@
           margin-top: 2px
 
         &:hover figcaption
-          color: $secondary-color
+          color: var(--secondary-color)
 
         &:hover .arrow
           left: calc(100% - 19px)
@@ -128,10 +123,10 @@
     display: none
 
   .current
-    color: $secondary-color
+    color: var(--secondary-color)
 
 .previous svg, .next svg
-  fill: $primary-color
+  fill: var(--primary-color)
   height: 12px
   width: 13px
 
