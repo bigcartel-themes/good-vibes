@@ -172,6 +172,18 @@
         </div>
       </div>
     </footer>
+    <script>
+      const themeOptions = {
+        showSoldOutOptions: {{ theme.show_sold_out_product_options }},
+        desktopProductPageImages: '{{ theme.desktop_product_page_images }}',
+        mobileProductPageImages: '{{ theme.mobile_product_page_images }}',
+        productImageZoom: {{ theme.product_image_zoom }},
+      }
+      const themeColors = {
+        backgroundColor: '{{ theme.background_color }}',
+        primaryColor: '{{ theme.primary_color }}',
+      }
+    </script>
     {% if theme.announcement_message_text != blank %}
       <script>
         let hashCode=function(s){return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a;},0);}
@@ -209,14 +221,6 @@
           return formatMoney(number, true, true, true);
         {% endcase %}
       };
-      $(function() {
-        if ($('.slides').length) {
-          $('.flexslider').flexslider({
-            "animation": "slide",
-            "useCSS": false
-          });
-        }
-      });
     </script>
     <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}

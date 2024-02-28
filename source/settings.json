@@ -40,6 +40,11 @@
       "default": "#A21C10"
     },
     {
+      "variable": "tagline_color",
+      "label": "Tagline Color",
+      "default": "#000000"
+    },
+    {
       "variable": "announcement_text_color",
       "label": "Announcement Message Text",
       "default": "#F7F7F3"
@@ -177,15 +182,35 @@
       "description": "This tagline appears over your slideshow"
     },
     {
-      "variable": "tagline_color",
-      "label": "Tagline Color",
+      "variable": "product_image_zoom",
+      "label": "Enable product image zoom",
+      "type": "boolean",
+      "default": true,
+      "description": "Click to open a larger version of the Product page image"
+    },
+    {
+      "variable": "desktop_product_page_images",
+      "label": "Desktop product page images",
       "type": "select",
       "options": [
-        ["Black", "#000000"],
-        ["White", "#FFFFFF"]
+        ["Thumbnails", "thumbnails"],
+        ["Carousel", "carousel"],
+        ["Stacked 2 column", "two-column"],
+        ["Stacked full width", "stacked"]
       ],
-      "description": "The color of your tagline text",
-      "default": "#000000"
+      "default": "carousel",
+      "description": "Sets the display of the Product page gallery"
+    },
+    {
+      "variable": "mobile_product_page_images",
+      "label": "Mobile product page image carousel",
+      "type": "select",
+      "options": [
+        ["Show thumbnails", "show-thumbnails"],
+        ["Hide thumbnails", "hide-thumbnails"]
+      ],
+      "default": "show-thumbnails",
+      "description": "Choose to hide or show thumbnails on the mobile Product page carousel"
     },
     {
       "variable": "money_format",
