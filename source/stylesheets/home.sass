@@ -1,0 +1,84 @@
+\:root
+  --pagination-background: transparent
+  --pagination-page-background: var(--secondary-color)
+  --pagination-active-page: var(--primary-color)
+
+.home-slideshow
+  margin-bottom: 64px
+
+  .splide__track
+    display: grid
+    place-items: center
+    align-items: center
+
+  .splide__list
+    grid-area: 1/1
+    width: 100%
+
+  .slideshow-image
+    border-radius: var(--border-radius)
+    width: 100%
+
+  .splide__arrow
+    border-radius: var(--border-radius)
+    width: 2em
+    height: 4em
+
+  .splide__slide
+    width: 100%
+
+  .splide__pagination
+    z-index: 1
+    background: var(--pagination-background)
+    border-radius: 18px
+    display: inline-flex
+    position: absolute
+    height: 24px
+    margin-top: 8px
+    bottom: auto
+    align-items: center
+    justify-content: center
+    transform: translateX(-50%)
+    left: 50%
+    padding: 4px 8px
+    gap: 2px
+    right: auto
+
+    li
+      display: flex
+
+    .splide__pagination__page
+      opacity: 1
+      background: var(--pagination-page-background)
+      height: 10px
+      width: 10px
+
+      &.is-active
+        background: var(--pagination-active-page)
+        transform: scale(1.1)
+
+.store-tagline
+  color: var(--tagline-color)
+  text-align: center
+  padding: 24px 48px
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 700
+  pointer-events: none
+  grid-area: 1/1
+  z-index: 1
+
+  &__text
+    font-size: 2em
+
+    @media screen and (max-width: $break-medium)
+      font-size: 1.1em
+
+.no-slideshow
+  min-height: 200px
+  pointer-events: all
+  width: 100%
+
+  @media screen and (max-width: $break-medium)
+    min-height: 150px

@@ -1,106 +1,73 @@
-<div class="cart_holder">
-  <div class="cart_content">
-    <h2>{{ page.name }}</h2>
-    {% if errors != blank %}
-      <ul class="errors">
-        {% for error in errors %}
-        <li>{{ error }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-    {% if cart.items != blank %}
-      <form method="post" action="/cart" id="cart_form" class="cart_form">
-        <ul class="cart_items">
-          {% for item in cart.items %}
-            <li>
-              <a href="{{ item.product.url }}" class="product_image">
-                <img src="{{ item.product.image | product_image_url | constrain: 200 }}">
-              </a>
-              <div class="product_details">
-                <a href="{{ item.product.url }}">
-                  {{ item.product.name }}
-                  {% unless item.product.has_default_option %}
-                    <em>{{ item.option.name }}</em>
-                  {% endunless %}
-                </a>
-              </div>
-              <div class="product_actions">
-                <div class="quantity">{{ item | item_quantity_input }}</div>
-                <div class="price">{{ item.price | money: theme.money_format }}</div>
-                <div class="remove">
-                  <a href="#" data-item-id="{{ item.id }}"><svg version="1.1" class="remove_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 75.6 612 651.2" enable-background="new 0 75.6 612 651.2" xml:space="preserve"><polygon points="612,175.7 517.4,75.6 306,303.7 94.6,75.6 0,175.7 213.8,401.2 0,626.6 94.6,726.8 306,498.6 517.4,726.8 612,626.6 398.2,401.2 "/></svg></a>
+<h1 class="page-title">{{ page.name }}</h1>
+<div class="cart-container">
+  {% if errors != blank %}
+    <div class="message-banner message-banner--errors">
+      {% for error in errors %}
+        <div>{{ error }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if cart.items == blank %}
+    <div class="cart-empty">
+      <div class="message-banner message-banner--no-bg message-banner--centered message-banner--empty-cart">Your cart is empty! Sounds like a good time to start shopping.</div>
+      <a href="/products" class="button">Shop now</a>
+    </div>
+  {% else %}
+    <form method="post" id="cart_form" class="cart-form" action="/cart" accept-charset="utf8">
+      <div class="cart-columns">
+        <div class="cart-details">
+          <input type="hidden" name="utf8" value='✓'>
+          <ul class="cart-items">
+            {% for item in cart.items %}
+              {% capture aria_label_name %}{{ item.product.name | escape }}{% unless item.product.has_default_option %} - {{ item.option.name | escape }}{% endunless %}{% endcapture %}
+              <li class="cart-item" data-item-id="{{ item.id }}">
+                <div class="cart-item-image-holder">
+                  <a class="cart-item-image-link" href="{{ item.product.url }}">
+                    <img src="{{ item.product.image | product_image_url | constrain: 400, 400 }}" alt="{{ item.product.name | escape }}">
+                  </a>
                 </div>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-        {% if cart.shipping.enabled or cart.discount.enabled %}
-          <div class="cart_shipping_discounts">
-            {% if cart.shipping.enabled %}
-              <div class="cart_shipping">
-                <label class="cart_shipping_label" for="country">Shipping</label>
-                <div class="wrapper-dropdown">
-                  {{ store.country | country_select }}
-                  <svg version="1.1" class="downarrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 7.6" enable-background="new 0 0 11 7.6" xml:space="preserve"><g><polygon points="11,1.8 9.3,0 5.5,4.1 1.7,0 0,1.8 5.5,7.6"/></g></svg>
+                <div class="cart-item-detail">
+                  <a href="{{ item.product.url }}">
+                    <div class="product-name">{{ item.product.name }}</div>
+                  </a>
+                  <div class="option-name">
+                    {% unless item.product.has_default_option %}
+                      {{ item.option.name }} - <span class="cart-item-unit-price">{{ item.unit_price | money: theme.money_format }}</span>
+                    {% else %}
+                      <div class="cart-item-unit-price">{{ item.unit_price | money: theme.money_format }}</div>
+                    {% endunless %}
+                  </div>
                 </div>
-              </div>
-            {% endif %}
-            {% if cart.discount.enabled %}
-              <div class="cart_discounts">
-                <label class="cart_discount_label" for="cart_discount_code">Discount code</label>
-                {% if cart.discount.pending %}
-                  {{ cart.discount | discount_code_input }}
-                {% elsif cart.discount.free_shipping %}
-                  <p>{{ cart.discount.name }} applied!</p>
-                {% else %}
-                  <p>{{ cart.discount.name }} applied!</p>
-                {% endif %}
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-
-        <div class="cart_footer">
-          {% if cart.shipping.enabled or cart.discount.enabled %}
-
-            {% if cart.shipping.enabled %}
-              <h3>
-                Shipping
-                {% if cart.shipping.pending %}
-                  {% if cart.country %}
-                    <span class="small_message">Select another country</span>
-                  {% else %}
-                    <span class="small_message">Select country</span>
-                  {% endif %}
-                {% else %}
-                  <span>{{ cart.shipping.amount | money: theme.money_format }}</span>
-                {% endif %}
-              </h3>
-            {% endif %}
-
-            {% if cart.discount.enabled %}
-              {% if cart.discount.pending %}
-              {% elsif cart.discount.free_shipping %}
-                <h3>Discount <span class="small_message">Free shipping!</span></h3>
-              {% else %}
-                <h3>Discount <span>- {{ cart.discount.amount | money: theme.money_format }}</span></h3>
-              {% endif %}
-            {% endif %}
-
-          {% endif %}
-          <h3>Total  <span>{{ cart.total | money: theme.money_format }}</span></h3>
-          <a class="button continue_shopping" href="/products">Continue Shopping</a>
-          <button type="submit" name="update" title="Checkout" id="update">Update cart</button>
-          <button type="submit" name="checkout" title="Checkout" class="checkout_btn">Checkout</button>
+                <div class="cart-qty">
+                  <div class="qty-holder" data-item-id="{{ item.id }}">
+                    <button title="Decrease quantity of {{ aria_label_name }}" class="qty-button qty-button--decrease" data-func="decrease" type="button" data-item-id="{{ item.id }}">
+                      <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.5 13 2"> <path d="M13 1.5C13 2.0625 12.5312 2.5 12 2.5H1C0.4375 2.5 0 2.0625 0 1.5C0 0.96875 0.4375 0.5 1 0.5H12C12.5312 0.5 13 0.96875 13 1.5Z"></path> </svg>
+                    </button>
+                    <input aria-label="Quantity of {{ aria_label_name }}" type="number" autocomplete="off" class="product-quantity" name="cart[update][{{ item.id }}]" min="0" value="{{ item.quantity }}" data-item-id="{{ item.id }}">
+                    <button title="Increase quantity of {{ aria_label_name }}" class="qty-button qty-button--increase" data-func="increase" type="button" data-item-id="{{ item.id }}">
+                      <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"> <path d="M7.5 1V5.5H12C12.5312 5.5 13 5.96875 13 6.5C13 7.0625 12.5312 7.5 12 7.5H7.5V12C7.5 12.5625 7.03125 13 6.5 13C5.9375 13 5.5 12.5625 5.5 12V7.5H1C0.4375 7.5 0 7.0625 0 6.5C0 5.96875 0.4375 5.5 1 5.5H5.5V1C5.5 0.46875 5.9375 0 6.5 0C7.03125 0 7.5 0.46875 7.5 1Z"></path> </svg>
+                    </button>
+                  </div>
+                  <button class="cart-remove-item cart-remove-item--link button minimal-button" data-item-id="{{ item.id }}" type="button">Remove<span class="visually-hidden"> {{ item.product.name | escape }} from cart</span></button>
+                </div>
+                <div class="cart-item-price">
+                  <span class="cart-item-price__update" data-item-id="{{ item.id }}">{{ item.price | money: theme.money_format }}</span>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-      </form>
-    {% else %}
-      <div class="cart_message">
-        <h3>Your cart is empty!</h3>
-        <p>Sounds like a good time to <a href="/products">start shopping &rarr;</a></p>
+        <div class="cart-footer">
+          <div class="cart-subtotal" aria-live="polite" aria-atomic="true">
+            <span class="cart-subtotal__label">Subtotal</span>
+            <span class="cart-subtotal__amount">{{ cart.total | money: theme.money_format }}</span>
+          </div>
+          <div class="cart-submit">
+            <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
+            <a class="button minimal-button" href="/products">Continue Shopping</a>
+          </div>
+        </div>
       </div>
-    {% endif %}
-    <a href="#" class="close_cart"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="25.5 90 561 612" enable-background="new 25.5 90 561 612" xml:space="preserve"><polygon points="25.5,375.6 112.2,457.2 244.8,324.6 244.8,702 367.2,702 367.2,324.6 499.8,457.2 586.5,375.6 306,90 "></polygon></svg></a>
-  </div>
+    </form>
+  {% endif %}
 </div>

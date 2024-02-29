@@ -1,11 +1,11 @@
 {
   "name": "Good Vibes",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "images": [
     {
       "variable": "logo",
       "label": "Header Logo",
-      "description": "80px by 80px image recommended"
+      "description": "Good for an image up to 80px high"
     }
   ],
   "image_sets": [
@@ -15,6 +15,101 @@
       "description": "1300px by 450px images recommended"
     }
   ],
+  "preset_styles": {
+    "preview": {
+      "title_font": "primary_font",
+      "body_font": "primary_font",
+      "text_color": "primary_color",
+      "background_color": "background_color"
+    },
+    "presets": [
+      {
+        "group_name": "Natural",
+        "styles": [
+          {
+            "style_name": "Natural #1",
+            "fonts": {
+              "primary_font": "Helvetica"
+            },
+            "colors": {
+              "background_color": "#F7F7F3",
+              "primary_color": "#323A39",
+              "secondary_color": "#A21C10",
+              "tagline_color": "#323A39",
+              "announcement_text_color": "#F7F7F3",
+              "announcement_background_color": "#323A39"
+            }
+          },
+          {
+            "style_name": "Natural #2",
+            "fonts": {
+              "primary_font": "Cutive Mono"
+            },
+            "colors": {
+              "background_color": "#FEF5EF",
+              "primary_color": "#584B53",
+              "secondary_color": "#9D5C63",
+              "tagline_color": "#584B53",
+              "announcement_text_color": "#FEF5EF",
+              "announcement_background_color": "#584B53"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "primary_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "primary_color": "#111111",
+              "secondary_color": "#5900FF",
+              "tagline_color": "#111111",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#111111"
+            }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "primary_font": "Marcellus"
+            },
+            "colors": {
+              "background_color": "#141415",
+              "primary_color": "#F8F8F8",
+              "secondary_color": "#D0D0D0",
+              "tagline_color": "#F8F8F8",
+              "announcement_text_color": "#141415",
+              "announcement_background_color": "#F8F8F8"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "primary_font": "Syne"
+            },
+            "colors": {
+              "background_color": "#CEFF66",
+              "primary_color": "#000000",
+              "secondary_color": "#0000FF",
+              "tagline_color": "#000000",
+              "announcement_text_color": "#CEFF66",
+              "announcement_background_color": "#000000"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "primary_font",
@@ -37,6 +132,21 @@
       "variable": "secondary_color",
       "label": "Secondary Color",
       "default": "#A21C10"
+    },
+    {
+      "variable": "tagline_color",
+      "label": "Tagline Color",
+      "default": "#323A39"
+    },
+    {
+      "variable": "announcement_text_color",
+      "label": "Announcement Message Text",
+      "default": "#F7F7F3"
+    },
+    {
+      "variable": "announcement_background_color",
+      "label": "Announcement Message Background",
+      "default": "#323A39"
     }
   ],
   "checkout": {
@@ -98,6 +208,12 @@
   },
   "options": [
     {
+      "variable": "announcement_message_text",
+      "label": "Announcement text",
+      "type": "text",
+      "description": "Displays an announcement message on the top of every page"
+    },
+    {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
@@ -105,11 +221,18 @@
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
     {
+      "variable": "featured_header",
+      "label": "Featured header",
+      "type": "text",
+      "description": "Displays above your featured products on the Home page",
+      "default": "Featured Products"
+    },
+    {
       "variable": "featured_products",
       "label": "Featured Products",
       "type": "select",
       "options": "0..100",
-      "default": 6,
+      "default": 12,
       "description": "The number of featured products on the Home page"
     },
     {
@@ -117,7 +240,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 12,
+      "default": 48,
       "description": "The number of products shown per page"
     },
     {
@@ -153,15 +276,35 @@
       "description": "This tagline appears over your slideshow"
     },
     {
-      "variable": "tagline_color",
-      "label": "Tagline Color",
+      "variable": "product_image_zoom",
+      "label": "Enable product image zoom",
+      "type": "boolean",
+      "default": true,
+      "description": "Click to open a larger version of the Product page image"
+    },
+    {
+      "variable": "desktop_product_page_images",
+      "label": "Desktop product page images",
       "type": "select",
       "options": [
-        ["Black", "#000000"],
-        ["White", "#FFFFFF"]
+        ["Thumbnails", "thumbnails"],
+        ["Carousel", "carousel"],
+        ["Stacked 2 column", "two-column"],
+        ["Stacked full width", "stacked"]
       ],
-      "description": "The color of your tagline text",
-      "default": "#000000"
+      "default": "carousel",
+      "description": "Sets the display of the Product page gallery"
+    },
+    {
+      "variable": "mobile_product_page_images",
+      "label": "Mobile product page image carousel",
+      "type": "select",
+      "options": [
+        ["Show thumbnails", "show-thumbnails"],
+        ["Hide thumbnails", "hide-thumbnails"]
+      ],
+      "default": "show-thumbnails",
+      "description": "Choose to hide or show thumbnails on the mobile Product page carousel"
     },
     {
       "variable": "money_format",
@@ -175,34 +318,58 @@
       "description": "Sets the display of prices in your shop"
     },
     {
+      "variable": "instagram_url",
+      "label": "Instagram URL",
+      "type": "text",
+      "description": "Ex: https://instagram.com/bigcartel"
+    },
+    {
+      "variable": "tiktok_url",
+      "label": "TikTok URL",
+      "type": "text",
+      "description": "Ex: https://tiktok.com/@bigcartelofficial"
+    },
+    {
       "variable": "twitter_url",
       "label": "Twitter URL",
       "type": "text",
-      "description": "Ex: http://twitter.com/bigcartel"
+      "description": "Ex: https://twitter.com/bigcartel"
     },
     {
       "variable": "facebook_url",
       "label": "Facebook URL",
       "type": "text",
-      "description": "Ex: http://facebook.com/bigcartel"
+      "description": "Ex: https://facebook.com/bigcartel"
     },
     {
-      "variable": "tumblr_url",
-      "label": "Tumblr URL",
+      "variable": "snapchat_url",
+      "label": "Snapchat URL",
       "type": "text",
-      "description": "Ex: http://bigcartel.tumblr.com"
-    },
-    {
-      "variable": "instagram_url",
-      "label": "Instagram URL",
-      "type": "text",
-      "description": "Ex: http://instagram.com/bigcartel"
+      "description": "Ex: https://snapchat.com/add/bigcartel"
     },
     {
       "variable": "pinterest_url",
       "label": "Pinterest URL",
       "type": "text",
-      "description": "Ex: http://pinterest.com/bigcartel"
+      "description": "Ex: https://pinterest.com/big_cartel"
+    },
+    {
+      "variable": "youtube_url",
+      "label": "YouTube URL",
+      "type": "text",
+      "description": "Ex: https://youtube.com/@BigCartelDotCom"
+    },
+    {
+      "variable": "tumblr_url",
+      "label": "Tumblr URL",
+      "type": "text",
+      "description": "Ex: https://bigcartel.tumblr.com"
+    },
+    {
+      "variable": "bandcamp_url",
+      "label": "Bandcamp URL",
+      "type": "text",
+      "description": "Ex: https://bigcartel.bandcamp.com"
     }
   ]
 }

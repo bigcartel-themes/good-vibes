@@ -1,0 +1,108 @@
+.product-breadcrumb
+  margin-bottom: 16px
+  display: flex
+  white-space: pre-wrap
+
+  a
+    font-weight: bold
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+
+  svg
+    fill: currentColor
+    height: 12px
+    width: 13px
+
+.product-container
+  display: grid
+  grid-template-columns: 1fr 360px
+  column-gap: 60px
+  row-gap: 40px
+
+  @media screen and (max-width: $break-large)
+    column-gap: 32px
+
+  @media screen and (max-width: $break-medium)
+    row-gap: 24px
+    grid-template-columns: 1fr
+
+.reset-selection-button-container
+  text-align: center
+  width: 100%
+
+  button.reset-selection-button
+    display: none
+    margin-top: 8px
+
+.product-form
+  width: 100%
+
+  button
+    max-width: 100%
+    width: 100%
+
+  @media screen and (max-width: $break-large)
+    max-width: 100%
+
+.product-selects
+  margin-bottom: 20px
+
+.product-option-groups
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.product-detail
+  display: flex
+  flex-direction: column
+  row-gap: 36px
+
+  &__header
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__status
+    margin-left: 8px
+    color: var(--secondary-color)
+
+  &__pricing
+    display: flex
+    align-items: center
+    font-size: 1.25em
+    font-weight: bold
+
+  .page-title
+    margin-bottom: 0
+    text-align: left
+
+#instant-checkout-button
+  margin-top: 12px
+
+.sharing
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 12px
+  color: var(--primary-color)
+  font-weight: bold
+
+  li
+    position: relative
+
+    &:after
+      content: ''
+      height: calc(100% - 8px)
+      top: 4px
+      position: absolute
+      width: 2px
+      background: var(--primary-color)
+
+    a
+      margin-right: 12px
+
+    &:last-child
+      &:after
+        display: none
