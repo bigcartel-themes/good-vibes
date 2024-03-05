@@ -243,13 +243,14 @@ header
 .page-link
   position: relative
 
-  &:after
-    @include slide-rollover
-    top: auto
-    bottom: 0px
+  @media (hover: hover)
+    &:after
+      @include slide-rollover
+      top: auto
+      bottom: 0px
 
-  &:hover:after
-    width: 100%
+    &:hover:after
+      width: 100%
 
 .open_cart
   font-size: 1.25em
@@ -266,13 +267,14 @@ header
     position: relative
     white-space: nowrap
 
-    &:after
-      @include slide-rollover
-      top: auto
-      bottom: 0px
+    @media (hover: hover)
+      &:after
+        @include slide-rollover
+        top: auto
+        bottom: 0px
 
-    &:hover:after
-      width: 100%
+      &:hover:after
+        width: 100%
 
     svg
       flex-shrink: 0

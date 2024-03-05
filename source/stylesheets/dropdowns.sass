@@ -16,16 +16,17 @@
   +justify-content(center)
   gap: 8px
 
-  &:after
-    @include slide-rollover
-    top: auto
-    bottom: 0
-
-  &:hover
-    color: var(--secondary-color)
-
+  @media (hover: hover)
     &:after
-      width: 100%
+      @include slide-rollover
+      top: auto
+      bottom: 0
+
+    &:hover
+      color: var(--secondary-color)
+
+      &:after
+        width: 100%
 
   &[aria-expanded="true"]
     color: var(--secondary-color)
