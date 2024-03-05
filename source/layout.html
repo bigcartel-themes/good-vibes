@@ -28,7 +28,7 @@
         <div class="brand">
           <a href="/" title="{{ store.name | escape }}" class="store_header {% if theme.logo != blank %}logo{% else %}text{% endif %}">
             {% if theme.logo != blank %}
-              <img alt="{{ store.name }} Home" class="store-image" src="{{ theme.images.logo.url | constrain: '', 140 }}" srcset="{{ theme.images.logo.url | constrain: '', 140 }} 2x, {{ theme.images.logo.url | constrain: '', 70 }} 1x">
+              <img alt="{{ store.name }} Home" class="store-image" src="{{ theme.images.logo.url | constrain: '', 160 }}" srcset="{{ theme.images.logo.url | constrain: '', 160 }} 2x, {{ theme.images.logo.url | constrain: '', 80 }} 1x">
             {% else %}
               {{ store.name }}
             {% endif %}
