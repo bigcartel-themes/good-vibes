@@ -255,13 +255,6 @@
       "description": "The arrangement of your products on the Home and Products pages"
     },
     {
-      "variable": "share_buttons",
-      "label": "Show social buttons",
-      "type": "boolean",
-      "default": false,
-      "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
-    },
-    {
       "variable": "show_sold_out_product_options",
       "label": "Show sold out product options",
       "type": "boolean",
