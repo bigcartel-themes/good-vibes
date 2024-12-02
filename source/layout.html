@@ -8,7 +8,7 @@
     {{ head_content }}
     <style>.preloader * { opacity: 0; }.transition-preloader * { transition: none !important }</style>
   </head>
-  <body id="{{ page.permalink }}" class="{{ page.category }} preloader transition-preloader">
+  <body id="{{ page.permalink }}" class="{{ page.category }} preloader transition-preloader" data-bc-page-type="{% if page.category == 'custom' %}custom{% else %}{{ page.permalink }}{% endif %}">
     <a class="skip-link" href="#main">Skip to main content</a>
     {% if theme.announcement_message_text != blank %}
       <div aria-label="Announcement message" class="announcement-message">
@@ -20,7 +20,7 @@
         </button>
       </div>
     {% endif %}
-    <header>
+    <header data-bc-hook="header">
       <div class="container">
         <button class="icon-button open-mobile-navigation" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navigation-modal">
           <span></span><span></span><span></span><span></span>
@@ -107,7 +107,7 @@
       </main>
     </section>
 
-    <footer>
+    <footer data-bc-hook="footer">
       <div class="container">
         {% if theme.instagram_url != blank
           or theme.tiktok_url != blank
