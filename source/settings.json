@@ -19,7 +19,7 @@
     "preview": {
       "title_font": "primary_font",
       "body_font": "primary_font",
-      "text_color": "primary_color",
+      "text_color": "primary_text_color",
       "background_color": "background_color"
     },
     "presets": [
@@ -33,8 +33,8 @@
             },
             "colors": {
               "background_color": "#F7F7F3",
-              "primary_color": "#323A39",
-              "secondary_color": "#A21C10",
+              "primary_text_color": "#323A39",
+              "secondary_text_color": "#A21C10",
               "tagline_color": "#323A39",
               "announcement_text_color": "#F7F7F3",
               "announcement_background_color": "#323A39"
@@ -47,8 +47,8 @@
             },
             "colors": {
               "background_color": "#FEF5EF",
-              "primary_color": "#584B53",
-              "secondary_color": "#9D5C63",
+              "primary_text_color": "#584B53",
+              "secondary_text_color": "#9D5C63",
               "tagline_color": "#584B53",
               "announcement_text_color": "#FEF5EF",
               "announcement_background_color": "#584B53"
@@ -66,8 +66,8 @@
             },
             "colors": {
               "background_color": "#FFFFFF",
-              "primary_color": "#111111",
-              "secondary_color": "#5900FF",
+              "primary_text_color": "#111111",
+              "secondary_text_color": "#5900FF",
               "tagline_color": "#111111",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#111111"
@@ -80,8 +80,8 @@
             },
             "colors": {
               "background_color": "#141415",
-              "primary_color": "#F8F8F8",
-              "secondary_color": "#D0D0D0",
+              "primary_text_color": "#F8F8F8",
+              "secondary_text_color": "#D0D0D0",
               "tagline_color": "#F8F8F8",
               "announcement_text_color": "#141415",
               "announcement_background_color": "#F8F8F8"
@@ -99,8 +99,8 @@
             },
             "colors": {
               "background_color": "#CEFF66",
-              "primary_color": "#000000",
-              "secondary_color": "#0000FF",
+              "primary_text_color": "#000000",
+              "secondary_text_color": "#0000FF",
               "tagline_color": "#000000",
               "announcement_text_color": "#CEFF66",
               "announcement_background_color": "#000000"
@@ -124,12 +124,12 @@
       "default": "#F7F7F3"
     },
     {
-      "variable": "primary_color",
+      "variable": "primary_text_color",
       "label": "Primary Color",
       "default": "#323A39"
     },
     {
-      "variable": "secondary_color",
+      "variable": "secondary_text_color",
       "label": "Secondary Color",
       "default": "#A21C10"
     },
@@ -154,22 +154,22 @@
     "header_image_max_width": "300px",
     "header_image_max_height": "80px",
     "title_font_size": "22px",
-    "title_color": "{{ primary_color }}",
+    "title_color": "{{ primary_text_color }}",
     "title_background_color": "transparent",
     "title_font": "{{ primary_font }}",
     "background_color": "{{ background_color }}",
     "body_font": "{{ primary_font }}",
     "body_font_size": "14px",
-    "step_border_color":"{{ secondary_color }}",
-    "step_header_color":"{{ primary_color }}",
-    "step_inactive_header_color":" {{ primary_color }}",
+    "step_border_color":"{{ secondary_text_color }}",
+    "step_header_color":"{{ primary_text_color }}",
+    "step_inactive_header_color":" {{ primary_text_color }}",
     "step_background_color":"{{ background_color }}",
     "step_header_font": "{{ primary_font }}",
     "content_background_color":"{{ background_color }}",
     "content_banded": "true",
     "content_header_background_color":"{{ background_color }}",
-    "content_header_color":"{{ primary_color }}",
-    "content_color":"{{ secondary_color }}",
+    "content_header_color":"{{ primary_text_color }}",
+    "content_color":"{{ secondary_text_color }}",
     "content_header_font_size":"18px",
     "content_border_color":"transparent",
     "content_border_radius":"0px",
@@ -188,23 +188,23 @@
     "input_background_color": "#ffffff",
     "input_error_background_color": "#ffffff",
     "input_border_radius":"0px",
-    "button_color":"{{ primary_color }}",
+    "button_color":"{{ primary_text_color }}",
     "button_border_width":"2px",
     "button_font": "{{ primary_font }}",
     "button_border_radius":"0px",
-    "button_hover_color":"{{ secondary_color }}",
+    "button_hover_color":"{{ secondary_text_color }}",
     "button_background_color":"transparent",
     "button_hover_background_color":"transparent",
-    "button_border_color":"{{ primary_color }}",
-    "button_hover_border_color":"{{ secondary_color }}",
-    "link_color":"{{ primary_color }}",
-    "link_hover_color":"{{ secondary_color }}",
+    "button_border_color":"{{ primary_text_color }}",
+    "button_hover_border_color":"{{ secondary_text_color }}",
+    "link_color":"{{ primary_text_color }}",
+    "link_hover_color":"{{ secondary_text_color }}",
     "step_header_font_size":"18px",
-    "summary_color":"{{ primary_color }}",
-    "summary_secondary_color":"{{ secondary_color }}",
+    "summary_color":"{{ primary_text_color }}",
+    "summary_secondary_color":"{{ secondary_text_color }}",
     "summary_submit_background_color":"{{ background_color }}",
-    "summary_item_border_color":"{{ primary_color }}",
-    "summary_item_list_border_color": "{{ primary_color }}"
+    "summary_item_border_color":"{{ primary_text_color }}",
+    "summary_item_list_border_color": "{{ primary_text_color }}"
   },
   "options": [
     {
