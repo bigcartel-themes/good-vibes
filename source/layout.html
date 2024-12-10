@@ -28,7 +28,15 @@
         <div class="brand">
           <a href="/" title="{{ store.name | escape }}" class="store_header {% if theme.logo != blank %}logo{% else %}text{% endif %}">
             {% if theme.logo != blank %}
-              <img alt="{{ store.name }} Home" class="store-image" src="{{ theme.images.logo.url | constrain: '', 160 }}" srcset="{{ theme.images.logo.url | constrain: '', 160 }} 2x, {{ theme.images.logo.url | constrain: '', 80 }} 1x">
+              {% assign logo_image_height_1x = theme.logo_max_height %}
+              {% assign logo_image_height_2x = logo_image_height_1x | times: 2 %}
+              <img
+                  alt="{{ store.name }} Home"
+                  class="store-image"
+                  srcset="{{ theme.images.logo.url | constrain: '', logo_image_height_1x }}, {{ theme.images.logo.url | constrain: '', logo_image_height_2x }} 2x"
+                  src="{{ theme.images.logo.url | constrain: '', logo_image_height_1x }}"
+                  
+                >
             {% else %}
               {{ store.name }}
             {% endif %}
@@ -228,6 +236,8 @@
         desktopProductPageImages: '{{ theme.desktop_product_page_images }}',
         mobileProductPageImages: '{{ theme.mobile_product_page_images }}',
         productImageZoom: {{ theme.product_image_zoom }},
+        homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
+        homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
       }
       const themeColors = {
         backgroundColor: '{{ theme.background_color }}',
