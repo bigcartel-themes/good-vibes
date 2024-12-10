@@ -227,10 +227,11 @@ header
       font-size: 1.35em
 
     img
-      max-height: 80px
+      max-height: calc(var(--logo-max-height) * 1px)
 
-      @media screen and (max-width: $break-small)
-        max-height: 70px
+      @media screen and (max-width: $break-medium)
+        // Min 70px, Max 80px
+        height: clamp(70px, calc(var(--logo-max-height) * 0.8 * 1px), 80px)
 
   .nav
     display: flex

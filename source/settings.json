@@ -5,7 +5,7 @@
     {
       "variable": "logo",
       "label": "Header Logo",
-      "description": "Good for an image up to 80px high"
+      "description": "Recommend transparent background and 280px high"
     }
   ],
   "image_sets": [
@@ -219,6 +219,19 @@
       "type": "text",
       "description": "A message visitors see when your shop is in Maintenance Mode",
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
+    },
+    {
+      "variable": "logo_max_height",
+      "label": "Header logo image height",
+      "type": "select",
+      "options": [
+        ["Small", "80"],
+        ["Medium", "100"],
+        ["Large", "120"],
+        ["Extra Large", "140"]
+      ],
+      "default": "80",
+      "description": "Controls the maximum height of your header logo"
     },
     {
       "variable": "homepage_slideshow_autoplay",
