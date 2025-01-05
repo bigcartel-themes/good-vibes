@@ -96,14 +96,19 @@ p
   text-align: center
 
   &.minimal-button
+    font-weight: normal
     background: none
     color: var(--primary-text-color)
     border: none
     font-size: 1em
     padding: 0
+    text-decoration: none
 
     &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
       background: none
+      text-decoration: underline
+      text-underline-offset: 4px
+      text-decoration-thickness: 1px
 
   &:disabled, &.disabled
     border: 2px solid var(--primary-text-color)
@@ -115,7 +120,7 @@ p
     border-color: var(--secondary-text-color)
     color: var(--secondary-text-color)
 
-.heavy-underline, .minimal-button
+.heavy-underline
   text-decoration: underline
   text-underline-offset: 4px
   text-decoration-thickness: 1px
