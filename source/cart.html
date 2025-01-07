@@ -7,7 +7,7 @@
       {% endfor %}
     </div>
   {% endif %}
-  {% if cart.items %}
+  {% if cart.item_count == 0 %}
     <div class="cart-empty">
       <div class="message-banner message-banner--no-bg message-banner--centered message-banner--empty-cart">Your cart is empty!</div>
       <a href="/" class="button">Shop now</a>
