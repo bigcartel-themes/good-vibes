@@ -25,15 +25,6 @@
   @media screen and (max-width: $break-large)
     grid-template-columns: 1fr
 
-.cart-header
-  display: grid
-  justify-content: flex-end
-  margin-bottom: 10px
-
-  .copy-cart-link
-    margin-left: auto
-    padding: 0
-
 .cart-items
   border-bottom: 2px solid var(--border-color)
 
@@ -204,6 +195,12 @@
   gap: 24px
   width: 100%
 
+  button
+    margin-bottom: 10px
+
   .button
     max-width: 100%
     width: 100%
+
+  a.button
+    padding: 0

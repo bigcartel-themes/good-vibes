@@ -13,11 +13,6 @@
       <a href="/" class="button">Shop now</a>
     </div>
   {% else %}
-    {% if cart.shareable_link == blank %}
-    <div class="cart-header">
-      <a href="{{ cart.shareable_link }}" class="button minimal-button copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
-    </div>
-    {% endif %}
     <form method="post" id="cart_form" class="cart-form" action="/cart" accept-charset="utf8">
       <div class="cart-columns">
         <div class="cart-details">
@@ -70,6 +65,9 @@
           <div class="cart-submit">
             <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
             <a class="button minimal-button" href="/">Continue Shopping</a>
+            {% if cart.shareable_link %}
+              <a href="{{ cart.shareable_link }}" class="button minimal-button copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
+            {% endif %}
           </div>
         </div>
       </div>
