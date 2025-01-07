@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "images": [
     {
       "variable": "logo",
@@ -53,6 +53,20 @@
               "announcement_text_color": "#FEF5EF",
               "announcement_background_color": "#584B53"
             }
+          },
+          {
+            "style_name": "Natural #3",
+            "fonts": {
+              "primary_font": "Raleway"
+            },
+            "colors": {
+              "background_color": "#EFEAD8",
+              "primary_text_color": "#3E3C38",
+              "secondary_text_color": "#8C5A4A",
+              "tagline_color": "#3E3C38",
+              "announcement_text_color": "#EFEAD8",
+              "announcement_background_color": "#3E3C38"
+            }
           }
         ]
       },
@@ -86,6 +100,20 @@
               "announcement_text_color": "#141415",
               "announcement_background_color": "#F8F8F8"
             }
+          },
+          {
+            "style_name": "Classic #3",
+            "fonts": {
+              "primary_font": "Playfair Display"
+            },
+            "colors": {
+              "background_color": "#F5F5F5",
+              "primary_text_color": "#2E2E2E",
+              "secondary_text_color": "#0056A3",
+              "tagline_color": "#2E2E2E",
+              "announcement_text_color": "#F5F5F5",
+              "announcement_background_color": "#2E2E2E"
+            }
           }
         ]
       },
@@ -104,6 +132,34 @@
               "tagline_color": "#000000",
               "announcement_text_color": "#CEFF66",
               "announcement_background_color": "#000000"
+            }
+          },
+          {
+            "style_name": "Playful #2",
+            "fonts": {
+              "primary_font": "Chewy"
+            },
+            "colors": {
+              "background_color": "#FFE4E1",
+              "primary_text_color": "#8B0000",
+              "secondary_text_color": "#FF4500",
+              "tagline_color": "#8B0000",
+              "announcement_text_color": "#FFE4E1",
+              "announcement_background_color": "#8B0000"
+            }
+          },
+          {
+            "style_name": "Playful #3",
+            "fonts": {
+              "primary_font": "Poppins"
+            },
+            "colors": {
+              "background_color": "#FFFA65",
+              "primary_text_color": "#333333",
+              "secondary_text_color": "#FF6347",
+              "tagline_color": "#333333",
+              "announcement_text_color": "#FFFA65",
+              "announcement_background_color": "#333333"
             }
           }
         ]

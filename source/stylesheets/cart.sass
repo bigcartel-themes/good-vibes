@@ -25,15 +25,6 @@
   @media screen and (max-width: $break-large)
     grid-template-columns: 1fr
 
-.cart-header
-  display: flex
-  align-items: flex-end
-  justify-content: flex-start
-  margin-bottom: 32px
-
-  .page-title
-    margin-bottom: 0
-
 .cart-items
   border-bottom: 2px solid var(--border-color)
 
@@ -150,8 +141,11 @@
     font-weight: normal
     font-size: .925em
     padding: 8px 16px
-    text-decoration: underline
+    text-decoration: none
     width: auto
+
+    &:hover
+      text-decoration: underline
 
     @media (max-width: $break-large)
       padding: 4px 0
@@ -201,6 +195,12 @@
   gap: 24px
   width: 100%
 
+  button
+    margin-bottom: 10px
+
   .button
     max-width: 100%
     width: 100%
+
+  a.button
+    padding: 0

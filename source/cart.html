@@ -7,10 +7,10 @@
       {% endfor %}
     </div>
   {% endif %}
-  {% if cart.items == blank %}
+  {% if cart.item_count == 0 %}
     <div class="cart-empty">
-      <div class="message-banner message-banner--no-bg message-banner--centered message-banner--empty-cart">Your cart is empty! Sounds like a good time to start shopping.</div>
-      <a href="/products" class="button">Shop now</a>
+      <div class="message-banner message-banner--no-bg message-banner--centered message-banner--empty-cart">Your cart is empty!</div>
+      <a href="/" class="button">Shop now</a>
     </div>
   {% else %}
     <form method="post" id="cart_form" class="cart-form" action="/cart" accept-charset="utf8">
@@ -64,7 +64,10 @@
           </div>
           <div class="cart-submit">
             <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
-            <a class="button minimal-button" href="/products">Continue Shopping</a>
+            <a class="button minimal-button" href="/">Continue Shopping</a>
+            {% if cart.shareable_link %}
+              <a href="{{ cart.shareable_link }}" class="button minimal-button copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
+            {% endif %}
           </div>
         </div>
       </div>
