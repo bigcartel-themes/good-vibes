@@ -326,6 +326,17 @@
       "description": "The number of featured products on the Home page"
     },
     {
+      "variable": "featured_order",
+      "label": "Featured products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "position",
+      "description": "The order of products on the Home page",
+      "requires": [
+        "featured_items gt 0"
+      ]
+    },
+    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",
