@@ -363,7 +363,7 @@
       "type": "boolean",
       "default": true,
       "description": "Shows sold out product options in the Product page dropdowns",
-      "requires": "inventory"
+      "requires": ["inventory"]
     },
     {
       "variable": "store_tagline",
