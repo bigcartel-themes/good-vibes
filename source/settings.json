@@ -1,6 +1,6 @@
 {
   "name": "Good Vibes",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "images": [
     {
       "variable": "logo",
@@ -267,12 +267,14 @@
       "variable": "announcement_message_text",
       "label": "Announcement text",
       "type": "text",
+      "max_length": 500,
       "description": "Displays an announcement message on the top of every page"
     },
     {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
+      "max_length": 2048,
       "description": "A message visitors see when your shop is in Maintenance Mode",
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
@@ -293,7 +295,7 @@
       "variable": "homepage_slideshow_autoplay",
       "label": "Auto-play homepage slideshow",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Automatically advances slides in the homepage slideshow"
     },
     {
@@ -308,7 +310,10 @@
         ["Fastest", 3000]
       ],
       "default": 4000,
-      "description": "Controls how quickly slides advance in the auto-playing slideshow"
+      "description": "Controls how quickly slides advance in the auto-playing slideshow",
+      "requires": [
+        "homepage_slideshow_autoplay eq true"
+      ]
     },
     {
       "variable": "featured_header",
@@ -324,6 +329,17 @@
       "options": "0..100",
       "default": 12,
       "description": "The number of featured products on the Home page"
+    },
+    {
+      "variable": "featured_order",
+      "label": "Featured products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "position",
+      "description": "The order of products on the Home page",
+      "requires": [
+        "featured_products gt 0"
+      ]
     },
     {
       "variable": "products_per_page",
@@ -350,7 +366,7 @@
       "type": "boolean",
       "default": true,
       "description": "Shows sold out product options in the Product page dropdowns",
-      "requires": "inventory"
+      "requires": ["inventory"]
     },
     {
       "variable": "store_tagline",
@@ -453,6 +469,24 @@
       "label": "YouTube URL",
       "type": "text",
       "description": "Ex: https://youtube.com/@BigCartelDotCom"
+    },
+    {
+      "variable": "spotify_url",
+      "label": "Spotify URL",
+      "type": "text",
+      "description": "Ex: https://open.spotify.com/artist/0gxy..."
+    },
+    {
+      "variable": "linkedin_url",
+      "label": "LinkedIn URL",
+      "type": "text",
+      "description": "Ex: https://linkedin.com/in/bigcartel"
+    },
+    {
+      "variable": "twitch_url",
+      "label": "Twitch URL",
+      "type": "text",
+      "description": "Ex: https://twitch.tv/username"
     },
     {
       "variable": "tumblr_url",
