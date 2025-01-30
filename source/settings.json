@@ -338,7 +338,7 @@
       "default": "position",
       "description": "The order of products on the Home page",
       "requires": [
-        "featured_items gt 0"
+        "featured_products gt 0"
       ]
     },
     {
